@@ -742,6 +742,14 @@ article.smaller {
   box-reflect: below 3px linear-gradient(rgba(255,255,255,0) 85%, white 150%);
 }
 
+.shadow {
+  -webkit-box-shadow: 10px 10px 25px #888;;
+  -moz-box-shadow: 10px 10px 25px #888;;
+  -o-box-shadow: 10px 10px 25px #888;;
+  -ms-box-shadow: 10px 10px 25px #888;;
+  box-shadow: 10px 10px 25px #888;;
+}
+
 .flexbox {
   @include flexbox;
 }
@@ -801,8 +809,8 @@ article.smaller {
 /* ===== SLIDE CONTENT ===== */
 .logoslide {
   img {
-    width: 383px;
-    height: 92px;
+    width: 395px;
+    height: 70px;
   }
 }
 

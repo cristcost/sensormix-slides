@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Sviluppare su OSGI<br/>con Camel e GWT',
-    subtitle: 'Introduzione',
+    subtitle: 'Aperitivo tecnologico del GDG Firenze<br/>http://www.gdg-firenze.info/',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
