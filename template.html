@@ -1,31 +1,18 @@
-<!--
-Google IO 2012/2013 HTML5 Slide Template
-
-Authors: Eric Bidelman <ebidel@gmail.com>
-         Luke Mahé <lukem@google.com>
-
-URL: https://code.google.com/p/io-2012-slides
--->
 <!DOCTYPE html>
 <html>
 <head>
   <title></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-  <!--This one seems to work all the time, but really small on ipad-->
-  <!--<meta name="viewport" content="initial-scale=0.4">-->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" media="all" href="theme/css/default.css">
-  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
 <body style="opacity: 0">
 
 <slides class="layout-widescreen">
-
+  
   <slide class="logoslide nobackground">
     <article class="flexbox vcenter">
       <span><img src="images/google_developers_logo.png"></span>
@@ -33,7 +20,7 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -41,6 +28,47 @@ URL: https://code.google.com/p/io-2012-slides
       <p data-config-presenter><!-- populated from slide_config.json --></p>
     </hgroup>
   </slide>
+
+  <slide class="segue back-blue nobackground">
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Segue Blu</h2>
+      <h3>Da usare per slide introduttive, conclusive e generiche su sensormix</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue back-yellow nobackground">
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Segue Giallo</h2>
+      <h3>Da usare per slide riguardanti ServiceMix/OSGi</h3>
+    </hgroup>
+  </slide>
+  
+  <slide class="segue back-green nobackground">
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Segue Verde</h2>
+      <h3>Da usare per slide riguardanti Apache Camel </h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue back-red nobackground">
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Segue Rosso</h2>
+      <h3>Da usare per slide riguardanti GWT</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="segue dark nobackground">
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Segue Grigio</h2>
+      <h3>Da usare per slide riguardanti gli extra</h3>
+    </hgroup>
+  </slide>
+
 
   <slide>
     <hgroup>
@@ -152,46 +180,6 @@ function helloWorld(world) {
 &lt;body>
 &lt;/html>
 </pre>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
-    </hgroup>
-    <article>
-      <p>Press 'p' to toggle speaker notes.</p>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Presenter Mode</h2>
-    </hgroup>
-    <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
     </article>
   </slide>
 
@@ -332,14 +320,6 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
   <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
     <hgroup>
       <h2 class="white">Full Image (with Optional Header)</h2>
@@ -348,7 +328,7 @@ function helloWorld(world) {
   </slide>
 
   <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <q>
         This is an example of quote text.
@@ -360,23 +340,8 @@ function helloWorld(world) {
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Iframe</h2>
-    </hgroup>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
-  <slide>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
   <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/gdg_firenze_logo.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
       <p>Important contact information goes here.</p>
