@@ -12,6 +12,19 @@
 </head>
 <body style="opacity: 0">
 
+<svg>
+  <defs>
+    <filter id="box-shadow-filter" x="0" y="0">
+      <feGaussianBlur stdDeviation="5"/>
+      <feOffset dx="10" dy="10"/>
+    </filter>
+    <marker id="arrow" orient="auto" refX="0" refY="0" style="stroke-linecap:butt;overflow:visible">
+      <path 
+      d="M 0.5,0 -5,3 -5,-3 z" />
+    </marker>
+  </defs>
+</svg>
+
 <slides class="layout-widescreen">
   
   <slide class="logoslide nobackground">
@@ -36,135 +49,32 @@
     </hgroup>
     <article class="flexbox vcenter">
       <svg height="496" width="780">
-        <defs>
-          <filter id="filter" x="0" y="0">
-            <feGaussianBlur stdDeviation="5"/>
-            <feOffset dx="10" dy="10"/>
-          </filter>
-        </defs>
         <g transform="translate(193,248)">
           <g>
+            <text class="who-we-are-text" filter="url(#box-shadow-filter)">Cristiano</text>
             <text class="who-we-are-text">Cristiano</text>
-            <text class="who-we-are-text" filter="url(#filter)">Cristiano</text>
             <animateMotion begin="0s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
           </g>
           <g>
+            <text class="who-we-are-text" filter="url(#box-shadow-filter)">Giuseppe</text>
             <text class="who-we-are-text">Giuseppe</text>
-            <text class="who-we-are-text" filter="url(#filter)">Giuseppe</text>
             <animateMotion begin="5s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
           </g>
           <g>
+            <text class="who-we-are-text" filter="url(#box-shadow-filter)">Michele</text>
             <text class="who-we-are-text">Michele</text>
-            <text class="who-we-are-text" filter="url(#filter)">Michele</text>
             <animateMotion begin="10s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
           </g>
           <g>
+            <text class="who-we-are-text" filter="url(#box-shadow-filter)">Sergio</text>
             <text class="who-we-are-text">Sergio</text>
-            <text class="who-we-are-text" filter="url(#filter)">Sergio</text>
             <animateMotion begin="15s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
           </g>
           <g>
+            <text class="who-we-are-text" filter="url(#box-shadow-filter)">Stefano</text>
             <text class="who-we-are-text">Stefano</text>
-            <text class="who-we-are-text" filter="url(#filter)">Stefano</text>
             <animateMotion begin="20s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
           </g>
-        </g>
-      </svg>
-      <!--
-      <svg width="780px" height="496px" viewbox="-390 -248 780 496">
-        <circle cx="50" cy="50" fill="red" r="40" stroke="black" stroke-width="3"/>
-        <ellipse cx="200" cy="80" rx="100" ry="50" style="fill:yellow;stroke:purple;stroke-width:2"/>
-        <line style="stroke:rgb(255,0,0);stroke-width:2" x1="0" x2="200" y1="0" y2="200"/>
-        <path d="M 100 350 l 150 -300" fill="none" id="lineAB" stroke="red" stroke-width="3"/>
-        <path d="M 100 350 q 150 -300 300 0" fill="none" stroke="blue" stroke-width="5"/>
-        <path d="M 175 200 l 150 0" fill="none" stroke="green" stroke-width="3"/>
-        <path d="M 250 50 l 150 300" fill="none" id="lineBC" stroke="red" stroke-width="3"/>
-        <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1"/>
-        <rect height="150" rx="20" ry="20" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" width="150" x="50" y="20"/>
-        <rect height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" width="150" x="50" y="20"/>
-        <rect x="100" y="0" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" width="300" />
-        <text fill="blue" x="500" y="30">I love SVG!</text>
-        <text fill="green" transform="rotate(30 20,40)" x="550" y="15">I love SVG</text>
-        <text x="500" y="80" textLength="500" lengthAdjust="spacing">A long, long, long text.</text>
-        <text x="750" y="20" style="text-anchor: start">Start</text>
-        <text x="750" y="40" style="text-anchor: middle">Middle</text>
-        <text x="750" y="60" style="text-anchor: end">End</text>
-        <g fill="black" stroke="black" stroke-width="3">
-          <circle cx="100" cy="350" id="pointA" r="3"/>
-          <circle cx="250" cy="50" id="pointB" r="3"/>
-          <circle cx="400" cy="350" id="pointC" r="3"/>
-        </g>
-        <g fill="black" font="sans-serif" font-size="30" stroke="none" text-anchor="middle">
-          <text dx="-30" x="100" y="350">A</text>
-          <text dy="-10" x="250" y="50">B</text>
-          <text dx="30" x="400" y="350">C</text>
-        </g>
-
-        <defs>
-          <filter id="filter" x="0" y="0">
-            <feGaussianBlur stdDeviation="5" />
-            <feOffset dx="5" dy="5" />
-          </filter>
-        </defs>
-        <rect x="500" y="150" width="90" height="90" fill="grey" filter="url(#filter)" />
-        <rect x="500" y="150" width="90" height="90" fill="yellow" stroke="black" />
-
-        <text x="750" y="250" font-size = "20">
-            <tspan>Normal weight.</tspan>
-            <tspan x="750" dy="20"  font-weight="bold">Bold type.</tspan>
-            <tspan x="750" dy="20"  font-weight="100">font-weight set to 100.</tspan>
-            <tspan x="750" dy="20"  font-weight="200">font-weight set to 200.</tspan>
-            <tspan x="750" dy="20"  font-weight="600">font-weight set to 600.</tspan>
-            <tspan x="750" dy="20"  font-weight="700">font-weight set to 700.</tspan>
-            <tspan x="750" dy="20"  font-weight="900">font-weight set to 900.</tspan>
-        </text>
-      </svg>
-      -->
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Test diagramma</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <svg height="496" id="svg2" version="1.1" width="780" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg">
-        <defs id="defs28">
-          <marker id="Arrow2Lend" orient="auto" refX="0" refY="0" style="overflow:visible">
-            <path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" id="path3902" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" transform="matrix(-1.1,0,0,-1.1,-1.1,0)"/>
-          </marker>
-          <marker id="TriangleOutL" orient="auto" refX="0" refY="0" style="overflow:visible">
-            <path d="m 5.77,0 -8.65,5 0,-10 8.65,5 z" id="path4024" style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" transform="scale(0.8,0.8)"/>
-          </marker>
-          <marker id="Arrow2Mend" orient="auto" refX="0" refY="0" style="overflow:visible">
-            <path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" id="path3908" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" transform="scale(-0.6,-0.6)"/>
-          </marker>
-          <marker id="Arrow1Lend" orient="auto" refX="0" refY="0" style="overflow:visible">
-            <path d="M 0,0 5,-5 -12.5,0 5,5 0,0 z" id="path3884" style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" transform="matrix(-0.8,0,0,-0.8,-10,0)"/>
-          </marker>
-        </defs>
-        <g id="g4" transform="translate(34.552353,41.611436)">
-          <g id="g3861">
-            <rect height="82.96611" id="rect3007" style="fill:#ffffff;stroke:#000000;stroke-width:2.04933667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" width="230.75172" x="188.10579" y="5.6766987"/>
-            <text id="text10" x="303.29611" y="62.052334">
-              <tspan id="tspan12" style="font-size:40px;text-align:center;text-anchor:middle">Model</tspan>
-            </text>
-          </g>
-          <g id="g3866" transform="translate(0,10.508453)">
-            <rect height="82.96611" id="rect3849" style="fill:#ffffff;stroke:#000000;stroke-width:2.04933667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" width="230.75172" x="188.10579" y="137.03264"/>
-            <text id="text3851" x="301.46994" y="193.40826">
-              <tspan id="tspan3853" style="font-size:40px;text-align:center;text-anchor:middle">Presenter</tspan>
-            </text>
-          </g>
-          <g id="g3871">
-            <rect height="82.96611" id="rect3855" style="fill:#ffffff;stroke:#000000;stroke-width:2.04933667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" width="230.75172" x="188.10579" y="289.40552"/>
-            <text id="text3857" x="304.0676" y="345.78116">
-              <tspan id="tspan3859" style="font-size:40px;text-align:center;text-anchor:middle">View</tspan>
-            </text>
-          </g>
-          <path d="m 337.32203,131.27891 0,56.84895" id="path3876" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)" transform="translate(-34.552353,-41.611436)"/>
-          <path d="m 242.87137,230.20388 0,56.84895" id="path4905" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"/>
-          <path d="m 355.8727,287.88085 0,-56.84895" id="path4907" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3, 3;stroke-dashoffset:0;marker-end:url(#Arrow2Lend)"/>
         </g>
       </svg>
     </article>
@@ -199,53 +109,476 @@
 
 
 
-
+  <!-- Introduzione a OSGi e Servicemix -->
   <slide class="segue back-yellow nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Segue Giallo</h2>
-      <h3>Da usare per slide riguardanti ServiceMix/OSGi</h3>
+      <h2>Introduzione a OSGi e Servicemix</h2>
+      <h3>Ovvero un approccio a SOA modulare per i Backend</h3>
     </hgroup>
   </slide>
 
-   <slide class="header-yellow">
+  <slide class="header-yellow">
     <hgroup>
-      <h2>Titolo yellow</h2>
-      <h3>Sottotitolo</h3>
+      <h2>OSGi: questo sconosciuto</h2>
     </hgroup>
     <article>
-      <p>Info</p>
+      <ul>
+        <li>OSGi: Open Service Gateway initiative</li>
+        <li>OSGi Alliance: organizzazione fondata nel 1999 da <a href="http://it.wikipedia.org/wiki/Ericsson">Ericsson</a>, <a href="http://it.wikipedia.org/wiki/IBM">IBM</a>, <a href="http://it.wikipedia.org/wiki/Oracle">Oracle</a> e altri</li>
+        <li>OSGi Framework: è un layer di modularità per la piattaforma Java</li>
+      </ul>
+      <p>Il nucleo delle specifiche definisce la gestione del modello del ciclo di vita del software, i moduli (chiamati bundles), un service registry e un ambiente di esecuzione.</p>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>Una Metafora:</h2>
+      <h3>Pensate ai servizi di Windows o demoni Unix ma completamente Java</h3>
+    </hgroup>
+    <article class="flexbox">
+      <div class="build fade">
+
+        <img style="width:580px; position: relative;" src="images/servicemix_image_1.png" alt="OSGi as services or deamons" title="OSGi as services or deamons" />
+        <img style="width:680px; position: relative;" src="images/servicemix_image_1.png" alt="OSGi as services or deamons" title="OSGi as services or deamons" />
+
+        <img style="width:780px; position: relative;" src="images/servicemix_image_1.png" alt="OSGi as services or deamons" title="OSGi as services or deamons" />
+
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>Perchè nasce OSGi</h2>
+    </hgroup>
+    <article>
+      <p>OSGi nasce con lo scopo di creare sistemi embedded per mercati residenziali, automotive e M2M. In questi contesti è spesso necessario comunicare con i devices attraverso protocolli differenti.</p>
+      <p>Il fine, quindi, era quello di fornire un modello di programmazione capace di realizzare servizi end-to-end creando uno strato di astrazione che unificasse i differenti protocolli.</p>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>Perchè si espande</h2>
+    </hgroup>
+    <article class="flexbox vleft auto-fadein smaller">
+      <q>
+        We’ve all used development platforms in the past, such as Java Enterprise Edition (JEE), and even though there have been great advances in this industry, we’re still building large complex systems, which are hard to develop, maintain, and extend.
+      </q>
+      <div class="author">
+        <br/>Alexandre de Castro Alves<br/>
+        OSGi in Depth - Manning, <br/>
+        pagina 1, riga 1
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>Implementazioni OSGi</h2>
+    </hgroup>
+    <article class="bigger">
+      <p>Esistono diverse implementazioni di OSGi. Quelle più complete sono:</p>
+      <ul>
+        <li>Apache Felix</li>
+        <li>Eclipse Equinox</li>
+        <li>Knopflerfish</li>
+      </ul>
+    </article>
+  </slide>
+ 
+   <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il framework</h2>
+    </hgroup>
+    <article>
+      <svg style="float:right;" height="496" width="370">
+        <g>
+          <g transform="translate(160,10)">
+            <rect x="-150" height="240" class="diagram-block-shadow" width="300"/>
+            <rect x="-150" height="80" class="diagram-block" width="300"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Service</tspan>
+            </text>
+          </g>
+          <g transform="translate(160,90)">
+            <rect x="-150" height="80" class="diagram-block" width="300"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Lifecycle</tspan>
+            </text>
+          </g>
+          <g transform="translate(160,170)">
+            <rect x="-150" height="80" class="diagram-block" width="300"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Module</tspan>
+            </text>
+          </g>
+        </g>
+      </svg>
+      <p>Il framework può essere rappresentato con tre layer:</p>
       <ul class="build fade">
-        <li>Punto 1</li>
-        <li>Punto 2</li>
-        <li>Punto 3</li>
+        <li>Il <b>module</b> layer definisce il concetto di modulo OSGi: il Bundle</li>
+        <li>Il <b>lifecycle</b> layer definisce come i bundles sono dinamicamente installati e gestiti nel framework OSGi</li>
+        <li>Il <b>service</b> layer supporta e promuove un modello di sviluppo di applicazioni flessibile che incapsula concetti resi di uso comune dal service-oriented programming</li>
       </ul>
     </article>
   </slide>
 
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il module layer</h2>
+    </hgroup>
+    <article>
+      <img style="width:370px;float:right;" src="images/servicemix_image_2.png" alt="OSGi Bundles" title="OSGi Bundles" />
+      <p>Il cuore del module layer è il bundle.</p>
+      <p>Il Bundle è un JAR che contiene metadati extra (manifest).</p>
+
+      <div class="build">
+        <p>A differenza dei JAR il bundle ha:</p>
+        <ul>
+          <li>un classpath “ristretto” al solo bundle</li>
+          <li>un manifest più ricco</li>
+        </ul>
+        <p>Grazie al manifest è possibile estendere la visibilità del classpath dichiarando esplicitamente le proprie dipendenze</p>
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il manifest</h2>
+    </hgroup>
+    <article>
+      <p>Nel manifest viene specificato anche:</p>
+      <ul>
+        <li>L’identificazione e la descrizione</li>
+        <li>Il classloading</li>
+        <li>L’activazione</li>
+      </ul>
+      <p>Esempi:</p>
+    </article>
+  </slide>
+<slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il manifest</h2>
+      <h3>Manifest di un semplice JAR compilato con maven</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="manifest.mf">
+Manifest-Version: 1.0
+Build-Jdk: 1.7.0_40
+Built-By: gdg-firenze
+Created-By: Apache Maven
+      </pre>
+    </article>
+  </slide>
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il manifest</h2>
+      <h3>Manifest di un Bundle</h3>
+    </hgroup>
+    <article class="smaller">
+      <pre class="prettyprint" data-lang="manifest.mf">
+Manifest-Version: 1.0
+<b>Bnd-LastModified: 1386750447262</b>
+Build-Jdk: 1.7.0_40
+Built-By: gdg-firenze
+<b>Bundle-ManifestVersion: 2</b>
+<b>Bundle-Name: GDG Firenze :: Sensormix :: Example Bundle</b>
+<b>Bundle-SymbolicName: example-bundle</b>
+<b>Bundle-Vendor: GDG Firenze :: Sensormix Team</b>
+<b>Bundle-Version: 1.0.0.SNAPSHOT</b>
+Created-By: Apache Maven Bundle Plugin
+<b>Export-Package: 
+ com.google.developers.gdgfirenze.model;version="1.0.0.SNAPSHOT",
+ com.google.developers.gdgfirenze.osgi;version="1.0.0.SNAPSHOT",
+ com.google.developers.gdgfirenze.service;version="1.0.0.SNAPSHOT"</b>
+<b>Import-Package: 
+ javax.jws,javax.jws.soap,javax.xml.bind.annotation,javax.xml.ws</b>
+<b>Tool: Bnd-1.50.0</b>
+      </pre>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il Lifecycle Layer</h2>
+      <h3>Il lifecycle layer ha due scopi:</h3>
+    </hgroup>
+    <article>
+    <p>Esternamente gestisce il ciclo di vita del bundle.</p>
+    <img src="images/servicemix_image_3.png" alt="OSGi Lifecycle" title="OSGi Lifecycle" />
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il Lifecycle Layer</h2>
+      <h3>Il lifecycle layer ha due scopi:</h3>
+    </hgroup>
+    <article>
+      <p>Internamente definisce Bundle Activator </p>
+      <img src="images/servicemix_image_4.png" alt="OSGi Bundle Activator" title="OSGi Bundle Activator" />
+      <div class="build"><p>= public static void main(String[] args)</p></div>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: il Service Layer</h2>
+    </hgroup>
+    <article>
+      <p>L’OSGi service layer promuove l’approccio basato su interface ed in particolare la separazione tra interfacce e implementazioni.</p>
+      <p>I Servizi OSGi sono interfacce Java che rappresentano un contratto tra il service provider e i service clients.</p>
+      <img src="images/servicemix_image_5.png" alt="OSGi Bundle Activator" title="OSGi Bundle Activator" />
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi: la Service Platform</h2>
+    </hgroup>
+    <article>
+      <img style="width:370px;float:right;" src="images/servicemix_image_6.png" alt="OSGi Service Platform" title="OSGi Service Platform" />
+      <p>L’OSGi definisce un set minimo di servizi per agevolare lo sviluppo di applicazioni modulari</p>
+      <ul>
+        <li>Cofiguration Admin (hot configuration)</li>
+        <li>Event Admin</li>
+        <li>Console Admin</li>
+        <li>Log Service</li>
+        <li>Blueprint component framework</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>Karaf: un OSGi container</h2>
+    </hgroup>
+    <article>
+      <p>Karaf è un OSGi container in cui sono deployati bundles (e servizi) aggiuntivi per fornire ulteriori funzionalità tra cui Hot deployment, Dynamic configuration, Logging System, Extensible Shell console (SSH)</p>
+      <p>Karaf è un chiaro esempio di architettura basata su OSGi</p>
+      <img src="images/servicemix_image_7.png" alt="Apache Karaf Architecture" title="Apache Karaf Architecture" />
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>Servicemix: un ESB su OSGi</h2>
+    </hgroup>
+    <article class="smaller">
+      <img style="width:370px;float:right;" src="images/servicemix_image_8.png" alt="OSGi Service Platform" title="OSGi Service Platform" />
+      <p>Le principali funzionalità di Servicemix sono:</p>
+      <ul>
+        <li>reliable messaging with <a href="http://activemq.apache.org/">Apache ActiveMQ</a></li>
+        <li>messaging, routing and Enterprise Integration Patterns with <a href="http://camel.apache.org">Apache Camel</a></li>
+        <li>WS-\* and RESTful web services with <a href="http://cxf.apache.org">Apache CXF</a></li>
+        <li>OSGi-based server runtime powered by <a href="http://karaf.apache.org">Apache Karaf</a></li>
+      </ul>
+
+      <p>Altre funzionalità offerte da Smx:</p>
+      <ul>
+        <li>loosely coupled integration between all the other components with Apache ServiceMix NMR including rich Event, Messaging and Audit API</li>
+        <li>complete WS-BPEL engine with <a href="http://ode.apache.org">Apache ODE</a></li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi e Spring</h2>
+      <h3>Uso di Spring dentro a Karaf/Servicemix</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Lo springframework fornisce molte features interessanti (dependency injection, ORM, AOP,...)</p>
+      <p>Lo Spring Deployer riconosce i file Spring all'interno del folder META-INF/spring di un Jar, e ne istanzia i bean che vi sono definiti, senza necessità di utilizzare le API OSGi</p>
+
+<pre class="prettyprint" data-lang="Spring">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; 
+  xmlns:context=&quot;http://www.springframework.org/schema/context&quot; 
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+  xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd&quot;&gt;
+
+  &lt;bean id=&quot;consumer&quot; class=&quot;com.myapplication.HelloWorldConsumer&quot; 
+    <b>destroy-method=&quot;osgiDestroy&quot; init-method=&quot;osgiInit&quot;</b>/&gt;
+    
+&lt;/beans&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-yellow">
+    <hgroup>
+      <h2>OSGi e Spring</h2>
+      <h3>Spring DM</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Spring DM permette di utilizzare servizi OSGi da Spring in modo trasparente.</p>
+<pre class="prettyprint" data-lang="Spring DM">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; 
+  <b>xmlns:osgi=&quot;http://www.springframework.org/schema/osgi&quot;</b>
+  xmlns:util=&quot;http://www.springframework.org/schema/util&quot; 
+  xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
+  <b>xsi:schemaLocation=&quot;http://www.springframework.org/schema/osgi 
+         http://www.springframework.org/schema/osgi/spring-osgi.xsd&quot;&gt;</b>
+
+  <b>&lt;osgi:service ref=&quot;eventService&quot;
+      interface=&quot;com.myapplication.HelloWorldService&quot; /&gt;</b>
+
+&lt;/beans&gt;
+</pre>
+    </article>
+  </slide>
+
+  <!-- Introduzione Camel -->
   <slide class="segue back-blue nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Segue Blu</h2>
-      <h3>Da usare per slide riguardanti Apache Camel </h3>
+      <h2>Introduzione ad Apache Camel</h2>
+      <h3>Ovvero un modo agile per interfacciarsi a sistemi eterogenei</h3>
     </hgroup>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Titolo blue</h2>
-      <h3>Sottotitolo</h3>
+      <h2>“Integrare”</h2>
+    </hgroup>
+    <article class="build fade">
+      <p>Cosa si intende quando parliamo di integrazione?</p>
+      <p>Si intende trovare una soluzione al seguente problema:</p>
+      <p>“Come posso far funzionare insieme molteplici applicazioni attraverso lo scambio di informazioni?”</p>
+    </article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Enterprise Integration Patterns</h2>
     </hgroup>
     <article>
-      <p>Info</p>
-      <ul class="build fade">
-        <li>Punto 1</li>
-        <li>Punto 2</li>
-        <li>Punto 3</li>
+      <p>Gli Enterprise Integration Patters offrono soluzioni per affrontare il precedente problema.</p>
+      <p>Cosa sono gli EIP?</p>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/eipbook.jpg)">
+    <hgroup>
+      <h2 class="white">Un libro!</h2>
+    </hgroup>
+    <footer class="source white"><a href="http://www.eaipatterns.com/">Gregor Hohpe and Gregor Hohpe</a></footer>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>EIP Importanti</h2>
+    </hgroup>
+    <article>
+      <ul style="font-size: 0.65em;">
+        <li><b>Message Channel:</b> How does one application communicate with another using messaging?</li>
+        <li><b>Message:</b> How can two applications connected by a message channel exchange a piece of information?</li>
+        <li><b>Message Router:</b> How can you decouple individual processing steps so that messages can be passed to different filters depending on a set of conditions?</li>
+        <li><b>Message Translator:</b>  How can systems using different data formats communicate with each other using messaging?</li>
+        <li><b>Message Endpoint:</b> How does an application connect to a messaging channel to send and receive messages?</li>
+        <li><b>Dead Letter Channel:</b> What will the messaging system do with a message it cannot deliver?</li>
+        <li><b>Message Bus:</b>  What is an architecture that enables separate applications to work together, but in a decoupled fashion such that applications can be easily added or removed without affecting the others?</li>
+        <li><b>Command Message:</b> How can messaging be used to invoke a procedure in another application?</li>
+        <li><b>Document Message:</b> How can messaging be used to transfer data between applications?</li>
+        <li><b>Event Message:</b> How can messaging be used to transmit events from one application to another?</li>
+        <li><b>Request-Reply:</b> When an application sends a message, how can it get a response from the receiver?</li>
+        <li><b>Canonical Data Model:</b> How can you minimize dependencies when integrating applications that use different data formats?</li>
       </ul>
     </article>
   </slide>
 
+  <slide class="fill nobackground" style="background-image: url(images/eipbookcover.jpg)">
+    <hgroup>
+      <h2 class="white">Notazione EIP</h2>
+    </hgroup>
+    <article class="build flexbox vcenter ">
+      <img src="images/camel_image_1.png" style="height:560px;" alt="EIP Notation" title="EIP Notation" />
+    </article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Come si può fare integrazione?</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Soluzioni con EIP</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Come si implementano gli EIP?</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Apache Camel</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Content Based Router</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Content Based Router: Java</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Content Based Router: XML</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Camel: componenti</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Camel: data format</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Camel in Servicemix</h2>
+    </hgroup>
+    <article></article>
+  </slide>
+
+
+
+
+  <!-- Usare GWT su Serivcemix -->
   <slide class="segue back-red nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
@@ -448,6 +781,93 @@ function helloWorld(world) {
       <footer class="source">source: place source info here</footer>
     </article>
   </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Slide with SVG diagram</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780" viebox="-0.5 -0.5 495.5 779.5">
+        <g>
+          <g transform="translate(300,10)">
+            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
+            <rect x="-115" height="80" class="diagram-block" width="230"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Model</tspan>
+            </text>
+          </g>
+          <g transform="translate(300,150)">
+            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
+            <rect x="-115" height="80" class="diagram-block" width="230"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Presenter</tspan>
+            </text>
+          </g>
+          <g transform="translate(300,290)">
+            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
+            <rect x="-115" height="80" class="diagram-block" width="230"/>
+            <text y="55">
+              <tspan class="diagram-block-text">View</tspan>
+            </text>
+          </g>
+          <path d="m 300,90 0,60" class="diagram-line" style="marker-end:url(#arrow)"/>
+          <path d="m 250,230 0,60" class="diagram-line" style="marker-end:url(#arrow)"/>
+          <path d="m 350,290 0,-60" class="diagram-line-dashed" style="marker-end:url(#arrow)"/>
+        </g>
+         <!--
+          <svg width="780px" height="496px" viewbox="-390 -248 780 496">
+            <circle cx="50" cy="50" fill="red" r="40" stroke="black" stroke-width="3"/>
+            <ellipse cx="200" cy="80" rx="100" ry="50" style="fill:yellow;stroke:purple;stroke-width:2"/>
+            <line style="stroke:rgb(255,0,0);stroke-width:2" x1="0" x2="200" y1="0" y2="200"/>
+            <path d="M 100 350 l 150 -300" fill="none" id="lineAB" stroke="red" stroke-width="3"/>
+            <path d="M 100 350 q 150 -300 300 0" fill="none" stroke="blue" stroke-width="5"/>
+            <path d="M 175 200 l 150 0" fill="none" stroke="green" stroke-width="3"/>
+            <path d="M 250 50 l 150 300" fill="none" id="lineBC" stroke="red" stroke-width="3"/>
+            <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1"/>
+            <rect height="150" rx="20" ry="20" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" width="150" x="50" y="20"/>
+            <rect height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" width="150" x="50" y="20"/>
+            <rect x="100" y="0" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" width="300" />
+            <text fill="blue" x="500" y="30">I love SVG!</text>
+            <text fill="green" transform="rotate(30 20,40)" x="550" y="15">I love SVG</text>
+            <text x="500" y="80" textLength="500" lengthAdjust="spacing">A long, long, long text.</text>
+            <text x="750" y="20" style="text-anchor: start">Start</text>
+            <text x="750" y="40" style="text-anchor: middle">Middle</text>
+            <text x="750" y="60" style="text-anchor: end">End</text>
+            <g fill="black" stroke="black" stroke-width="3">
+              <circle cx="100" cy="350" id="pointA" r="3"/>
+              <circle cx="250" cy="50" id="pointB" r="3"/>
+              <circle cx="400" cy="350" id="pointC" r="3"/>
+            </g>
+            <g fill="black" font="sans-serif" font-size="30" stroke="none" text-anchor="middle">
+              <text dx="-30" x="100" y="350">A</text>
+              <text dy="-10" x="250" y="50">B</text>
+              <text dx="30" x="400" y="350">C</text>
+            </g>
+
+            <defs>
+              <filter id="filter" x="0" y="0">
+                <feGaussianBlur stdDeviation="5" />
+                <feOffset dx="5" dy="5" />
+              </filter>
+            </defs>
+            <rect x="500" y="150" width="90" height="90" fill="grey" filter="url(#filter)" />
+            <rect x="500" y="150" width="90" height="90" fill="yellow" stroke="black" />
+
+            <text x="750" y="250" font-size = "20">
+                <tspan>Normal weight.</tspan>
+                <tspan x="750" dy="20"  font-weight="bold">Bold type.</tspan>
+                <tspan x="750" dy="20"  font-weight="100">font-weight set to 100.</tspan>
+                <tspan x="750" dy="20"  font-weight="200">font-weight set to 200.</tspan>
+                <tspan x="750" dy="20"  font-weight="600">font-weight set to 600.</tspan>
+                <tspan x="750" dy="20"  font-weight="700">font-weight set to 700.</tspan>
+                <tspan x="750" dy="20"  font-weight="900">font-weight set to 900.</tspan>
+            </text>
+          </svg>
+          -->
+      </svg>
+    </article>
+  </slide>
+
 
   <slide>
     <hgroup>
