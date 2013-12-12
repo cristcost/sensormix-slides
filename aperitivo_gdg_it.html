@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/svg.css">
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
   <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
 </head>
@@ -29,18 +30,143 @@
     </hgroup>
   </slide>
 
-   <slide>
+  <slide>
     <hgroup>
       <h2>Chi Siamo</h2>
     </hgroup>
-    <article>
-      <ul>
-        <li>Cristiano</li>
-        <li>Giuseppe</li>
-        <li>Michele</li>
-        <li>Sergio</li>
-        <li>Stefano</li>
-      </ul>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <defs>
+          <filter id="filter" x="0" y="0">
+            <feGaussianBlur stdDeviation="5"/>
+            <feOffset dx="10" dy="10"/>
+          </filter>
+        </defs>
+        <g transform="translate(193,248)">
+          <g>
+            <text class="who-we-are-text">Cristiano</text>
+            <text class="who-we-are-text" filter="url(#filter)">Cristiano</text>
+            <animateMotion begin="0s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
+          </g>
+          <g>
+            <text class="who-we-are-text">Giuseppe</text>
+            <text class="who-we-are-text" filter="url(#filter)">Giuseppe</text>
+            <animateMotion begin="5s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
+          </g>
+          <g>
+            <text class="who-we-are-text">Michele</text>
+            <text class="who-we-are-text" filter="url(#filter)">Michele</text>
+            <animateMotion begin="10s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
+          </g>
+          <g>
+            <text class="who-we-are-text">Sergio</text>
+            <text class="who-we-are-text" filter="url(#filter)">Sergio</text>
+            <animateMotion begin="15s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
+          </g>
+          <g>
+            <text class="who-we-are-text">Stefano</text>
+            <text class="who-we-are-text" filter="url(#filter)">Stefano</text>
+            <animateMotion begin="20s" dur="25s" path="m 0,0 c 0,-61.84 88.02,-111.98 196.60,-111.98 108.58,0 196.60,50.13 196.60,111.98 0,61.84 -88.02,111.98 -196.60,111.98 C 88.02,111.98 0,61.84 0,0 z" repeatCount="indefinite"/>
+          </g>
+        </g>
+      </svg>
+      <!--
+      <svg width="780px" height="496px" viewbox="-390 -248 780 496">
+        <circle cx="50" cy="50" fill="red" r="40" stroke="black" stroke-width="3"/>
+        <ellipse cx="200" cy="80" rx="100" ry="50" style="fill:yellow;stroke:purple;stroke-width:2"/>
+        <line style="stroke:rgb(255,0,0);stroke-width:2" x1="0" x2="200" y1="0" y2="200"/>
+        <path d="M 100 350 l 150 -300" fill="none" id="lineAB" stroke="red" stroke-width="3"/>
+        <path d="M 100 350 q 150 -300 300 0" fill="none" stroke="blue" stroke-width="5"/>
+        <path d="M 175 200 l 150 0" fill="none" stroke="green" stroke-width="3"/>
+        <path d="M 250 50 l 150 300" fill="none" id="lineBC" stroke="red" stroke-width="3"/>
+        <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1"/>
+        <rect height="150" rx="20" ry="20" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" width="150" x="50" y="20"/>
+        <rect height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" width="150" x="50" y="20"/>
+        <rect x="100" y="0" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" width="300" />
+        <text fill="blue" x="500" y="30">I love SVG!</text>
+        <text fill="green" transform="rotate(30 20,40)" x="550" y="15">I love SVG</text>
+        <text x="500" y="80" textLength="500" lengthAdjust="spacing">A long, long, long text.</text>
+        <text x="750" y="20" style="text-anchor: start">Start</text>
+        <text x="750" y="40" style="text-anchor: middle">Middle</text>
+        <text x="750" y="60" style="text-anchor: end">End</text>
+        <g fill="black" stroke="black" stroke-width="3">
+          <circle cx="100" cy="350" id="pointA" r="3"/>
+          <circle cx="250" cy="50" id="pointB" r="3"/>
+          <circle cx="400" cy="350" id="pointC" r="3"/>
+        </g>
+        <g fill="black" font="sans-serif" font-size="30" stroke="none" text-anchor="middle">
+          <text dx="-30" x="100" y="350">A</text>
+          <text dy="-10" x="250" y="50">B</text>
+          <text dx="30" x="400" y="350">C</text>
+        </g>
+
+        <defs>
+          <filter id="filter" x="0" y="0">
+            <feGaussianBlur stdDeviation="5" />
+            <feOffset dx="5" dy="5" />
+          </filter>
+        </defs>
+        <rect x="500" y="150" width="90" height="90" fill="grey" filter="url(#filter)" />
+        <rect x="500" y="150" width="90" height="90" fill="yellow" stroke="black" />
+
+        <text x="750" y="250" font-size = "20">
+            <tspan>Normal weight.</tspan>
+            <tspan x="750" dy="20"  font-weight="bold">Bold type.</tspan>
+            <tspan x="750" dy="20"  font-weight="100">font-weight set to 100.</tspan>
+            <tspan x="750" dy="20"  font-weight="200">font-weight set to 200.</tspan>
+            <tspan x="750" dy="20"  font-weight="600">font-weight set to 600.</tspan>
+            <tspan x="750" dy="20"  font-weight="700">font-weight set to 700.</tspan>
+            <tspan x="750" dy="20"  font-weight="900">font-weight set to 900.</tspan>
+        </text>
+      </svg>
+      -->
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Test diagramma</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" id="svg2" version="1.1" width="780" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs id="defs28">
+          <marker id="Arrow2Lend" orient="auto" refX="0" refY="0" style="overflow:visible">
+            <path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" id="path3902" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" transform="matrix(-1.1,0,0,-1.1,-1.1,0)"/>
+          </marker>
+          <marker id="TriangleOutL" orient="auto" refX="0" refY="0" style="overflow:visible">
+            <path d="m 5.77,0 -8.65,5 0,-10 8.65,5 z" id="path4024" style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" transform="scale(0.8,0.8)"/>
+          </marker>
+          <marker id="Arrow2Mend" orient="auto" refX="0" refY="0" style="overflow:visible">
+            <path d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z" id="path3908" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" transform="scale(-0.6,-0.6)"/>
+          </marker>
+          <marker id="Arrow1Lend" orient="auto" refX="0" refY="0" style="overflow:visible">
+            <path d="M 0,0 5,-5 -12.5,0 5,5 0,0 z" id="path3884" style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none" transform="matrix(-0.8,0,0,-0.8,-10,0)"/>
+          </marker>
+        </defs>
+        <g id="g4" transform="translate(34.552353,41.611436)">
+          <g id="g3861">
+            <rect height="82.96611" id="rect3007" style="fill:#ffffff;stroke:#000000;stroke-width:2.04933667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" width="230.75172" x="188.10579" y="5.6766987"/>
+            <text id="text10" x="303.29611" y="62.052334">
+              <tspan id="tspan12" style="font-size:40px;text-align:center;text-anchor:middle">Model</tspan>
+            </text>
+          </g>
+          <g id="g3866" transform="translate(0,10.508453)">
+            <rect height="82.96611" id="rect3849" style="fill:#ffffff;stroke:#000000;stroke-width:2.04933667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" width="230.75172" x="188.10579" y="137.03264"/>
+            <text id="text3851" x="301.46994" y="193.40826">
+              <tspan id="tspan3853" style="font-size:40px;text-align:center;text-anchor:middle">Presenter</tspan>
+            </text>
+          </g>
+          <g id="g3871">
+            <rect height="82.96611" id="rect3855" style="fill:#ffffff;stroke:#000000;stroke-width:2.04933667;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" width="230.75172" x="188.10579" y="289.40552"/>
+            <text id="text3857" x="304.0676" y="345.78116">
+              <tspan id="tspan3859" style="font-size:40px;text-align:center;text-anchor:middle">View</tspan>
+            </text>
+          </g>
+          <path d="m 337.32203,131.27891 0,56.84895" id="path3876" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)" transform="translate(-34.552353,-41.611436)"/>
+          <path d="m 242.87137,230.20388 0,56.84895" id="path4905" style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend)"/>
+          <path d="m 355.8727,287.88085 0,-56.84895" id="path4907" style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3, 3;stroke-dashoffset:0;marker-end:url(#Arrow2Lend)"/>
+        </g>
+      </svg>
     </article>
   </slide>
 
