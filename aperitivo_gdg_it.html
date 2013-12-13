@@ -140,10 +140,9 @@
     <article class="flexbox">
       <div class="build fade">
 
-        <img style="width:580px; position: relative;" src="images/servicemix_image_1.png" alt="OSGi as services or deamons" title="OSGi as services or deamons" />
-        <img style="width:680px; position: relative;" src="images/servicemix_image_1.png" alt="OSGi as services or deamons" title="OSGi as services or deamons" />
-
-        <img style="width:780px; position: relative;" src="images/servicemix_image_1.png" alt="OSGi as services or deamons" title="OSGi as services or deamons" />
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/servicemix_windows_services.png" alt="OSGi as Windows Services" title="OSGi as Windows Services" />
+        <img style="position: absolute;left:50%;margin-left:-310px;margin-top:20px;" src="images/servicemix_linux_daemons.png" alt="OSGi as Unix Daemons" title="OSGi as Unix Daemons" />
+        <img style="position: absolute;left:50%;margin-left:-255px;" src="images/servicemix_felix.png" alt="OSGi as a platform of services in Java" title="OSGi as a platform of services in Java" />
 
       </div>
     </article>
@@ -471,7 +470,7 @@ Created-By: Apache Maven Bundle Plugin
     <hgroup>
       <h2 class="white">Un libro!</h2>
     </hgroup>
-    <footer class="source white"><a href="http://www.eaipatterns.com/">Gregor Hohpe and Gregor Hohpe</a></footer>
+    <footer><a class="source white" href="http://www.eaipatterns.com/">Gregor Hohpe and Bobby Woolf<br/>Addison-Wesley 2003</a></footer>
   </slide>
 
   <slide class="header-blue">
@@ -501,7 +500,24 @@ Created-By: Apache Maven Bundle Plugin
       <h2 class="white">Notazione EIP</h2>
     </hgroup>
     <article class="build flexbox vcenter ">
-      <img src="images/camel_image_1.png" style="height:560px;" alt="EIP Notation" title="EIP Notation" />
+      <img src="images/camel_image_1.png" style="height:560px;margin-top:-50px;" alt="EIP Notation" title="EIP Notation" />
+      
+      <footer><a class="source white" href="http://www.eaipatterns.com/toc.html">http://www.eaipatterns.com/toc.html</a></footer>
+    </article>
+  </slide>
+
+
+  <!-- TODO TODO -->
+  <slide hidden class="header-blue">
+    <hgroup>
+      <h2>Soluzioni con EIP</h2>
+    </hgroup>
+     <article class="flexbox">
+      <div class="build fade">
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/camel_eip_1.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/camel_eip_2.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/camel_eip_3.png" alt="" title="" />
+      </div>
     </article>
   </slide>
 
@@ -509,28 +525,54 @@ Created-By: Apache Maven Bundle Plugin
     <hgroup>
       <h2>Come si può fare integrazione?</h2>
     </hgroup>
-    <article></article>
-  </slide>
-
-  <slide class="header-blue">
-    <hgroup>
-      <h2>Soluzioni con EIP</h2>
-    </hgroup>
-    <article></article>
+    <article>
+      <p>I principali metodi tramite cui avviene integrazione sono:</p>
+      <ul class="build fade">
+        <li>Scambio di file
+          <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_file.gif" alt="EIP File Transfer" title="EIP File Transfer" /></div></li>
+        <li>Database condiviso
+          <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_db.gif" alt="EIP Shared DB" title="EIP Shared DB" /></div></li>
+        <li>Remote Procedure Invocation
+          <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_rmi.gif" alt="EIP Remote Procedure Invocation" title="EIP Remote Procedure Invocation" /></div></li>
+        <li>Messaging
+          <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_messaging.gif" alt="EIP Messaging" title="EIP Messaging" /></div></li>
+      </ul>
+      <p>Gli EIP si focalizzano sulla integrazione via “messaging”.</p>
+      <p>Però integrare è difficile lo stesso perchè eiste una vasta eterogeneità di protocolli, interfacce e formati.</p>
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
       <h2>Come si implementano gli EIP?</h2>
+      <h3>(domanda retorica)</h3>
     </hgroup>
-    <article></article>
+    <article class="build">
+      <p>Come si possono implementare su una piattaforma Java degli Enterprise Integration Pattern?</p>
+      <div>
+        <p>con</p>
+        <q>Apache Camel</q>
+        <ul class="build fade">
+          <li><b>C</b>oncise</li>
+          <li><b>A</b>pplication</li>
+          <li><b>M</b>essaging</li>
+          <li><b>E</b>xchange</li>
+          <li><b>L</b>anguage</li>
+        </ul>
+      </div>
+ 
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
       <h2>Apache Camel</h2>
     </hgroup>
-    <article></article>
+    <article class="build">
+      <p>Apache Camel è un framework di intrgrazione open-sorce versatile basato sugli Enterprise Integration Patterns del libro di Hohpe e Woolf.</p>
+      <p>Include un vasto insieme di componenti per funzionare con molti protocolli di trasporto e formati dati e permette di definire regole di instradamento e intermediazione attraverso l’uso di "domain-specific language".</p>
+      <p>...si presta talmente bene alla integrazione che ServiceMix, dalla versione 3 alla 4, ha abbandonato la tecnologia JBI per adottare un nuovo approccio alla integrazione basato su Camel e OSGi.</p>
+    </article>
   </slide>
 
   <slide class="header-blue">
