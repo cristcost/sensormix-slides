@@ -57,8 +57,10 @@
       <h2>Come è composto Sensormix</h2>
       <h3>Architettura interna</h3>
     </hgroup>
-    <article>
-      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_1.png" alt="Sensormix: Architecture" title="Sensormix: Architecture" />
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="430" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
     </article>
   </slide>
 
@@ -67,11 +69,10 @@
       <h2>Come è composto Sensormix</h2>
       <h3>Architettura esterna</h3>
     </hgroup>
-    <article>
-      <!-- <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_2.png" alt="Sensormix: Interfaces" title="Sensormix: Interfaces" /> -->
-      <svg style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" height="496" width="780">
-        <rect class="diagram-block" height="290" width="770" y="5" x="5" rx="20" ry="20"/>        
-      </svg>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="430" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
     </article>
   </slide>
 
@@ -139,27 +140,10 @@
     <hgroup>
       <h2> POJO annotati JaxB</h2>
     </hgroup>
-    <article class="flexbox build fade smaller">
-<pre class="prettyprint" data-lang="java">
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = &quot;SampleReport&quot;)
-public class SampleReport implements Serializable {
-
-  /** The sensor id. */
-  @XmlAttribute(required = true, name = &quot;sensorId&quot;)
-  @XmlSchemaType(name = &quot;anyURI&quot;)
-  private String sensorId;
-
-  /** The sample type. */
-  @XmlAttribute(required = false, name = &quot;sampleType&quot;)
-  private String sampleType;
-
-  /** The daily sample reports. */
-  @XmlElement(required = false, name = &quot;dailySampleReport&quot;)
-  private List&lt;DailySampleReport&gt; dailySampleReports;
-
-  // ...</pre>
-      <img style="position: absolute; top: 100px; right: 50px;" src="images/sensormix_cdm_image_1.png" alt="POJO annotated JaxB" title="POJO annotated JaxB" />
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="486" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
     </article>
   </slide>
 
@@ -167,31 +151,10 @@ public class SampleReport implements Serializable {
     <hgroup>
       <h2> Interfaccia annotata JaxWS</h2>
     </hgroup>
- <article class="flexbox build fade smaller">
-<pre class="prettyprint" data-lang="java">
-@WebService(name = &quot;SensormixService&quot;,
-    targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
-@SOAPBinding(parameterStyle = ParameterStyle.WRAPPED, style = Style.DOCUMENT, use = Use.LITERAL)
-public interface SensormixService {
-
-  @WebMethod(action = &quot;urn:#listSensorsIds&quot;)
-  @RequestWrapper(localName = &quot;listSensorsIdsIn&quot;,
-      targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
-  @ResponseWrapper(localName = &quot;listSensorsIdsOut&quot;,
-      targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
-  @WebResult(name = &quot;sensorId&quot;)
-  List&lt;String&gt; listSensorsIds();
-
-  @WebMethod(action = &quot;urn:#listSamplesTypes&quot;)
-  @RequestWrapper(localName = &quot;listSamplesTypesIn&quot;,
-      targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
-  @ResponseWrapper(localName = &quot;listSamplesTypesOut&quot;,
-      targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
-  @WebResult(name = &quot;sampleType&quot;)
-  List&lt;String&gt; listSamplesTypes();
-
-  // ...</pre>
-      <img style="position: absolute; top: 100px; right: 50px;" src="images/sensormix_cdm_image_2.png" alt="Interfaces annotated JaxWS" title="Interfaces annotated JaxWS" />
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="486" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
     </article>
   </slide>
 
@@ -201,23 +164,9 @@ public interface SensormixService {
     </hgroup>
     <article class="flexbox vcenter">
       <p>Infine, se si vuole usare il data model anche dentro un progetto GWT, basta aggiungere un modulo .gwt.xml:</p>
-      <div class="build fade">
-<pre class="prettyprint" data-lang="gwt xml">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!-- When updating your version of GWT, you should also update this DTD reference, 
-        so that your app can take advantage of the latest GWT module capabilities. --&gt;
-&lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit 2.5.1//EN&quot;
-  &quot;http://google-web-toolkit.googlecode.com/svn/tags
-  /2.5.1/distro-source/core/src/gwt-module.dtd&quot;&gt;
-&lt;module&gt;
-
-        &lt;!-- Specify the paths for translatable code --&gt;
-        &lt;source path='model' /&gt;
-        &lt;source path='service' /&gt;
-
-&lt;/module&gt;</pre>
-        <img style="position: absolute; top: 100px; right: 50px;" src="images/sensormix_cdm_image_3.png" alt="Interfaces annotated JaxWS" title="Interfaces annotated JaxWS" />
-      </div>
+      <svg height="400" width="780">
+        <rect class="diagram-block" height="390" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
     </article>
   </slide>
 
