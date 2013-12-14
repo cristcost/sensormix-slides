@@ -825,20 +825,85 @@ public class MyRoute extends RouteBuilder {
     </hgroup>
   </slide>
 
+ <slide class="header-dark">
+    <hgroup>
+      <img style="float:right;margin-top:10px;" src="images/arduino_logo.png" alt="Arduino Logo" title="Arduino Logo" />
+      <h2>Integrazione di Arduino</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img style="height: 100%;" src="images/arduino_circuit.png" alt="Arduino Circuit" title="Arduino Circuit" />
+  </article>
+  </slide>
+
   <slide class="header-dark">
     <hgroup>
-      <h2>Titolo dark</h2>
-      <h3>Sottotitolo</h3>
+      <img style="float:right;margin-top:10px;" src="images/arduino_logo.png" alt="Arduino Logo" title="Arduino Logo" />
+      <h2>Integrazione di Arduino</h2>
     </hgroup>
-    <article>
-      <p>Info</p>
-      <ul class="build fade">
-        <li>Punto 1</li>
-        <li>Punto 2</li>
-        <li>Punto 3</li>
-      </ul>
+    <article class="flexbox vcenter">
+      <img style="height: 100%;" src="images/arduino_sheet.png" alt="Arduino Sheet" title="Arduino Sheet" />
     </article>
   </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <img style="float:right;"  src="images/android_logo.png" alt="Android Logo" title="Android Logo"  />
+      <h2> 
+        Integrazione di Android
+      </h2>
+    </hgroup>
+    <article>
+      <pre class="prettyprint" data-lang="java">
+
+        HttpPost httppost = new HttpPost(url.toString());
+        httppost.setHeader("Content-type", "application/json");
+
+        StringEntity se = new StringEntity(bodyForHttpPostRequest);
+        se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE,
+            "application/json"));
+        httppost.setEntity(se);
+
+        HttpResponse response = httpclient.execute(httppost);
+        String temp = EntityUtils.toString(response.getEntity());
+        logger.info("JSON post response: " + temp);
+
+      </pre>    
+    </article>
+  </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <img style="float:right;"  src="images/android_logo.png" alt="Android Logo" title="Android Logo"  />
+      <h2> 
+        Integrazione di Android - NFC
+      </h2>
+    </hgroup>
+    <article  class="smaller">
+      <pre class="prettyprint" data-lang="java">
+
+      Tag tag = getIntent().getParcelableExtra(NfcAdapter.EXTRA_TAG);
+      StringBuilder id = new StringBuilder();
+      byte[] data = tag.getId();
+      for (int i = 0; i &lt; data.length; i++) {
+        id.append(String.format("%02x", data[i]));
+        if (i &lt; data.length - 1) {
+          id.append(":");
+        }
+      }
+      JSONObject jsonSamplePacket = new JSONObject();
+      JSONObject obj = new JSONObject();
+      jsonSamplePacket.put("sample", obj);
+      obj.put("device_id", "the device id");
+      obj.put("time", dateFormat.format(new Date()));
+      obj.put("nfc", id);
+      Intent intent = new Intent(this, DataSenderService.class);
+      intent.putExtra(DataSenderService.INTENT_EXTRA,
+          jsonSamplePacket.toString());
+      startService(intent);
+      </pre>    
+    </article>
+  </slide>
+
 
 
 
