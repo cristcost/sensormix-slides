@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/svg.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<svg>
+  <defs>
+    <filter id="box-shadow-filter" x="0" y="0">
+      <feGaussianBlur stdDeviation="5"/>
+      <feOffset dx="10" dy="10"/>
+    </filter>
+    <marker id="arrow" orient="auto" refX="0" refY="0" style="stroke-linecap:butt;overflow:visible">
+      <path 
+      d="M 0.5,0 -5,3 -5,-3 z" />
+    </marker>
+  </defs>
+</svg>
+
+<slides class="layout-widescreen">
+  
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/gdg_firenze_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+
+  <slide class="segue back-green nobackground">
+    <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Sensormix</h2>
+      <h3>Architettura di esempio basata su Servicemix, Camel e GWT</h3>
+    </hgroup>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2>Come è composto Sensormix</h2>
+      <h3>Architettura interna</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="430" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2>Come è composto Sensormix</h2>
+      <h3>Architettura esterna</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="430" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <article class="flexbox vcenter">
+      <div>
+        <h2 style="font-size:10em;">Demo</h2>
+      </div>
+    </article>
+  </slide>
+
+  <!-- Canonical Data Model -->
+  <slide class="header-green">
+    <hgroup>
+      <h2> Il Canonical Data Model EIP</h2>
+    </hgroup>
+    <article>
+      <p>Dal libro EIP:</p>
+      <div class="build fade">
+        <p>“I am designing several applications to work together through Messaging. Each application has its own internal data format.”</p>
+        <p>“How can you minimize dependencies when integrating applications that use different data formats?”</p>
+        <svg height="300" width="780">
+          <rect class="diagram-block" height="290" width="770" y="5" x="5" rx="20" ry="20"/>        
+        </svg>
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> Il Canonical Data Model EIP</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="486" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2>Il nostro approccio al CDM</h2>
+    </hgroup>
+    <article class="build">
+      <p>A noi piace l’approccio <b>Java first</b>:</p>
+      <ul>
+        <li>Modello dati: <b>POJO</b></li>
+        <li>Modello servizi: <b>Interfacce Java</b></li>
+      </ul>
+      <p>Usiamo annotazioni JaxB e JaxWS per generare dal nostro modello gli XML Schema e WSDL.</p>
+      <div>
+        <p>Troviamo che cominciare dagli oggetti sia più naturale, lineare e agile:</p>
+        <ul class="build fade">
+          <li>Lo XML Schema finale risulta più pulito</li>
+          <li>Si può fare a meno della validazione XML 
+            <ul><li>eccezioni Java = XML non valido</li></ul>
+          </li>
+          <li>Lavorare sulle classi Java è più veloce (per noi che siamo sviluppatori)</li>
+        </ul>
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> POJO annotati JaxB</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="486" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> Interfaccia annotata JaxWS</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780">
+        <rect class="diagram-block" height="486" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> Utilizzo del CDM su GWT</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <p>Infine, se si vuole usare il data model anche dentro un progetto GWT, basta aggiungere un modulo .gwt.xml:</p>
+      <svg height="400" width="780">
+        <rect class="diagram-block" height="390" width="770" y="5" x="5" rx="20" ry="20"/>        
+      </svg>    
+    </article>
+  </slide>
+
+  <!-- Data Service -->
+  <slide class="header-green">
+    <hgroup>
+      <h2> Il bundle dataservice</h2>
+    </hgroup>
+    <article>
+      <p>Contiene un servizio che espone funzionalità di memorizzazione e recupero di informazioni </p>
+      <p>Il servizio viene registrato in OSGi tramite Spring DM</p>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> La registrazione del servizio</h2>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="spring dm">
+&lt;osgix:cm-properties id=&quot;dataSourceProperties&quot;
+  persistent-id=&quot;sensormix.jpa.persistenceunit&quot;&gt;
+  &lt;prop key=&quot;sensormix_db.driverClassName&quot;&gt;org.hsqldb.jdbcDriver&lt;/prop&gt;
+  &lt;prop key=&quot;sensormix_db.url&quot;&gt;jdbc:hsqldb:mem:sensormix_db&lt;/prop&gt;
+  &lt;prop key=&quot;sensormix_db.username&quot;&gt;sa&lt;/prop&gt;
+  &lt;prop key=&quot;sensormix_db.password&quot;&gt;&lt;/prop&gt;
+&lt;/osgix:cm-properties&gt;
+
+&lt;osgi:service ref=&quot;sensormixService&quot;&gt;
+  &lt;osgi:interfaces&gt;
+    &lt;value&gt;com.google.developers.gdgfirenze.service.SensormixService&lt;/value&gt;
+    &lt;value&gt;com.google.developers.gdgfirenze.osgi.SensormixAdminInterface&lt;/value&gt;
+  &lt;/osgi:interfaces&gt;
+&lt;/osgi:service&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> Il servizio in java</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="java">
+public class SensormixServiceJpaImpl implements SensormixService, SensormixAdminInterface {
+
+  private EntityManagerFactory entityManagerFactory;
+
+  @Override
+  public List&lt;String&gt; listSensorsIds() {
+    List&lt;String&gt; result = new ArrayList&lt;String&gt;();
+
+    try {
+      EntityManager em = entityManagerFactory.createEntityManager();
+      TypedQuery&lt;String&gt; q = em.createQuery(&quot;SELECT s.id FROM JpaSensor s&quot;, String.class);
+
+      result.addAll(q.getResultList());
+
+      em.close();
+    } catch (Exception e) {
+      logger.log(Level.SEVERE, &quot;Error during sensors list retrieving&quot;, e);
+    }
+
+    return result;
+  }
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> Spring ORM</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="spring dm">
+&lt;bean id=&quot;emf&quot; class=&quot;org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean&quot;&gt;
+  &lt;property name=&quot;persistenceUnitName&quot; value=&quot;sensormix_db&quot; /&gt;
+  &lt;property name=&quot;jpaVendorAdapter&quot;&gt;
+    &lt;bean class=&quot;org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter&quot;&gt;
+      &lt;property name=&quot;showSql&quot; value=&quot;true&quot; /&gt;
+    &lt;/bean&gt;
+  &lt;/property&gt;
+  &lt;property name=&quot;jpaProperties&quot;&gt;
+    &lt;props&gt;
+      &lt;prop key=&quot;eclipselink.ddl-generation&quot;&gt;create-tables&lt;/prop&gt;
+      &lt;prop key=&quot;eclipselink.logging.level&quot;&gt;INFO&lt;/prop&gt;
+      &lt;prop key=&quot;eclipselink.weaving&quot;&gt;false&lt;/prop&gt;
+      &lt;prop key=&quot;javax.persistence.jdbc.driver&quot;&gt;${sensormix_db.driverClassName}&lt;/prop&gt;
+      &lt;prop key=&quot;javax.persistence.jdbc.url&quot;&gt;${sensormix_db.url}&lt;/prop&gt;
+      &lt;prop key=&quot;javax.persistence.jdbc.user&quot;&gt;${sensormix_db.username}&lt;/prop&gt;
+      &lt;prop key=&quot;javax.persistence.jdbc.password&quot;&gt;${sensormix_db.password}&lt;/prop&gt;
+    &lt;/props&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+
+&lt;bean id=&quot;sensormixService&quot;
+  class=&quot;com.google.developers.gdgfirenze.dataservice.SensormixServiceJpaImpl&quot;&gt;
+  &lt;property name=&quot;entityManagerFactory&quot; ref=&quot;emf&quot; /&gt;
+&lt;/bean&gt;
+
+</pre>
+    </article>
+  </slide>
+
+
+  <!-- Integration -->
+  <!-- Data Service -->
+  <slide class="header-green">
+    <hgroup>
+      <h2> Il bundle di integrazione</h2>
+    </hgroup>
+    <article>
+      <p>Definisce le rotte Camel per l'ingresso dei campioni da Android, Arduino e iOS</p>
+      <p>Utilizza quasi esclusivamente configurazione via Spring XML</p>
+      <p>Unica eccezione: la classe <b>SampleAdapter</b> che trasforma da protocol buffer al nostro data model tramite codice java</p>
+    </article>
+  </slide>
+
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> Le rotta di ingresso UDP e HTTP </h2>
+      <h3>Usate da Android e da Arduino</h3>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="spring xml">
+&lt;route&gt;
+  <b>&lt;from uri=&quot;mina2:udp://0.0.0.0:10081&quot; /&gt;</b>
+  &lt;to uri=&quot;seda:jsonEntry&quot; /&gt;
+&lt;/route&gt;
+</pre>
+
+<pre class="prettyprint" data-lang="spring xml">
+&lt;route&gt;
+  <b>&lt;from uri=&quot;jetty:http://0.0.0.0:10080/sensormixSamplesEndpoint&quot; /&gt;</b>
+  &lt;to uri=&quot;seda:jsonEntry&quot; /&gt;
+
+  &lt;setHeader headerName=&quot;Content-Type&quot;&gt;
+    <b>&lt;constant&gt;application/json&lt;/constant&gt;</b>
+  &lt;/setHeader&gt;
+  <b>&lt;to uri=&quot;velocity:vm_templates/json_response_template.vm&quot; /&gt;</b>
+&lt;/route&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> La rotta di trasformazione del JSON</h2>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="spring xml">
+&lt;route&gt;
+  &lt;from uri=&quot;seda:jsonEntry&quot; /&gt;
+  &lt;convertBodyTo type=&quot;java.lang.String&quot; /&gt;
+
+  &lt;unmarshal&gt;
+    <b>&lt;xmljson elementName=&quot;item&quot; arrayName=&quot;list&quot; rootName=&quot;root&quot; /&gt;</b>
+  &lt;/unmarshal&gt;
+
+  <b>&lt;to uri=&quot;xslt:xslt_adapters/raw2cdm_adapter.xsl&quot; /&gt;</b>
+
+  &lt;unmarshal&gt;
+    <b>&lt;jaxb contextPath=&quot;com.google.developers.gdgfirenze.service&quot; /&gt;</b>
+  &lt;/unmarshal&gt;
+
+  &lt;to uri=&quot;seda:serviceEntry&quot; /&gt;
+&lt;/route&gt;
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> La rotta TCP + ProtoBuf</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="spring xml">
+<b>&lt;bean id=&quot;sampleAdapter&quot; 
+  class=&quot;com.google.developers.gdgfirenze.integration.SampleAdapter&quot; /&gt;</b>
+
+&lt;route&gt;
+  <b>&lt;from uri=&quot;netty:tcp://0.0.0.0:10082/?decoders=#length-decoder&amp;amp;sync=false&quot; /&gt;</b>
+  &lt;unmarshal&gt;
+    <b>&lt;protobuf instanceClass=&quot;com.google.developers
+      .gdgfirenze.protobuf.SensormixProtos$SampleMessage&quot; /&gt;</b>
+  &lt;/unmarshal&gt;
+  <b>&lt;bean ref=&quot;sampleAdapter&quot; method=&quot;transform&quot; /&gt;</b>
+&lt;/route&gt;
+</pre>
+<pre class="prettyprint" data-lang="java">
+<b>package com.google.developers.gdgfirenze.integration;</b>
+
+public <b>class SampleAdapter</b> {
+  public SamplesPayload transform(SampleMessage message) {
+    SamplesPayload ret = new SamplesPayload();
+    // process 'SampleMessage' and return the adapted 'SamplesPayload'
+    return ret;
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2> L'output verso il servizio OSGi</h2>
+    </hgroup>
+    <article>
+<pre class="prettyprint" data-lang="spring xml">
+&lt;osgi:reference <b>id=&quot;sensormixService&quot;</b>
+    interface=&quot;com.google.developers.gdgfirenze.service.SensormixService&quot;
+    timeout=&quot;30000&quot; cardinality=&quot;1..1&quot; /&gt;
+
+&lt;route&gt;
+  &lt;from uri=&quot;seda:serviceEntry&quot; /&gt;
+  <b>&lt;to uri=&quot;bean:sensormixService?method=recordSamples(${body.samples})&quot; /&gt;</b>
+&lt;/route&gt;
+</pre>
+
+    </article>
+  </slide>
+  <!-- GWT -->
+
+
+
+  <slide class="logoslide dark nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/gdg_firenze_logo.png"></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
