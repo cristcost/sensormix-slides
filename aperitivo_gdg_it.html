@@ -478,20 +478,32 @@ Created-By: Apache Maven Bundle Plugin
       <h2>EIP Importanti</h2>
     </hgroup>
     <article>
-      <ul style="font-size: 0.65em;">
-        <li><b>Message Channel:</b> How does one application communicate with another using messaging?</li>
-        <li><b>Message:</b> How can two applications connected by a message channel exchange a piece of information?</li>
-        <li><b>Message Router:</b> How can you decouple individual processing steps so that messages can be passed to different filters depending on a set of conditions?</li>
-        <li><b>Message Translator:</b>  How can systems using different data formats communicate with each other using messaging?</li>
-        <li><b>Message Endpoint:</b> How does an application connect to a messaging channel to send and receive messages?</li>
-        <li><b>Dead Letter Channel:</b> What will the messaging system do with a message it cannot deliver?</li>
-        <li><b>Message Bus:</b>  What is an architecture that enables separate applications to work together, but in a decoupled fashion such that applications can be easily added or removed without affecting the others?</li>
-        <li><b>Command Message:</b> How can messaging be used to invoke a procedure in another application?</li>
-        <li><b>Document Message:</b> How can messaging be used to transfer data between applications?</li>
-        <li><b>Event Message:</b> How can messaging be used to transmit events from one application to another?</li>
-        <li><b>Request-Reply:</b> When an application sends a message, how can it get a response from the receiver?</li>
-        <li><b>Canonical Data Model:</b> How can you minimize dependencies when integrating applications that use different data formats?</li>
-      </ul>
+      <dl style="font-size: 0.65em;">
+        <dt>Message Channel:</dt>
+          <dd style="font-size: 0.65em;">How does one application communicate with another using messaging?</dd>
+        <dt>Message:</dt>
+          <dd style="font-size: 0.65em;">How can two applications connected by a message channel exchange a piece of information?</dd>
+        <dt>Message Router:</dt>
+          <dd style="font-size: 0.65em;">How can you decouple individual processing steps so that messages can be passed to different filters depending on a set of conditions?</dd>
+        <dt>Message Translator:</dt>
+          <dd style="font-size: 0.65em;"> How can systems using different data formats communicate with each other using messaging?</dd>
+        <dt>Message Endpoint:</dt>
+          <dd style="font-size: 0.65em;">How does an application connect to a messaging channel to send and receive messages?</dd>
+        <dt>Dead Letter Channel:</dt>
+          <dd style="font-size: 0.65em;">What will the messaging system do with a message it cannot deliver?</dd>
+        <dt>Message Bus:</dt>
+          <dd style="font-size: 0.65em;"> What is an architecture that enables separate applications to work together, but in a decoupled fashion such that applications can be easily added or removed without affecting the others?</dd>
+        <dt>Command Message:</dt>
+          <dd style="font-size: 0.65em;">How can messaging be used to invoke a procedure in another application?</dd>
+        <dt>Document Message:</dt>
+          <dd style="font-size: 0.65em;">How can messaging be used to transfer data between applications?</dd>
+        <dt>Event Message:</dt>
+          <dd style="font-size: 0.65em;">How can messaging be used to transmit events from one application to another?</dd>
+        <dt>Request-Reply:</dt>
+          <dd style="font-size: 0.65em;">When an application sends a message, how can it get a response from the receiver?</dd>
+        <dt>Canonical Data Model:</dt>
+          <dd style="font-size: 0.65em;">How can you minimize dependencies when integrating applications that use different data formats?</dd>
+      </dl>
     </article>
   </slide>
 
@@ -542,7 +554,7 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Come si implementano gli EIP?</h2>
+      <h2>Come implementare facilmente EIP?</h2>
       <h3>(domanda retorica)</h3>
     </hgroup>
     <article class="build">
@@ -577,7 +589,7 @@ Created-By: Apache Maven Bundle Plugin
     <hgroup>
       <h2>Esempio: Content Based Router</h2>
     </hgroup>
-    <article class="smaller">
+    <article class="smaller build">
       <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
       <div>
         <q>
@@ -659,26 +671,26 @@ public class MyRoute extends RouteBuilder {
     <article class="smaller">
       <div style="height:460px;overflow:auto;margin-top:-30px;">
         <table>
-          <tr><th></th><td>ActiveMQ</td><td>ActiveMQ Broker</td><td>Activiti</td><td>AHC</td><td>AMQP</td><td>APNS</td><td>Atom</td><td>Avro</td></tr>
+          <tr><th></th><td class="highlight">ActiveMQ</td><td>ActiveMQ Broker</td><td>Activiti</td><td>AHC</td><td>AMQP</td><td>APNS</td><td>Atom</td><td>Avro</td></tr>
           <tr><th></th><td>AWS-CW</td><td>AWS-DDB</td><td>AWS-S3</td><td>AWS-SDB</td><td>AWS-SES</td><td>AWS-SNS</td><td>AWS-SQS</td><td>Bean</td></tr>
           <tr><th></th><td>Bean Validation</td><td>Browse</td><td>Cache</td><td>Class</td><td>CMIS</td><td>Cometd</td><td>Context</td><td>ControlBus</td></tr>
-          <tr><th></th><td>CouchDB</td><td>Crypto</td><td>CXF</td><td>CXF Bean </td><td>CXFRS</td><td>DataFormat</td><td>DataSet</td><td>Db4o</td></tr>
+          <tr><th></th><td>CouchDB</td><td>Crypto</td><td class="highlight">CXF</td><td>CXF Bean </td><td>CXFRS</td><td>DataFormat</td><td>DataSet</td><td>Db4o</td></tr>
           <tr><th></th><td>Direct</td><td>Direct-VM</td><td>Disruptor</td><td>DNS</td><td>EJB</td><td>ElasticSearch</td><td>Esper</td><td>EventAdmin</td></tr>
-          <tr><th></th><td>Exec</td><td>Facebook</td><td>File</td><td>Flatpack</td><td>FOP</td><td>FreeMarker</td><td>FTP</td><td>FTPS</td></tr>
+          <tr><th></th><td>Exec</td><td>Facebook</td><td class="highlight">File</td><td>Flatpack</td><td>FOP</td><td>FreeMarker</td><td class="highlight">FTP</td><td>FTPS</td></tr>
           <tr><th></th><td>GAuth</td><td>Geocoder</td><td>GHttp</td><td>GLogin</td><td>GMail</td><td>GTask</td><td>Guava EventBus</td><td>Hazelcast</td></tr>
-          <tr><th></th><td>HBase</td><td>HDFS</td><td>Hibernate</td><td>HL7</td><td>HTTP</td><td>HTTP4</td><td>iBATIS</td><td>IMAP</td></tr>
+          <tr><th></th><td>HBase</td><td>HDFS</td><td>Hibernate</td><td>HL7</td><td class="highlight">HTTP</td><td>HTTP4</td><td>iBATIS</td><td>IMAP</td></tr>
           <tr><th></th><td>IMAPS</td><td>Infinispan</td><td>IRC</td><td>JavaSpace</td><td>JBI</td><td>JCIFS</td><td>jclouds</td><td>JCR</td></tr>
-          <tr><th></th><td>JDBC</td><td>Jetty</td><td>JGroups</td><td>JMS</td><td>JMX</td><td>JPA</td><td>Jsch</td><td>JT/400 </td></tr>
-          <tr><th></th><td>Kestrel</td><td>Krati</td><td>Language</td><td>LDAP</td><td>Log</td><td>Lucene</td><td>MINA</td><td>MINA2</td></tr>
+          <tr><th></th><td>JDBC</td><td class="highlight">Jetty</td><td>JGroups</td><td>JMS</td><td>JMX</td><td>JPA</td><td>Jsch</td><td>JT/400 </td></tr>
+          <tr><th></th><td>Kestrel</td><td>Krati</td><td>Language</td><td>LDAP</td><td>Log</td><td>Lucene</td><td>MINA</td><td class="highlight">MINA2</td></tr>
           <tr><th></th><td>Mock</td><td>MongoDB</td><td>MQTT</td><td>MSV</td><td>Mustache</td><td>MVEL</td><td>MyBatis</td><td>Nagios</td></tr>
-          <tr><th></th><td>Netty</td><td>Netty HTTP</td><td>NMR</td><td>OptaPlanner</td><td>Pax-Logging</td><td>POP3</td><td>POP3S</td><td>Printer</td></tr>
+          <tr><th></th><td class="highlight">Netty</td><td>Netty HTTP</td><td>NMR</td><td>OptaPlanner</td><td>Pax-Logging</td><td>POP3</td><td>POP3S</td><td>Printer</td></tr>
           <tr><th></th><td>Properties</td><td>Quartz</td><td>Quartz2</td><td>Quickfix</td><td>RabbitMQ</td><td>RCode</td><td>Ref</td><td>Restlet</td></tr>
           <tr><th></th><td>RMI</td><td>RNC</td><td>RNG</td><td>Routebox</td><td>RSS</td><td>Salesforce</td><td>SAP NetWeaver</td><td>Scalate</td></tr>
           <tr><th></th><td>SEDA</td><td>SERVLET</td><td>SFTP</td><td>Sip</td><td>SJMS</td><td>Smooks</td><td>SMPP</td><td>SMTP</td></tr>
           <tr><th></th><td>SMTP</td><td>SNMP</td><td>Solr</td><td>Splunk</td><td>Spring Event</td><td>Spring LDAP</td><td>Spring Neo4j</td><td>Spring Redis</td></tr>
           <tr><th></th><td>Spring Web Services</td><td>SpringBatch</td><td>SpringIntegration</td><td>SQL</td><td>StAX</td><td>Stomp</td><td>Stream</td><td>StringTemplate</td></tr>
-          <tr><th></th><td>Stub</td><td>Test</td><td>Timer</td><td>Twitter</td><td>Validation</td><td>Velocity</td><td>Vertx</td><td>VirtualBox</td></tr>
-          <tr><th></th><td>VM</td><td>Weather</td><td>Websocket</td><td>XML Security </td><td>XMPP</td><td>XQuery</td><td>XSLT</td><td>Yammer</td></tr>
+          <tr><th></th><td>Stub</td><td>Test</td><td>Timer</td><td>Twitter</td><td>Validation</td><td class="highlight">Velocity</td><td>Vertx</td><td>VirtualBox</td></tr>
+          <tr><th></th><td class="highlight">VM</td><td>Weather</td><td>Websocket</td><td>XML Security </td><td>XMPP</td><td>XQuery</td><td class="highlight">XSLT</td><td>Yammer</td></tr>
           <tr><th></th><td>ZeroMQ</td><td>Zookeeper</td></tr>
         </table>
       </div>  
@@ -694,9 +706,9 @@ public class MyRoute extends RouteBuilder {
       <table>
         <tr><th></th><td>Avro</td><td>Base64</td><td>BeanIO</td><td>Bindy</td><td>Castor</td></tr>
         <tr><th></th><td>Crypto</td><td>CSV</td><td>EDI</td><td>Flatpack DataFormat</td><td>GZip data format</td></tr>
-        <tr><th></th><td>HL7 DataFormat</td><td>JAXB</td><td>JiBX</td><td>JSON</td><td>PGP</td></tr>
-        <tr><th></th><td>Protobuf</td><td>Serialization</td><td>SOAP</td><td>String</td><td>XmlBeans</td></tr>
-        <tr><th></th><td>XmlJson</td><td>XMLSecurity DataFormat</td><td>XStream</td><td>Zip DataFormat</td><td>Zip File DataFormat</td></tr>
+        <tr><th></th><td>HL7 DataFormat</td><td class="highlight">JAXB</td><td>JiBX</td><td class="highlight">JSON</td><td>PGP</td></tr>
+        <tr><th></th><td class="highlight">Protobuf</td><td class="highlight">Serialization</td><td>SOAP</td><td>String</td><td>XmlBeans</td></tr>
+        <tr><th></th><td class="highlight">XmlJson</td><td>XMLSecurity DataFormat</td><td>XStream</td><td>Zip DataFormat</td><td>Zip File DataFormat</td></tr>
       </table>
     </article>
   </slide>
@@ -706,7 +718,7 @@ public class MyRoute extends RouteBuilder {
       <h2>Camel in Servicemix</h2>
     </hgroup>
     <article>
-      <p>Una volta attivati i bundle di Camel... </p>
+      <p>Una volta attivati i bundle di Camel su Karaf-Servicemix... </p>
       <div class="build">
         <img src="images/camel_image_3.png" alt="Camel Bundles in Servicemix" title="Camel Bundles in Servicemix" />
       </div>
