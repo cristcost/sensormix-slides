@@ -323,6 +323,24 @@ ul {
   }
 }
 
+
+dl {
+  margin-left: 1.2em;
+  margin-bottom: 1em;
+  position: relative;
+
+  dt {
+    margin-left: 1.2em;
+    margin-bottom: 0.5em;
+  }
+
+  dd {
+    margin-left: 3.2em;
+    margin-bottom: 0.5em;
+  }
+}
+
+
 // Code highlighting only effects the current slide.
 .highlight-code slide.current {
   pre > * {
@@ -583,6 +601,14 @@ article.bigger {
     }
   }
 }
+
+.text-on-dark-image {
+    @include text-shadow(2px 2px 4px #333);
+}
+.text-on-image {
+    @include text-shadow(2px 2px 4px #fff);
+}
+
 
 /* Builds */
 
@@ -875,11 +901,19 @@ article.bigger {
     }
   }
 
+  &.no-back {
+    h2 {
+      color: $gray-4;
+    }
+    h3 {
+      color: $gray-4;
+    }
+  }
+
   &.back-green {
     background: $brand-green !important;
   }
 }
-
 
 .header-yellow {
   @include background(linear-gradient(top, $brand-yellow 0%, $brand-yellow 3%, white 3%, white 99%, $brand-yellow 99%, $brand-yellow 100%) no-repeat);
@@ -900,7 +934,13 @@ article.bigger {
 
 
 .thank-you-slide {
-  background: $brand-blue !important;
+  @include background(linear-gradient(175deg, 
+      $brand-yellow 0%, $brand-yellow 23%, 
+      $brand-blue 25%, $brand-blue 48%, 
+      $brand-red 50%, $brand-red 73%, 
+      $brand-green 75%, $brand-green 100% 
+    ) 
+  no-repeat);
   color: white;
 
   h2 {

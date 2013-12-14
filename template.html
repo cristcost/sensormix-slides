@@ -392,6 +392,92 @@ function helloWorld(world) {
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>Slide with SVG diagram</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <svg height="496" width="780" viebox="-0.5 -0.5 495.5 779.5">
+        <g>
+          <g transform="translate(300,10)">
+            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
+            <rect x="-115" height="80" class="diagram-block" width="230"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Model</tspan>
+            </text>
+          </g>
+          <g transform="translate(300,150)">
+            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
+            <rect x="-115" height="80" class="diagram-block" width="230"/>
+            <text y="55">
+              <tspan class="diagram-block-text">Presenter</tspan>
+            </text>
+          </g>
+          <g transform="translate(300,290)">
+            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
+            <rect x="-115" height="80" class="diagram-block" width="230"/>
+            <text y="55">
+              <tspan class="diagram-block-text">View</tspan>
+            </text>
+          </g>
+          <path d="m 300,90 0,60" class="diagram-line" style="marker-end:url(#arrow)"/>
+          <path d="m 250,230 0,60" class="diagram-line" style="marker-end:url(#arrow)"/>
+          <path d="m 350,290 0,-60" class="diagram-line-dashed" style="marker-end:url(#arrow)"/>
+        </g>
+         <!--
+          <svg width="780px" height="496px" viewbox="-390 -248 780 496">
+            <circle cx="50" cy="50" fill="red" r="40" stroke="black" stroke-width="3"/>
+            <ellipse cx="200" cy="80" rx="100" ry="50" style="fill:yellow;stroke:purple;stroke-width:2"/>
+            <line style="stroke:rgb(255,0,0);stroke-width:2" x1="0" x2="200" y1="0" y2="200"/>
+            <path d="M 100 350 l 150 -300" fill="none" id="lineAB" stroke="red" stroke-width="3"/>
+            <path d="M 100 350 q 150 -300 300 0" fill="none" stroke="blue" stroke-width="5"/>
+            <path d="M 175 200 l 150 0" fill="none" stroke="green" stroke-width="3"/>
+            <path d="M 250 50 l 150 300" fill="none" id="lineBC" stroke="red" stroke-width="3"/>
+            <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1"/>
+            <rect height="150" rx="20" ry="20" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" width="150" x="50" y="20"/>
+            <rect height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" width="150" x="50" y="20"/>
+            <rect x="100" y="0" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" width="300" />
+            <text fill="blue" x="500" y="30">I love SVG!</text>
+            <text fill="green" transform="rotate(30 20,40)" x="550" y="15">I love SVG</text>
+            <text x="500" y="80" textLength="500" lengthAdjust="spacing">A long, long, long text.</text>
+            <text x="750" y="20" style="text-anchor: start">Start</text>
+            <text x="750" y="40" style="text-anchor: middle">Middle</text>
+            <text x="750" y="60" style="text-anchor: end">End</text>
+            <g fill="black" stroke="black" stroke-width="3">
+              <circle cx="100" cy="350" id="pointA" r="3"/>
+              <circle cx="250" cy="50" id="pointB" r="3"/>
+              <circle cx="400" cy="350" id="pointC" r="3"/>
+            </g>
+            <g fill="black" font="sans-serif" font-size="30" stroke="none" text-anchor="middle">
+              <text dx="-30" x="100" y="350">A</text>
+              <text dy="-10" x="250" y="50">B</text>
+              <text dx="30" x="400" y="350">C</text>
+            </g>
+
+            <defs>
+              <filter id="filter" x="0" y="0">
+                <feGaussianBlur stdDeviation="5" />
+                <feOffset dx="5" dy="5" />
+              </filter>
+            </defs>
+            <rect x="500" y="150" width="90" height="90" fill="grey" filter="url(#filter)" />
+            <rect x="500" y="150" width="90" height="90" fill="yellow" stroke="black" />
+
+            <text x="750" y="250" font-size = "20">
+                <tspan>Normal weight.</tspan>
+                <tspan x="750" dy="20"  font-weight="bold">Bold type.</tspan>
+                <tspan x="750" dy="20"  font-weight="100">font-weight set to 100.</tspan>
+                <tspan x="750" dy="20"  font-weight="200">font-weight set to 200.</tspan>
+                <tspan x="750" dy="20"  font-weight="600">font-weight set to 600.</tspan>
+                <tspan x="750" dy="20"  font-weight="700">font-weight set to 700.</tspan>
+                <tspan x="750" dy="20"  font-weight="900">font-weight set to 900.</tspan>
+            </text>
+          </svg>
+          -->
+      </svg>
+    </article>
+  </slide>
+
   <slide class="backdrop"></slide>
 
 </slides>

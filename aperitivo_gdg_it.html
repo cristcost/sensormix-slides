@@ -80,7 +80,7 @@
     </article>
   </slide>
 
-  <slide hidden>
+  <slide>
     <hgroup>
       <h2>Perchè lo facciamo</h2>
     </hgroup>
@@ -506,8 +506,6 @@ Created-By: Apache Maven Bundle Plugin
     </article>
   </slide>
 
-
-  <!-- TODO TODO -->
   <slide hidden class="header-blue">
     <hgroup>
       <h2>Soluzioni con EIP</h2>
@@ -577,50 +575,180 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Content Based Router</h2>
+      <h2>Esempio: Content Based Router</h2>
     </hgroup>
-    <article></article>
+    <article class="smaller">
+      <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
+      <div>
+        <q>
+          from <b>newOrder</b><br/>
+          &nbsp;&nbsp;choice<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b>
+        </q>
+      </div>
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Content Based Router: Java</h2>
+      <h2>Content Based Router in Java DSL</h2>
     </hgroup>
-    <article></article>
+    <article class="smaller">
+      <div style="float:right;">
+          from <b>newOrder</b><br/>
+          &nbsp;&nbsp;choice<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b>
+      </div>
+      <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
+
+<pre class="prettyprint" data-lang="java dsl">
+public class MyRoute extends RouteBuilder {
+
+  public void configure() throws Exception {
+    <b>from</b>(&quot;<b>activemq:queue:newOrder</b>&quot;)
+      .<b>choice</b>()
+        .<b>when</b>(xpath(&quot;<b>/order/product = 'widget'</b>&quot;))
+          .<b>to</b>(&quot;<b>activemq:queue:widget</b>&quot;)
+        .<b>otherwise</b>()
+          .<b>to</b>(&quot;<b>activemq:queue:gadget</b>&quot;)
+      .end();
+  }
+}
+</pre>
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Content Based Router: XML</h2>
+      <h2>Content Based Router in Spring XML</h2>
     </hgroup>
-    <article></article>
+    <article class="smaller">
+      <div style="float:right;">
+          from <b>newOrder</b><br/>
+          &nbsp;&nbsp;choice<br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/>
+          &nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b>
+      </div>
+      <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
+<pre class="prettyprint" data-lang="spring xml">
+&lt;camelContext xmlns=&quot;http://camel.apache.org/schema/spring&quot;&gt;
+  &lt;route&gt;
+    &lt;<b>from</b> uri=&quot;<b>activemq:queue:newOrder</b>&quot;/&gt;
+    &lt;<b>choice</b>&gt;
+      &lt;<b>when</b>&gt;
+        &lt;xpath&gt;<b>/order/product = &apos;widget&apos;</b>&lt;/xpath&gt;
+        &lt;<b>to</b> uri=&quot;<b>activemq:queue:widget</b>&quot;/&gt;
+      &lt;/when&gt;
+      &lt;<b>otherwise</b>&gt;
+        &lt;<b>to</b> uri=&quot;<b>activemq:queue:gadget</b>&quot;/&gt;
+      &lt;/otherwise&gt;
+    &lt;/choice&gt;
+  &lt;/route&gt;
+&lt;/camelContext&gt;
+</pre>
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
       <h2>Camel: componenti</h2>
+      <h3>162 componenti elencati su <a href="http://camel.apache.org/components.html">camel.apache.org/components.html</a></h3>
     </hgroup>
-    <article></article>
+    <article class="smaller">
+      <div style="height:460px;overflow:auto;margin-top:-30px;">
+        <table>
+          <tr><th></th><td>ActiveMQ</td><td>ActiveMQ Broker</td><td>Activiti</td><td>AHC</td><td>AMQP</td><td>APNS</td><td>Atom</td><td>Avro</td></tr>
+          <tr><th></th><td>AWS-CW</td><td>AWS-DDB</td><td>AWS-S3</td><td>AWS-SDB</td><td>AWS-SES</td><td>AWS-SNS</td><td>AWS-SQS</td><td>Bean</td></tr>
+          <tr><th></th><td>Bean Validation</td><td>Browse</td><td>Cache</td><td>Class</td><td>CMIS</td><td>Cometd</td><td>Context</td><td>ControlBus</td></tr>
+          <tr><th></th><td>CouchDB</td><td>Crypto</td><td>CXF</td><td>CXF Bean </td><td>CXFRS</td><td>DataFormat</td><td>DataSet</td><td>Db4o</td></tr>
+          <tr><th></th><td>Direct</td><td>Direct-VM</td><td>Disruptor</td><td>DNS</td><td>EJB</td><td>ElasticSearch</td><td>Esper</td><td>EventAdmin</td></tr>
+          <tr><th></th><td>Exec</td><td>Facebook</td><td>File</td><td>Flatpack</td><td>FOP</td><td>FreeMarker</td><td>FTP</td><td>FTPS</td></tr>
+          <tr><th></th><td>GAuth</td><td>Geocoder</td><td>GHttp</td><td>GLogin</td><td>GMail</td><td>GTask</td><td>Guava EventBus</td><td>Hazelcast</td></tr>
+          <tr><th></th><td>HBase</td><td>HDFS</td><td>Hibernate</td><td>HL7</td><td>HTTP</td><td>HTTP4</td><td>iBATIS</td><td>IMAP</td></tr>
+          <tr><th></th><td>IMAPS</td><td>Infinispan</td><td>IRC</td><td>JavaSpace</td><td>JBI</td><td>JCIFS</td><td>jclouds</td><td>JCR</td></tr>
+          <tr><th></th><td>JDBC</td><td>Jetty</td><td>JGroups</td><td>JMS</td><td>JMX</td><td>JPA</td><td>Jsch</td><td>JT/400 </td></tr>
+          <tr><th></th><td>Kestrel</td><td>Krati</td><td>Language</td><td>LDAP</td><td>Log</td><td>Lucene</td><td>MINA</td><td>MINA2</td></tr>
+          <tr><th></th><td>Mock</td><td>MongoDB</td><td>MQTT</td><td>MSV</td><td>Mustache</td><td>MVEL</td><td>MyBatis</td><td>Nagios</td></tr>
+          <tr><th></th><td>Netty</td><td>Netty HTTP</td><td>NMR</td><td>OptaPlanner</td><td>Pax-Logging</td><td>POP3</td><td>POP3S</td><td>Printer</td></tr>
+          <tr><th></th><td>Properties</td><td>Quartz</td><td>Quartz2</td><td>Quickfix</td><td>RabbitMQ</td><td>RCode</td><td>Ref</td><td>Restlet</td></tr>
+          <tr><th></th><td>RMI</td><td>RNC</td><td>RNG</td><td>Routebox</td><td>RSS</td><td>Salesforce</td><td>SAP NetWeaver</td><td>Scalate</td></tr>
+          <tr><th></th><td>SEDA</td><td>SERVLET</td><td>SFTP</td><td>Sip</td><td>SJMS</td><td>Smooks</td><td>SMPP</td><td>SMTP</td></tr>
+          <tr><th></th><td>SMTP</td><td>SNMP</td><td>Solr</td><td>Splunk</td><td>Spring Event</td><td>Spring LDAP</td><td>Spring Neo4j</td><td>Spring Redis</td></tr>
+          <tr><th></th><td>Spring Web Services</td><td>SpringBatch</td><td>SpringIntegration</td><td>SQL</td><td>StAX</td><td>Stomp</td><td>Stream</td><td>StringTemplate</td></tr>
+          <tr><th></th><td>Stub</td><td>Test</td><td>Timer</td><td>Twitter</td><td>Validation</td><td>Velocity</td><td>Vertx</td><td>VirtualBox</td></tr>
+          <tr><th></th><td>VM</td><td>Weather</td><td>Websocket</td><td>XML Security </td><td>XMPP</td><td>XQuery</td><td>XSLT</td><td>Yammer</td></tr>
+          <tr><th></th><td>ZeroMQ</td><td>Zookeeper</td></tr>
+        </table>
+      </div>  
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
       <h2>Camel: data format</h2>
+      <h3>25+ data format elencati su <a href="http://camel.apache.org/data-format.html">camel.apache.org/data-format.html</a></h3>
     </hgroup>
-    <article></article>
+    <article>
+      <table>
+        <tr><th></th><td>Avro</td><td>Base64</td><td>BeanIO</td><td>Bindy</td><td>Castor</td></tr>
+        <tr><th></th><td>Crypto</td><td>CSV</td><td>EDI</td><td>Flatpack DataFormat</td><td>GZip data format</td></tr>
+        <tr><th></th><td>HL7 DataFormat</td><td>JAXB</td><td>JiBX</td><td>JSON</td><td>PGP</td></tr>
+        <tr><th></th><td>Protobuf</td><td>Serialization</td><td>SOAP</td><td>String</td><td>XmlBeans</td></tr>
+        <tr><th></th><td>XmlJson</td><td>XMLSecurity DataFormat</td><td>XStream</td><td>Zip DataFormat</td><td>Zip File DataFormat</td></tr>
+      </table>
+    </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
       <h2>Camel in Servicemix</h2>
     </hgroup>
-    <article></article>
+    <article>
+      <p>Una volta attivati i bundle di Camel... </p>
+      <div class="build">
+        <img src="images/camel_image_3.png" alt="Camel Bundles in Servicemix" title="Camel Bundles in Servicemix" />
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Camel in Servicemix</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>...è possibile definire rotte direttamente
+       nei file Spring XML, oppure utilizzare dei RouteBuilder in Java per avviare delle 
+       applicazioni che usano Camel all’interno di ServiceMix.</p>
+<div class="build">
+<pre class="prettyprint" data-lang="Spring XML">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;&gt;
+
+  &lt;camelContext xmlns=&quot;http://camel.apache.org/schema/spring&quot;&gt;
+   
+    &lt;route&gt;
+      &lt;from uri=&quot;jetty:http://0.0.0.0:8080/tellMeSomething&quot;/&gt;
+      &lt;convertBodyTo type=&quot;java.lang.String&quot;/&gt;
+      &lt;transform&gt;
+        &lt;simple&gt;You say ${in.body}&lt;/simple&gt;
+      &lt;/transform&gt;
+      &lt;to uri=&quot;velocity:response.vm&quot; /&gt;
+    &lt;/route&gt;
+
+  &lt;/camelContext&gt;
+
+&lt;/beans&gt;
+</pre></div>
+
+    </article>
   </slide>
 
 
 
 
-  <!-- Usare GWT su Serivcemix -->
+  <!-- Usare GWT su Servicemix -->
   <slide class="segue back-red nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
@@ -691,371 +819,119 @@ Created-By: Apache Maven Bundle Plugin
   </slide>
 
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Bullets</h2>
+
+  <slide class="segue no-back nobackground">
+    <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Conclusioni</h2>
+      <h3>Considerazioni finali e riferimenti bibliografici</h3>
     </hgroup>
-    <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
-      </ul>
-    </article>
   </slide>
 
-  <slide>
+  <slide class="fill nobackground text-on-image" style="background-image: url(images/conclusion_issue.jpg)">
     <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Issue su GWT</h2>
     </hgroup>
     <article>
-      <p>A list where items build:</p>
+      <h3>Serve GWT 2.6.0 che sia reso OSGi ready:</h3>
       <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
+        <li>per favore aiutateci, votate lo issue sulla Osgify di GWT: 
+          <ul><li><a href="http://goo.gl/GEuVBR">http://goo.gl/GEuVBR</a></li></ul></li>
+        <li>oppure lo issue su Jira per avere il bundle rilasciato da Servicemix il prima possibile:<br/>
+          <ul><li><a href="http://goo.gl/jFsVcP">http://goo.gl/jFsVcP</a></li></ul></li>
       </ul>
     </article>
   </slide>
 
-  <slide>
+    <slide class="fill nobackground text-on-image" style="background-image: url(images/conclusion_thales.jpg)">
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Da noi stanno assumendo</h2>
     </hgroup>
-    <article class="smaller">
+    <article class="bigger">
       <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
+        <li>Novità degli ultimi giorni</li>
+        <li>Per lavorare su queste tecnolgie</li>
+        <li>2 persone a tempo determinato nel 2014</li>
+        <li>Inviare cv a: <ul><li><a href="mailto:cristiano.costantini@thalesgroup.com">cristiano.costantini@thalesgroup.com</a></li></ul></li>
       </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
 
   <slide>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Materiali</h2>
     </hgroup>
-    <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
+    <article class="bigger">
+      <dl>
+        <dt>Slides:</dt>
+        <dd><a href="http://cristcost.github.io/sensormix-slides/aperitivo_gdg_it.html">http://cristcost.github.io/sensormix-slides/aperitivo_gdg_it.html</a></dd>
+        <dt>Sensormix:</dt>
+        <dd><a href="https://github.com/cristcost/sensormix/">https://github.com/cristcost/sensormix/</a></dd>
+        <dt>Sensormix Android:</dt>
+        <dd><a href="https://github.com/cristcost/sensormix-android/">https://github.com/cristcost/sensormix-android/</a></dd>
+        <dt>Sensormix Arduino:</dt>
+        <dd><a href="https://github.com/michelefi/sensormix-arduino/">https://github.com/michelefi/sensormix-arduino/</a></dd>
+      </dl>
+    </article>
+  </slide>
+  
+  <slide class="fill white nobackground text-on-dark-image" style="background-image: url(images/conclusion_books.jpg)">
+    <hgroup>
+      <h2 class="white">Libri</h2>
+    </hgroup>
+    <article class="bigger">
+      <dl>
+        <dt>Camel in Action</dt><dd>C. Ibsen, J. Anstey - Manning</dd>
+        <dt>Enterprise Integration Patterns</dt><dd>G. Hohpe, B. Woolf - Addison Wesley</dd>
+        <dt>Spring DM in Action</dt><dd>A. Cogoluègnes, T. Templier, A. Piper - Manning</dd>
+        <dt>OSGi in Action</dt><dd>R. S. Hall, K. Pauls, S. McCulloch, D. Savage - Manning</dd>
+        <dt>OSGi In depth</dt><dd>Alexandre de Castro Alves - Manning</dd>
+      </dl>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
+      <h2>Links</h2>
     </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
+    <article class="bigger">
+      <dl>     
+      <dt>Apache Camel:</dt>
+      <dd><a href="http://camel.apache.org/">http://camel.apache.org/</a></dd>
+      <dt>Apache Servicemix:</dt>
+      <dd><a href="http://servicemix.apache.org/">http://servicemix.apache.org/</a></dd>
+      <dt>Apache Karaf:</dt>
+      <dd><a href="http://karaf.apache.org/">http://karaf.apache.org/</a></dd>
+      <dt>GWT:</dt>
+      <dd><a href="http://www.gwtproject.org/">http://www.gwtproject.org/</a></dd>
+      </dl>
     </article>
   </slide>
 
-  <slide>
-    <hgroup>
-      <h2>Slide with Image</h2>
-    </hgroup>
-    <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
 
   <slide>
-    <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
-    </hgroup>
     <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with SVG diagram</h2>
-    </hgroup>
-    <article class="flexbox vcenter">
-      <svg height="496" width="780" viebox="-0.5 -0.5 495.5 779.5">
-        <g>
-          <g transform="translate(300,10)">
-            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
-            <rect x="-115" height="80" class="diagram-block" width="230"/>
-            <text y="55">
-              <tspan class="diagram-block-text">Model</tspan>
-            </text>
-          </g>
-          <g transform="translate(300,150)">
-            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
-            <rect x="-115" height="80" class="diagram-block" width="230"/>
-            <text y="55">
-              <tspan class="diagram-block-text">Presenter</tspan>
-            </text>
-          </g>
-          <g transform="translate(300,290)">
-            <rect x="-115" height="80" class="diagram-block-shadow" width="230"/>
-            <rect x="-115" height="80" class="diagram-block" width="230"/>
-            <text y="55">
-              <tspan class="diagram-block-text">View</tspan>
-            </text>
-          </g>
-          <path d="m 300,90 0,60" class="diagram-line" style="marker-end:url(#arrow)"/>
-          <path d="m 250,230 0,60" class="diagram-line" style="marker-end:url(#arrow)"/>
-          <path d="m 350,290 0,-60" class="diagram-line-dashed" style="marker-end:url(#arrow)"/>
-        </g>
-         <!--
-          <svg width="780px" height="496px" viewbox="-390 -248 780 496">
-            <circle cx="50" cy="50" fill="red" r="40" stroke="black" stroke-width="3"/>
-            <ellipse cx="200" cy="80" rx="100" ry="50" style="fill:yellow;stroke:purple;stroke-width:2"/>
-            <line style="stroke:rgb(255,0,0);stroke-width:2" x1="0" x2="200" y1="0" y2="200"/>
-            <path d="M 100 350 l 150 -300" fill="none" id="lineAB" stroke="red" stroke-width="3"/>
-            <path d="M 100 350 q 150 -300 300 0" fill="none" stroke="blue" stroke-width="5"/>
-            <path d="M 175 200 l 150 0" fill="none" stroke="green" stroke-width="3"/>
-            <path d="M 250 50 l 150 300" fill="none" id="lineBC" stroke="red" stroke-width="3"/>
-            <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1"/>
-            <rect height="150" rx="20" ry="20" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" width="150" x="50" y="20"/>
-            <rect height="150" style="fill:blue;stroke:pink;stroke-width:5;fill-opacity:0.1;stroke-opacity:0.9" width="150" x="50" y="20"/>
-            <rect x="100" y="0" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" width="300" />
-            <text fill="blue" x="500" y="30">I love SVG!</text>
-            <text fill="green" transform="rotate(30 20,40)" x="550" y="15">I love SVG</text>
-            <text x="500" y="80" textLength="500" lengthAdjust="spacing">A long, long, long text.</text>
-            <text x="750" y="20" style="text-anchor: start">Start</text>
-            <text x="750" y="40" style="text-anchor: middle">Middle</text>
-            <text x="750" y="60" style="text-anchor: end">End</text>
-            <g fill="black" stroke="black" stroke-width="3">
-              <circle cx="100" cy="350" id="pointA" r="3"/>
-              <circle cx="250" cy="50" id="pointB" r="3"/>
-              <circle cx="400" cy="350" id="pointC" r="3"/>
-            </g>
-            <g fill="black" font="sans-serif" font-size="30" stroke="none" text-anchor="middle">
-              <text dx="-30" x="100" y="350">A</text>
-              <text dy="-10" x="250" y="50">B</text>
-              <text dx="30" x="400" y="350">C</text>
-            </g>
-
-            <defs>
-              <filter id="filter" x="0" y="0">
-                <feGaussianBlur stdDeviation="5" />
-                <feOffset dx="5" dy="5" />
-              </filter>
-            </defs>
-            <rect x="500" y="150" width="90" height="90" fill="grey" filter="url(#filter)" />
-            <rect x="500" y="150" width="90" height="90" fill="yellow" stroke="black" />
-
-            <text x="750" y="250" font-size = "20">
-                <tspan>Normal weight.</tspan>
-                <tspan x="750" dy="20"  font-weight="bold">Bold type.</tspan>
-                <tspan x="750" dy="20"  font-weight="100">font-weight set to 100.</tspan>
-                <tspan x="750" dy="20"  font-weight="200">font-weight set to 200.</tspan>
-                <tspan x="750" dy="20"  font-weight="600">font-weight set to 600.</tspan>
-                <tspan x="750" dy="20"  font-weight="700">font-weight set to 700.</tspan>
-                <tspan x="750" dy="20"  font-weight="900">font-weight set to 900.</tspan>
-            </text>
-          </svg>
-          -->
-      </svg>
-    </article>
-  </slide>
-
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
+      <div>
+        <h2 style="font-size:10em;">Q&amp;A</h2>
       </div>
     </article>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
 
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/logo_sensormix_c.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
+
 
   <slide class="thank-you-slide segue nobackground">
     <aside class="gdbar right"><img src="images/logo_sensormix_c.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>&lt;Thank You!&gt;</h2>
-      <p>Important contact information goes here.</p>
     </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
+    <p class="auto-fadein">
+        Cristiano Costantini <span style="font-size:0.5em;">cristiano.costantini@gmail.com</span><br/>
+        Giuseppe Gerla <span style="font-size:0.5em;">giuseppe.gerla@gmail.com</span><br/>
+        Michele Ficarra <span style="font-size:0.5em;">miche.ficarra@gmail.com</span><br/>
+        Sergio Ciampi <span style="font-size:0.5em;">sergio.ciampi@gmail.com</span><br/>
+        Stefano Cigheri <span style="font-size:0.5em;">stefano.cigheri@gmail.com</span><br/>
     </p>
   </slide>
 
