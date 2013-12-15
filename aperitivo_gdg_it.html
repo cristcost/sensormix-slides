@@ -441,7 +441,7 @@ Created-By: Apache Maven Bundle Plugin
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
       <h2>Introduzione ad Apache Camel</h2>
-      <h3>Ovvero un modo agile per interfacciarsi a sistemi eterogenei</h3>
+      <h3>Ovvero un modo agile per integrare sistemi eterogenei</h3>
     </hgroup>
   </slide>
 
@@ -449,10 +449,10 @@ Created-By: Apache Maven Bundle Plugin
     <hgroup>
       <h2>“Integrare”</h2>
     </hgroup>
-    <article class="build fade">
+    <article class="build">
       <p>Cosa si intende quando parliamo di integrazione?</p>
-      <p>Si intende trovare una soluzione al seguente problema:</p>
-      <p>“Come posso far funzionare insieme molteplici applicazioni attraverso lo scambio di informazioni?”</p>
+      <p>Trovare una soluzione al seguente problema:</p>
+      <q>Come posso far funzionare insieme molteplici applicazioni attraverso lo scambio di informazioni?</q>
     </article>
   </slide>
 
@@ -606,7 +606,7 @@ Created-By: Apache Maven Bundle Plugin
     </hgroup>
     <article class="build">
       <p>Apache Camel è un framework di intrgrazione open-sorce versatile basato sugli Enterprise Integration Patterns del libro di Hohpe e Woolf.</p>
-      <p>Include un vasto insieme di componenti per funzionare con molti protocolli di trasporto e formati dati e permette di definire regole di instradamento e intermediazione attraverso l’uso di "domain-specific language".</p>
+      <p>Include un vasto insieme di <a href="http://camel.apache.org/components.html">componenti</a> per funzionare con molti <b>protocolli di trasporto</b> e <a href="http://camel.apache.org/data-format.html">formati dati</a> e permette di definire regole di <b>instradamento</b> e <b>intermediazione</b> attraverso l’uso di <a href="http://camel.apache.org/dsl.html">domain-specific language</a>.</p>
       <p>...si presta talmente bene alla integrazione che ServiceMix, dalla versione 3 alla 4, ha abbandonato la tecnologia JBI per adottare un nuovo approccio alla integrazione basato su Camel e OSGi.</p>
     </article>
   </slide>
@@ -615,16 +615,14 @@ Created-By: Apache Maven Bundle Plugin
     <hgroup>
       <h2>Esempio: Content Based Router</h2>
     </hgroup>
-    <article class="smaller build">
+    <article class="bigger">
       <img style="width:50%;" src="images/camel_eip_3.png" alt="Content Based Router" title="Content Based Router" />
-      <div>
-        <q>
-          from <b>newOrder</b><br/>
-          &nbsp;&nbsp;choice<br/>
-          &nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/>
-          &nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b>
-        </q>
-      </div>
+      <p class="build">
+          <span>from <b>newOrder</b><br/></span>
+          <span>&nbsp;&nbsp;choice<br/></span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/></span>
+          <span>&nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b></span>
+      </p>
     </article>
   </slide>
 
@@ -1119,6 +1117,14 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
     </article>
   </slide>
 
+  <slide class="header-green">
+    <hgroup>
+      <h2>Rivediamo le interfacce SensorMix</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/sensormix_arc_2.png" alt="SensorMix: Interfaces" title="SensorMix: Interfaces" />
+    </article>
+  </slide>
 
   <slide class="header-green">
     <hgroup>
@@ -1179,9 +1185,6 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
     </hgroup>
     <article class="smaller">
 <pre class="prettyprint" data-lang="spring xml">
-<b>&lt;bean id=&quot;sampleAdapter&quot; 
-  class=&quot;com.google.developers.gdgfirenze.integration.SampleAdapter&quot; /&gt;</b>
-
 &lt;route&gt;
   <b>&lt;from uri=&quot;netty:tcp://0.0.0.0:10082/?decoders=#length-decoder&amp;amp;sync=false&quot; /&gt;</b>
   &lt;unmarshal&gt;
@@ -1190,12 +1193,15 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
   &lt;/unmarshal&gt;
   <b>&lt;bean ref=&quot;sampleAdapter&quot; method=&quot;transform&quot; /&gt;</b>
 &lt;/route&gt;
+
+<b>&lt;bean id=&quot;sampleAdapter&quot; 
+  class=&quot;com.google.developers.gdgfirenze.integration.SampleAdapter&quot; /&gt;</b>
 </pre>
 <pre class="prettyprint" data-lang="java">
 <b>package com.google.developers.gdgfirenze.integration;</b>
 
 public <b>class SampleAdapter</b> {
-  public SamplesPayload transform(SampleMessage message) {
+  <b>public SamplesPayload transform(SampleMessage message)</b> {
     SamplesPayload ret = new SamplesPayload();
     // process 'SampleMessage' and return the adapted 'SamplesPayload'
     return ret;
