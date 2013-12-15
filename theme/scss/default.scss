@@ -550,7 +550,7 @@ slide.fill {
 /* Size variants */
 
 article.smaller {
-  p, ul {
+  p, ul, dl{
     font-size: 20px;
     line-height: 24px;
     letter-spacing: 0;
@@ -577,7 +577,7 @@ article.smaller {
 
 
 article.bigger {
-  p, ul {
+  p, ul, dl {
     font-size: 28px;
     line-height: 32px;
     letter-spacing: 0;

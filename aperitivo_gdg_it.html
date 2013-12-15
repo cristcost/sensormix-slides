@@ -109,11 +109,11 @@
 
 
 
-  <!-- Introduzione a OSGi e Servicemix -->
+  <!-- Introduzione a OSGi e ServiceMix -->
   <slide class="segue back-yellow nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Introduzione a OSGi e Servicemix</h2>
+      <h2>Introduzione a OSGi e ServiceMix</h2>
       <h3>Ovvero un approccio modulare per backend SOA</h3>
     </hgroup>
   </slide>
@@ -148,7 +148,7 @@
     </article>
   </slide>
 
-  <slide class="header-yellow">
+  <slide class="header-yellow" hidden>
     <hgroup>
       <h2>Perchè nasce OSGi</h2>
     </hgroup>
@@ -158,7 +158,7 @@
     </article>
   </slide>
 
-  <slide class="header-yellow">
+  <slide class="header-yellow" hidden>
     <hgroup>
       <h2>Perchè si espande</h2>
     </hgroup>
@@ -254,7 +254,7 @@
       <ul>
         <li>L’identificazione e la descrizione</li>
         <li>Il classloading</li>
-        <li>L’activazione</li>
+        <li>L’attivazione</li>
       </ul>
       <p>Esempi:</p>
     </article>
@@ -365,11 +365,11 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Servicemix: un ESB su OSGi</h2>
+      <h2>ServiceMix: un ESB su OSGi</h2>
     </hgroup>
     <article class="smaller">
       <img style="width:370px;float:right;" src="images/servicemix_image_8.png" alt="OSGi Service Platform" title="OSGi Service Platform" />
-      <p>Le principali funzionalità di Servicemix sono:</p>
+      <p>Le principali funzionalità di ServiceMix sono:</p>
       <ul>
         <li>reliable messaging with <a href="http://activemq.apache.org/">Apache ActiveMQ</a></li>
         <li>messaging, routing and Enterprise Integration Patterns with <a href="http://camel.apache.org">Apache Camel</a></li>
@@ -377,7 +377,7 @@ Created-By: Apache Maven Bundle Plugin
         <li>OSGi-based server runtime powered by <a href="http://karaf.apache.org">Apache Karaf</a></li>
       </ul>
 
-      <p>Altre funzionalità offerte da Smx:</p>
+      <p>Altre funzionalità offerte da ServiceMix:</p>
       <ul>
         <li>loosely coupled integration between all the other components with Apache ServiceMix NMR including rich Event, Messaging and Audit API</li>
         <li>complete WS-BPEL engine with <a href="http://ode.apache.org">Apache ODE</a></li>
@@ -389,7 +389,7 @@ Created-By: Apache Maven Bundle Plugin
   <slide class="header-yellow">
     <hgroup>
       <h2>OSGi e Spring</h2>
-      <h3>Uso di Spring dentro a Karaf/Servicemix</h3>
+      <h3>Uso di Spring dentro a Karaf/ServiceMix</h3>
     </hgroup>
     <article class="smaller">
       <p>Lo springframework fornisce molte features interessanti (dependency injection, ORM, AOP,...)</p>
@@ -605,7 +605,7 @@ Created-By: Apache Maven Bundle Plugin
       <h2>Apache Camel</h2>
     </hgroup>
     <article class="build">
-      <p>Apache Camel è un framework di intrgrazione open-sorce versatile basato sugli Enterprise Integration Patterns del libro di Hohpe e Woolf.</p>
+      <p>Apache Camel è un framework di integrazione open-sorce versatile basato sugli Enterprise Integration Patterns del libro di Hohpe e Woolf.</p>
       <p>Include un vasto insieme di <a href="http://camel.apache.org/components.html">componenti</a> per funzionare con molti <b>protocolli di trasporto</b> e <a href="http://camel.apache.org/data-format.html">formati dati</a> e permette di definire regole di <b>instradamento</b> e <b>intermediazione</b> attraverso l’uso di <a href="http://camel.apache.org/dsl.html">domain-specific language</a>.</p>
       <p>...si presta talmente bene alla integrazione che ServiceMix, dalla versione 3 alla 4, ha abbandonato la tecnologia JBI per adottare un nuovo approccio alla integrazione basato su Camel e OSGi.</p>
     </article>
@@ -739,19 +739,19 @@ public class MyRoute extends RouteBuilder {
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Camel in Servicemix</h2>
+      <h2>Camel in ServiceMix</h2>
     </hgroup>
     <article>
-      <p>Una volta attivati i bundle di Camel su Karaf-Servicemix... </p>
+      <p>Una volta attivati i bundle di Camel su Karaf-ServiceMix... </p>
       <div class="build">
-        <img src="images/camel_image_3.png" alt="Camel Bundles in Servicemix" title="Camel Bundles in Servicemix" />
+        <img src="images/camel_image_3.png" alt="Camel Bundles in ServiceMix" title="Camel Bundles in ServiceMix" />
       </div>
     </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Camel in Servicemix</h2>
+      <h2>Camel in ServiceMix</h2>
     </hgroup>
     <article class="smaller">
       <p>...è possibile definire rotte direttamente
@@ -784,48 +784,180 @@ public class MyRoute extends RouteBuilder {
 
 
 
-  <!-- Usare GWT su Servicemix -->
+  <!-- Usare GWT su ServiceMix -->
   <slide class="segue back-red nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Segue Rosso</h2>
-      <h3>Da usare per slide riguardanti GWT</h3>
+      <h2>Utilizzare GWT su ServiceMix</h2>
+      <h3>Ovvero un modo diverso per fare Web Application</h3>
     </hgroup>
   </slide>
 
   <slide class="header-red">
     <hgroup>
-      <h2>Titolo red</h2>
-      <h3>Sottotitolo</h3>
+      <h2>SOA e SOFEA</h2>
     </hgroup>
-    <article>
-      <p>Info</p>
-      <ul class="build fade">
-        <li>Punto 1</li>
-        <li>Punto 2</li>
-        <li>Punto 3</li>
-      </ul>
+    <article class="flexbox vcenter">
+      <img src="images/gwt_image_1.png" alt="SOFEA Architecture" title="SOFEA Architecture" />
+      <footer class="source"><a href="http://raibledesigns.com/">http://raibledesigns.com/</a></footer>
     </article>
   </slide>
 
-  <!-- TODO: Rimanenti su GWT -->
+  <slide class="header-red">
+    <hgroup>
+      <h2>Framework Web per SOFEA</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/gwt_image_2.png" alt="SOFEA Web Frameworks" title="SOFEA Web Frameworks" />
+      <footer class="source"><a href="http://raibledesigns.com/">http://raibledesigns.com/</a></footer>
+    </article>
+  </slide>
 
+  <slide class="header-red">
+    <hgroup>
+      <h2>ServiceMix e le Web Application</h2>
+    </hgroup>
+    <article>
+      <p>ServiceMix non nasce come <a href="http://en.wikipedia.org/wiki/Web_container">Web Container</a> ma permette lo stesso di deployare delle web application. </p>
+      <p>In particolare risulta molto interessante qualora l’applicazione segua l’approccio precedente.</p>
+    </article>
+  </slide>
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>La nostra SOFEA</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/gwt_image_3.png" alt="SOFEA with GWT and ServiceMix" title="SOFEA with GWT and ServiceMix" />
+    </article>
+  </slide>
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>Deploy di WAR sotto Karaf/ServiceMix</h2>
+      <h3>WAR Deployer</h3>
+    </hgroup>
+    <article class="build">
+      <p>Il WAR Deployer è un bundle che si occupa del deploy di Web Application su Karaf/ServiceMix</p>
+      <div style="text-align:center;font-weight:bold;font-size:1.8em;"><p>Cosa fa?</p></div>
+      <ul>
+        <li>Cerca il file /WEB-INF/web.xml </li>
+        <li>Se lo trova, pubblica i file statici e le Servlet definite nel web.xml via HTTP</li>
+      </ul>
+      <div style="text-align:center;font-weight:bold;font-size:1.8em;"><p>Ma basta?</p></div>
+    </article>
+  </slide>
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>Deploy di WAR sotto Karaf/ServiceMix</h2>
+      <h3>Il WAR ha bisogno di modifiche</h3>
+    </hgroup>
+    <article class="build">
+      <ul>
+        <li>Deve avere un file /META-INF/MANIFEST.MF nella root del JAR</li>
+        <li>Il MANIFEST.MF deve contenere:
+          <ul>
+            <li>L'header <code>Web-ContextPath</code> (l'applicazione verrà pubblicata al context path specificato da questo header)</li>
+            <li>L'header <code>Bundle-ClassPath: .,WEB-INF/classes</code> (informa Karaf/ServiceMix dove sono i bytecode)</li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>É raccomandato fare uno <a href="http://maven.apache.org/plugins/maven-war-plugin/examples/skinny-wars.html">Skinny war</a> e usare dipendenze di Bundle (usando il maven-war-plugin e il maven-bundle-plugin)</p>
+
+      <div style="text-align:center;font-weight:bold;font-size:1.8em;"><p>Abbiamo Finito?</p></div>
+
+    </article>
+  </slide>
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>Applicazioni GWT sotto Karaf/ServiceMix</h2>
+      <h3>...anche gwt-servlet.jar ha bisogno di modifiche</h3>
+    </hgroup>
+    <article>
+      <p>GWT non è predisposto per essere usato in OSGi.</p>
+      <p>Non è un bundle perchè al manifest della gwt-servlet.jar mancano gli header OSGi.</p>
+
+      <div class="build" style="text-align:center;font-weight:bold;font-size:1.8em;"><p>E allora?</p></div>
+    </article>
+  </slide>
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>Come usare GWT con OSGi</h2>
+      <h3>Quattro strade:</h3>
+    </hgroup>
+    <article class="smaller">
+      <p>Ci sono 4 strade per ottenere un gwt-servlet.jar OSGi compliant e poterlo deployare su Karaf/ServiceMix.</p>
+      <dl class="build fade">
+        <div><dt>Caso 1:</dt><dd><a href="http://www.gwtproject.org/makinggwtbetter.html#compiling">Compilarsi</a> a mano il gwt-servlet.jar con gli <a href="https://gwt-review.googlesource.com/#/c/5351/">header OSGi</a> necessari</dd></div>
+        <div><dt>Caso 2:</dt><dd>Deployare il <a href="http://karaf.apache.org/manual/latest-2.2.x/users-guide/deployer.html#Wrapdeployer">Jar non-OSGi</a> configurandolo al momento della installazione su Karaf/ServiceMix passando come parametro le informazioni che dovrebbero essere contenute nel MANIFEST.MF</dd></div>
+        <div><dt>Caso 3:</dt><dd>Aspettare che il ServiceMix Team <a href="http://goo.gl/jFsVcP">rilasci</a> il Bundle per GWT-Servlet con gli header OSGi per la versione 2.6.0</dd></div>
+        <div><dt>Caso 4:</dt><dd>Sperare che il GWT Project Team <a href="https://gwt-review.googlesource.com/#/c/5351/">accetti la patch</a>, che abbiamo proposto, nella versione GWT 2.6.0 o successive. </dd></div>
+      </dl>
+    </article>
+  </slide>
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>Come usare GWT con OSGi</h2>
+      <h3>Che cosa significa?</h3>
+    </hgroup>
+    <article class="smaller">
+    <dl style="font-size:0.6em;line-height:1em;">
+      <dt>Caso 1:</dt>
+        <dd>
+          <code>git fetch https://gwt.googlesource.com/gwt refs/changes/51/5351/7</code><br/>
+          <code>git checkout FETCH_HEAD</code><br/>
+          <code>ant dist</code><br/>
+          <code>install -s mvn:com.google.gwt/gwt-servlet/2.6.0</code><br/>
+        </dd>
+
+      <dt>Caso 2:</dt>
+        <dd><code>
+          install -s wrap:mvn:com.google.gwt/gwt-servlet/2.6.0$Bundle-Name=GWT-Servlet&amp;Bu<br/>
+          ndle-SymbolicName=com.google.gwt.gwt-servlet&amp;Bundle-Version=2.6.0&amp;Export-Packag<br/>
+          e=com.google.gwt.user.client.rpc.*,org.hibernate.validator.engine,com.google.we<br/>
+          b.bindery.requestfactory.vm.impl.*,!javax.validation,!org.hibernate.validator.*<br/>
+          ,!*.client.*,!*.impl.*,*&amp;Import-Package=javax.servlet.*,javax.validation;resolu<br/>
+          tion:=optional,org.json;resolution:=optional,javax.validation.*;resolution:=opt<br/>
+          ional,org.json.*;resolution:=optional,!com.google.gwt.*,*;resolution:=optional</code></dd>
+
+      <dt>Caso 3:</dt>
+        <dd><code>install -s mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.gwt-servlet/2.6.0_1</code></dd>
+
+      <dt>Caso 4:</dt>
+        <dd><code>install -s mvn:com.google.gwt/gwt-servlet/2.6.0</code></dd>
+    </dl>
+    </article>
+  </slide>
+
+
+
+  <slide class="header-red">
+    <hgroup>
+      <h2>Esempi GWT su ServiceMix</h2>
+    </hgroup>
+    <article class="bigger">
+
+<p>Abbiamo adattato alcuni esempi della distribuzione GWT per funzionare su Karaf/ServiceMix:</p>
+
+<p><a href="https://github.com/cristcost/gwt-karaf-examples">https://github.com/cristcost/gwt-karaf-examples</a></p>
+
+<p>Tra poco faremo vedere un esempio che mette insieme tutte le tecnologie raccontate fino ad ora.</p>
+    </article>
+  </slide>
+
+
+  <!-- SensorMix -->
   <slide class="segue back-green nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
       <h2>SensorMix</h2>
-      <h3>Architettura di esempio basata su Servicemix, Camel e GWT</h3>
+      <h3>Architettura di esempio basata su ServiceMix, Camel e GWT</h3>
     </hgroup>
-  </slide>
-
-  <slide class="header-green">
-    <hgroup>
-      <h2>Come è composto SensorMix</h2>
-      <h3>Architettura interna</h3>
-    </hgroup>
-    <article>
-      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_1.png" alt="SensorMix: Architecture" title="SensorMix: Architecture" />
-    </article>
   </slide>
 
   <slide class="header-green">
@@ -835,6 +967,16 @@ public class MyRoute extends RouteBuilder {
     </hgroup>
     <article>
       <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_2.png" alt="SensorMix: Interfaces" title="SensorMix: Interfaces" />
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+      <h2>Come è composto SensorMix</h2>
+      <h3>Architettura interna</h3>
+    </hgroup>
+    <article>
+      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_1.png" alt="SensorMix: Architecture" title="SensorMix: Architecture" />
     </article>
   </slide>
 
@@ -909,13 +1051,13 @@ public class MyRoute extends RouteBuilder {
     </hgroup>
     <article class="flexbox build fade smaller">
 <pre class="prettyprint" data-lang="java">
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = &quot;SampleReport&quot;)
+<b>@XmlAccessorType(XmlAccessType.FIELD)</b>
+<b>@XmlType(name = &quot;SampleReport&quot;)</b>
 public class SampleReport implements Serializable {
 
   /** The sensor id. */
-  @XmlAttribute(required = true, name = &quot;sensorId&quot;)
-  @XmlSchemaType(name = &quot;anyURI&quot;)
+  <b>@XmlAttribute(required = true, name = &quot;sensorId&quot;)</b>
+  <b>@XmlSchemaType(name = &quot;anyURI&quot;)</b>
   private String sensorId;
 
   /** The sample type. */
@@ -937,17 +1079,17 @@ public class SampleReport implements Serializable {
     </hgroup>
  <article class="flexbox build fade smaller">
 <pre class="prettyprint" data-lang="java">
-@WebService(name = &quot;SensormixService&quot;,
-    targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
+<b>@WebService(name = &quot;SensormixService&quot;,
+    targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)</b>
 @SOAPBinding(parameterStyle = ParameterStyle.WRAPPED, style = Style.DOCUMENT, use = Use.LITERAL)
 public interface SensormixService {
 
-  @WebMethod(action = &quot;urn:#listSensorsIds&quot;)
+  <b>@WebMethod(action = &quot;urn:#listSensorsIds&quot;)</b>
   @RequestWrapper(localName = &quot;listSensorsIdsIn&quot;,
       targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
   @ResponseWrapper(localName = &quot;listSensorsIdsOut&quot;,
       targetNamespace = &quot;http://developers.google.com/gdgfirenze/ns/service&quot;)
-  @WebResult(name = &quot;sensorId&quot;)
+  <b>@WebResult(name = &quot;sensorId&quot;)</b>
   List&lt;String&gt; listSensorsIds();
 
   @WebMethod(action = &quot;urn:#listSamplesTypes&quot;)
@@ -1122,7 +1264,7 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
       <h2>Rivediamo le interfacce SensorMix</h2>
     </hgroup>
     <article class="flexbox vcenter">
-      <img src="images/sensormix_arc_2.png" alt="SensorMix: Interfaces" title="SensorMix: Interfaces" />
+      <img src="images/sensormix_camel_1.png" alt="SensorMix: Interfaces" title="SensorMix: Interfaces" />
     </article>
   </slide>
 
@@ -1192,6 +1334,7 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
       .gdgfirenze.protobuf.SensormixProtos$SampleMessage&quot; /&gt;</b>
   &lt;/unmarshal&gt;
   <b>&lt;bean ref=&quot;sampleAdapter&quot; method=&quot;transform&quot; /&gt;</b>
+  &lt;to uri=&quot;seda:serviceEntry&quot; /&gt;
 &lt;/route&gt;
 
 <b>&lt;bean id=&quot;sampleAdapter&quot; 
@@ -1348,7 +1491,7 @@ public <b>class SampleAdapter</b> {
       <ul class="build">
         <li>per favore aiutateci, votate lo issue sulla Osgify di GWT: 
           <ul><li><a href="http://goo.gl/GEuVBR">http://goo.gl/GEuVBR</a></li></ul></li>
-        <li>oppure lo issue su Jira per avere il bundle rilasciato da Servicemix il prima possibile:<br/>
+        <li>oppure lo issue su Jira per avere il bundle rilasciato da ServiceMix il prima possibile:<br/>
           <ul><li><a href="http://goo.gl/jFsVcP">http://goo.gl/jFsVcP</a></li></ul></li>
       </ul>
     </article>
@@ -1410,7 +1553,7 @@ public <b>class SampleAdapter</b> {
       <dl>     
       <dt>Apache Camel:</dt>
       <dd><a href="http://camel.apache.org/">http://camel.apache.org/</a></dd>
-      <dt>Apache Servicemix:</dt>
+      <dt>Apache ServiceMix:</dt>
       <dd><a href="http://servicemix.apache.org/">http://servicemix.apache.org/</a></dd>
       <dt>Apache Karaf:</dt>
       <dd><a href="http://karaf.apache.org/">http://karaf.apache.org/</a></dd>
