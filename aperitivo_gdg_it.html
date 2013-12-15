@@ -100,7 +100,7 @@
         <li class="yellow3"><b>Introduzione ad OSGi e ServiceMix</b></li>
         <li class="blue3"><b>Introduzione ad Apache Camel</b></li>
         <li class="red3"><b>Utilizzare GWT su ServiceMix</b></li>
-        <li class="green3"><b>Sensormix: Architettura di esempio</b></li>
+        <li class="green3"><b>SensorMix: Architettura di esempio</b></li>
         <li class="gray4"><b>Fun facts: perchè ci piace questa architettura</b></li>
       </ul>
     </article>
@@ -507,47 +507,13 @@ Created-By: Apache Maven Bundle Plugin
     </article>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/eipbookcover.jpg)">
-    <hgroup>
-      <h2 class="white">Notazione EIP</h2>
-    </hgroup>
-    <article class="build flexbox vcenter ">
-      <img src="images/camel_image_1.png" style="height:560px;margin-top:-50px;" alt="EIP Notation" title="EIP Notation" />
-      
-      <footer><a class="source white" href="http://www.eaipatterns.com/toc.html">http://www.eaipatterns.com/toc.html</a></footer>
-    </article>
-  </slide>
-
-  <slide class="header-blue">
-    <hgroup>
-      <h2>Soluzioni con EIP</h2>
-    </hgroup>
-     <article class="flexbox">
-      <div>
-        <img src="images/camel_eip_1.png" alt="" title="" />
-      </div>
-    </article>
-  </slide>
-
-  <slide class="header-blue">
-    <hgroup>
-      <h2>Soluzioni con EIP</h2>
-    </hgroup>
-     <article class="flexbox">
-      <div>
-        <img src="images/camel_eip_2.png" alt="" title="" />
-      </div>
-    </article>
-  </slide>
-
-
   <slide class="header-blue">
     <hgroup>
       <h2>Come si può fare integrazione?</h2>
     </hgroup>
     <article>
       <p>I principali metodi tramite cui avviene integrazione sono:</p>
-      <ul class="build fade">
+      <ul class="build">
         <li>Scambio di file
           <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_file.gif" alt="EIP File Transfer" title="EIP File Transfer" /></div></li>
         <li>Database condiviso
@@ -557,8 +523,57 @@ Created-By: Apache Maven Bundle Plugin
         <li>Messaging
           <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_messaging.gif" alt="EIP Messaging" title="EIP Messaging" /></div></li>
       </ul>
-      <p>Gli EIP si focalizzano sulla integrazione via “messaging”.</p>
-      <p>Però integrare è difficile lo stesso perchè eiste una vasta eterogeneità di protocolli, interfacce e formati.</p>
+      <div class="build"><p>Gli EIP si focalizzano sulla integrazione via “messaging” e definiscono una notazione per rappresentare le soluzioni di integrazione.</p></div>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/eipbookcover.jpg)">
+    <hgroup>
+      <h2 class="white">Notazione EIP</h2>
+    </hgroup>
+    <article class="build flexbox vcenter ">
+      <div>
+        <img src="images/camel_image_1.png" style="height:560px;margin-top:-50px;" alt="EIP Notation" title="EIP Notation" />
+        
+        <footer><a class="source white" href="http://www.eaipatterns.com/toc.html">http://www.eaipatterns.com/toc.html</a></footer>
+      <div>
+    </article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Soluzioni con EIP</h2>
+    </hgroup>
+     <article class="flexbox vcenter">
+      <div>
+        <img src="images/camel_eip_1.png" alt="Example of EIP" title="Example of EIP" />
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Soluzioni con EIP</h2>
+    </hgroup>
+     <article class="flexbox vcenter">
+      <div>
+        <img src="images/camel_eip_2.png" alt="Example of EIP" title="Example of EIP" />
+      </div>
+    </article>
+  </slide>
+
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Soluzioni con EIP</h2>
+    </hgroup>
+     <article class="flexbox vcenter">
+      <div>
+        <img src="images/sensormix_cdm_eip.png" alt="Example of EIP" title="Example of EIP" />
+        <div class="build">
+          <h3>Attenti a questa qui!</h3>
+        </div>
+      </div>
     </article>
   </slide>
 
@@ -568,17 +583,18 @@ Created-By: Apache Maven Bundle Plugin
       <h3>(domanda retorica)</h3>
     </hgroup>
     <article class="build">
-      <p>Come si possono implementare su una piattaforma Java degli Enterprise Integration Pattern?</p>
+      <p>Integrare è però difficile perchè esiste una vasta eterogeneità di protocolli, interfacce e formati.</p>
+      <p>Come si possono implementare su una piattaforma Java gli Enterprise Integration Pattern?</p>
       <div>
         <p>con</p>
         <q>Apache Camel</q>
-        <ul class="build fade">
-          <li><b>C</b>oncise</li>
-          <li><b>A</b>pplication</li>
-          <li><b>M</b>essaging</li>
-          <li><b>E</b>xchange</li>
-          <li><b>L</b>anguage</li>
-        </ul>
+        <div class="build">
+          <span><b>C</b>oncise</span>
+          <span><b>A</b>pplication</span>
+          <span><b>M</b>essaging</span>
+          <span><b>E</b>xchange</span>
+          <span><b>L</b>anguage</span>
+        </div>
       </div>
  
     </article>
@@ -600,7 +616,7 @@ Created-By: Apache Maven Bundle Plugin
       <h2>Esempio: Content Based Router</h2>
     </hgroup>
     <article class="smaller build">
-      <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
+      <img style="width:50%;" src="images/camel_eip_3.png" alt="Content Based Router" title="Content Based Router" />
       <div>
         <q>
           from <b>newOrder</b><br/>
@@ -623,7 +639,7 @@ Created-By: Apache Maven Bundle Plugin
           &nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/>
           &nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b>
       </div>
-      <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
+      <img style="width:50%;" src="images/camel_eip_3.png" alt="Content Based Router" title="Content Based Router" />
 
 <pre class="prettyprint" data-lang="java dsl">
 public class MyRoute extends RouteBuilder {
@@ -653,7 +669,7 @@ public class MyRoute extends RouteBuilder {
           &nbsp;&nbsp;&nbsp;&nbsp;when <b>isWidget</b> to <b>widget</b><br/>
           &nbsp;&nbsp;&nbsp;&nbsp;otherwise to <b>gadget</b>
       </div>
-      <img style="width:50%;" src="images/camel_image_2.png" alt="Content Based Router" title="Content Based Router" />
+      <img style="width:50%;" src="images/camel_eip_3.png" alt="Content Based Router" title="Content Based Router" />
 <pre class="prettyprint" data-lang="spring xml">
 &lt;camelContext xmlns=&quot;http://camel.apache.org/schema/spring&quot;&gt;
   &lt;route&gt;
