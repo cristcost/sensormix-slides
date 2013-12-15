@@ -956,7 +956,7 @@ public class MyRoute extends RouteBuilder {
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
       <h2>SensorMix</h2>
-      <h3>Architettura di esempio basata su ServiceMix, Camel e GWT</h3>
+      <h3>Esempio di architettura basata su ServiceMix, Camel e GWT</h3>
     </hgroup>
   </slide>
 
@@ -1270,7 +1270,7 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
 
   <slide class="header-green">
     <hgroup>
-      <h2> Le rotta di ingresso UDP e HTTP </h2>
+      <h2> Le rotte di ingresso UDP e HTTP </h2>
       <h3>Usate da Android e da Arduino</h3>
     </hgroup>
     <article>
@@ -1381,7 +1381,177 @@ public <b>class SampleAdapter</b> {
   </slide>
 
 
-  <!-- TODO: Rimanenti su GWT -->
+  <slide class="header-green">
+    <hgroup>
+      <h2>Riepilogo:</h2>
+    </hgroup>
+    <article>
+      <p>Abbiamo visto che per il deploy di una Web Application GWT su Karaf/ServiceMix dobbiamo garantire che:</p>
+      <ul>
+        <li>Il WAR sia un bundle OSGi compliant</li>
+        <li>Che gwt-servlet.jar sia stata correttamente installata come bundle.</li>
+      </ul>
+      <p>Noi cosa abbiamo fatto?</p>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>GWT RPC Plumbing diagram</h2>
+<h3>Siamo partiti da qui...</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/sensormix_gwt_1.png" alt="GWT RPC Plumbing diagram" title="GWT RPC Plumbing diagram" />
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>Sensormix RPC Plumbing diagram</h2>
+<h3>...per arrivare qui</h3>
+    </hgroup>
+<article class="flexbox vcenter">
+      <img src="images/sensormix_gwt_2.png" alt="Sensormix RPC Plumbing diagram" title="Sensormix RPC Plumbing diagram" />
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>GWT RPC in Sensormix</h2>
+<h3>Lato Client</h3>
+    </hgroup>
+    <article class="smaller">
+<p>Instanziare la service interface usando GWT.create():</p>
+<pre class="prettyprint" data-lang="java">
+GwtSensormixServiceAsync sensormixService 
+    = GWT.create(GwtSensormixService.class);
+</pre>
+<p>Fare la chiamata al servizio:</p>
+<pre class="prettyprint" data-lang="java">
+sensormixService.listSensorsIds(new AsyncCallback<List>() {
+  @Override
+  public void onFailure(Throwable caught) {
+    // handle the request failure
+  }
+
+  @Override
+  public void onSuccess(List result) {
+    // handle the response from the service
+  }
+});
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>GWT RPC in Sensormix</h2>
+<h3>Lato Server</h3>
+    </hgroup>
+    <article class="smaller">
+<p>SensormixServiceProxy.java è un servizio GWT che usa un servizio OSGi. Nella inizializazione ottiene dei riferimenti al servizio utilizzando le API del Framework.</p>
+<pre class="prettyprint" data-lang="java">
+public void init() throws ServletException {
+
+  final BundleContext context = FrameworkUtil.getBundle(this.getClass()).getBundleContext();
+  tracker = new ServiceTracker(context, SensormixService.class.getName(), null);
+  tracker.open();
+}
+</pre>
+
+<p>Come viene usata l’istanza del servizio OSGi?</p>
+<pre class="prettyprint" data-lang="java">
+private SensormixService getService() {
+  return (SensormixService) tracker.waitForService(10000);
+}
+
+public List&lt;String&gt; listSensorsIds() {
+  return getService().listSensorsIds();
+}
+</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>Importiamo il Canonical Data Model</h2>
+    </hgroup>
+    <article class="smaller">
+<p>Nel file SensormixAdminApp.gwt.xml:</p>
+<pre class="prettyprint" data-lang=".gwt.xml">
+  &lt;inherits name='com.google.developers.gdgfirenze.Sensormix' /&gt;
+</pre>
+
+<p>Nel pom.xml:</p>
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;dependency&gt;
+  &lt;groupId&gt;com.google.developers.gdgfirenze&lt;/groupId&gt;
+  &lt;artifactId&gt;sensormix-datamodel-api&lt;/artifactId&gt;
+  &lt;version&gt;${project.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.google.developers.gdgfirenze&lt;/groupId&gt;
+  &lt;artifactId&gt;sensormix-datamodel-api&lt;/artifactId&gt;
+  &lt;version&gt;${project.version}&lt;/version&gt;
+  <b>&lt;classifier&gt;sources&lt;/classifier&gt;</b>
+&lt;/dependency&gt;</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>Configuriamo il maven-bundle-plugin</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;instructions&gt;
+  &lt;Bundle-SymbolicName&gt;${project.artifactId}&lt;/Bundle-SymbolicName&gt;
+  &lt;Bundle-Description&gt;${project.description}&lt;/Bundle-Description&gt;
+
+  <b>&lt;Web-ContextPath&gt;/${project.artifactId}&lt;/Web-ContextPath&gt;</b>
+
+  <b>&lt;Bundle-ClassPath&gt;.,WEB-INF/classes&lt;/Bundle-ClassPath&gt;</b>
+
+  <b>&lt;Import-Package&gt;
+    com.google.gwt.user.client.rpc.*,
+    com.google.gwt.user.client.rpc.core.com.google.gwt.core.shared,
+    com.google.gwt.user.client.rpc.core.java.lang,
+    com.google.gwt.user.client.rpc.core.java.math,
+    com.google.gwt.user.client.rpc.core.java.sql,
+    com.google.gwt.user.client.rpc.core.java.util,
+    com.google.gwt.user.client.rpc.core.java.util.logging,
+    com.google.gwt.user.server.rpc.core.java.lang,
+    com.google.gwt.user.server.rpc.core.java.util,
+    !com.google.gwt.*.client.*,
+    *
+  &lt;/Import-Package&gt;</b>
+&lt;/instructions&gt;</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>Configuriamo il maven-war-plugin</h2>
+<h3>Ricordate lo skinny war?</h3>
+    </hgroup>
+    <article>
+<p>Si tolgono le dipendenze dalla lib:</p>
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;packagingExcludes&gt;WEB-INF/lib/,
+             WEB-INF/classes/META-INF/&lt;/packagingExcludes&gt;
+</pre>
+
+<p>Si istruisce Maven di copiare il Manifest al posto giusto:</p>
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;archive&gt;
+  &lt;manifestFile&gt;
+    ${project.build.outputDirectory}/META-INF/MANIFEST.MF
+  &lt;/manifestFile&gt;
+&lt;/archive&gt;
+</pre>
+    </article>
+  </slide>
+
 
 
   <slide class="segue dark nobackground">
