@@ -54,21 +54,21 @@
 
   <slide class="header-green">
     <hgroup>
-      <h2>Come è composto Sensormix</h2>
+      <h2>Come è composto SensorMix</h2>
       <h3>Architettura interna</h3>
     </hgroup>
     <article>
-      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_1.png" alt="Sensormix: Architecture" title="Sensormix: Architecture" />
+      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_1.png" alt="SensorMix: Architecture" title="SensorMix: Architecture" />
     </article>
   </slide>
 
   <slide class="header-green">
     <hgroup>
-      <h2>Come è composto Sensormix</h2>
+      <h2>Come è composto SensorMix</h2>
       <h3>Architettura esterna</h3>
     </hgroup>
     <article>
-      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_2.png" alt="Sensormix: Interfaces" title="Sensormix: Interfaces" />
+      <img style="position: absolute;left:50%;margin-left:-340px;margin-top:-50px;" src="images/sensormix_arc_2.png" alt="SensorMix: Interfaces" title="SensorMix: Interfaces" />
     </article>
   </slide>
 
@@ -81,6 +81,13 @@
   </slide>
 
   <!-- Canonical Data Model -->
+  <slide class="segue header-green no-back">
+    <aside class="gdbar big-green"><img src="images/sensormix_focus_cdm.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Data Model Bundle</h2>
+    </hgroup>
+  </slide>
+
   <slide class="header-green">
     <hgroup>
       <h2> Il Canonical Data Model EIP</h2>
@@ -90,9 +97,7 @@
       <div class="build fade">
         <p>“I am designing several applications to work together through Messaging. Each application has its own internal data format.”</p>
         <p>“How can you minimize dependencies when integrating applications that use different data formats?”</p>
-        <svg height="300" width="780">
-          <rect class="diagram-block" height="290" width="770" y="5" x="5" rx="20" ry="20"/>        
-        </svg>
+        <img src="images/sensormix_cdm_problem.png" alt="Canonical Data Model problem" title="Canonical Data Model problem" />
       </div>
     </article>
   </slide>
@@ -102,9 +107,9 @@
       <h2> Il Canonical Data Model EIP</h2>
     </hgroup>
     <article class="flexbox vcenter">
-      <svg height="496" width="780">
-        <rect class="diagram-block" height="486" width="770" y="5" x="5" rx="20" ry="20"/>        
-      </svg>    
+      <div>
+        <img src="images/sensormix_cdm_eip.png" alt="Example of EIP" title="Example of EIP" />
+      </div>
     </article>
   </slide>
 
@@ -219,6 +224,13 @@ public interface SensormixService {
   </slide>
 
   <!-- Data Service -->
+  <slide class="segue header-green no-back">
+    <aside class="gdbar big-green"><img src="images/sensormix_focus_dataservice.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Data Service Bundle</h2>
+    </hgroup>
+  </slide>
+
   <slide class="header-green">
     <hgroup>
       <h2> Il bundle dataservice</h2>
@@ -321,7 +333,13 @@ public class SensormixServiceJpaImpl implements SensormixService, SensormixAdmin
 
 
   <!-- Integration -->
-  <!-- Data Service -->
+  <slide class="segue header-green no-back">
+    <aside class="gdbar big-green"><img src="images/sensormix_focus_integration.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Integration Bundle</h2>
+    </hgroup>
+  </slide>
+
   <slide class="header-green">
     <hgroup>
       <h2> Il bundle di integrazione</h2>
@@ -438,6 +456,12 @@ public <b>class SampleAdapter</b> {
     </article>
   </slide>
   <!-- GWT -->
+  <slide class="segue header-green no-back">
+    <aside class="gdbar big-green"><img src="images/sensormix_focus_webapp.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Admin WebApp Bundle</h2>
+    </hgroup>
+  </slide>
 
 
 

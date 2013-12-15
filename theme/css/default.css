@@ -1463,25 +1463,48 @@ aside.gdbar img {
   right: 0;
   margin: 8px 15px;
 }
+/* line 1001, ../scss/default.scss */
+aside.gdbar.big-green {
+  height: 272px;
+  width: 455px;
+  -webkit-border-radius: 0 20px 20px 0;
+  -moz-border-radius: 0 20px 20px 0;
+  -ms-border-radius: 0 20px 20px 0;
+  -o-border-radius: 0 20px 20px 0;
+  border-radius: 0 20px 20px 0;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #0da861), color-stop(100%, #0da861)) no-repeat;
+  background: -webkit-linear-gradient(left, #0da861, #0da861) no-repeat;
+  background: -moz-linear-gradient(left, #0da861, #0da861) no-repeat;
+  background: -o-linear-gradient(left, #0da861, #0da861) no-repeat;
+  background: linear-gradient(left, #0da861, #0da861) no-repeat;
+}
+/* line 1007, ../scss/default.scss */
+aside.gdbar.big-green img {
+  width: 339px;
+  height: 258px;
+  position: absolute;
+  right: 0;
+  margin: 8px 15px;
+}
 
-/* line 1004, ../scss/default.scss */
+/* line 1019, ../scss/default.scss */
 .title-slide hgroup {
   bottom: 100px;
 }
-/* line 1007, ../scss/default.scss */
+/* line 1022, ../scss/default.scss */
 .title-slide hgroup h1 {
   font-size: 65px;
   line-height: 1.4;
   letter-spacing: -3px;
   color: #515151;
 }
-/* line 1014, ../scss/default.scss */
+/* line 1029, ../scss/default.scss */
 .title-slide hgroup h2 {
   font-size: 34px;
   color: darkgrey;
   font-weight: inherit;
 }
-/* line 1020, ../scss/default.scss */
+/* line 1035, ../scss/default.scss */
 .title-slide hgroup p {
   font-size: 20px;
   color: #797979;
@@ -1489,11 +1512,11 @@ aside.gdbar img {
   margin-top: 2em;
 }
 
-/* line 1029, ../scss/default.scss */
+/* line 1044, ../scss/default.scss */
 .quote {
   color: #e6e6e6;
 }
-/* line 1032, ../scss/default.scss */
+/* line 1047, ../scss/default.scss */
 .quote .author {
   font-size: 24px;
   position: absolute;
@@ -1501,22 +1524,22 @@ aside.gdbar img {
   line-height: 1.4;
 }
 
-/* line 1041, ../scss/default.scss */
+/* line 1056, ../scss/default.scss */
 [data-config-contact] a {
   color: white;
   border-bottom: none;
 }
-/* line 1045, ../scss/default.scss */
+/* line 1060, ../scss/default.scss */
 [data-config-contact] span {
   width: 115px;
   display: inline-block;
 }
 
-/* line 1054, ../scss/default.scss */
+/* line 1069, ../scss/default.scss */
 .overview.popup .note {
   display: none !important;
 }
-/* line 1060, ../scss/default.scss */
+/* line 1075, ../scss/default.scss */
 .overview slides slide {
   display: block;
   cursor: pointer;
@@ -1529,26 +1552,26 @@ aside.gdbar img {
   background: linear-gradient(#ffffff, #ffffff 85%, #e6e6e6);
   background-color: white;
 }
-/* line 1061, ../scss/default.scss */
+/* line 1076, ../scss/default.scss */
 .overview slides slide.backdrop {
   display: none !important;
 }
-/* line 1076, ../scss/default.scss */
+/* line 1091, ../scss/default.scss */
 .overview slides slide.far-past, .overview slides slide.past, .overview slides slide.next, .overview slides slide.far-next, .overview slides slide.far-past {
   opacity: 0.5;
   display: block;
 }
-/* line 1081, ../scss/default.scss */
+/* line 1096, ../scss/default.scss */
 .overview slides slide.current {
   opacity: 1;
 }
-/* line 1087, ../scss/default.scss */
+/* line 1102, ../scss/default.scss */
 .overview .slide-area {
   display: none;
 }
 
 @media print {
-  /* line 1094, ../scss/default.scss */
+  /* line 1109, ../scss/default.scss */
   slides slide {
     display: block !important;
     position: relative;
@@ -1573,46 +1596,46 @@ aside.gdbar img {
     opacity: 1 !important;
     color: #555;
   }
-  /* line 1114, ../scss/default.scss */
+  /* line 1129, ../scss/default.scss */
   slides slide.far-past, slides slide.past, slides slide.next, slides slide.far-next, slides slide.far-past, slides slide.current {
     opacity: 1 !important;
     display: block !important;
   }
-  /* line 1120, ../scss/default.scss */
+  /* line 1135, ../scss/default.scss */
   slides slide .build > * {
     -webkit-transition: none;
     -moz-transition: none;
     -o-transition: none;
     transition: none;
   }
-  /* line 1125, ../scss/default.scss */
+  /* line 1140, ../scss/default.scss */
   slides slide .build .to-build,
   slides slide .build .build-fade {
     opacity: 1;
   }
-  /* line 1130, ../scss/default.scss */
+  /* line 1145, ../scss/default.scss */
   slides slide .auto-fadein {
     opacity: 1 !important;
   }
-  /* line 1134, ../scss/default.scss */
+  /* line 1149, ../scss/default.scss */
   slides slide.backdrop {
     display: none !important;
   }
-  /* line 1138, ../scss/default.scss */
+  /* line 1153, ../scss/default.scss */
   slides slide table.rows {
     border-right: 0;
   }
-  /* line 1143, ../scss/default.scss */
+  /* line 1158, ../scss/default.scss */
   slides slide[hidden] {
     display: none !important;
   }
 
-  /* line 1148, ../scss/default.scss */
+  /* line 1163, ../scss/default.scss */
   .slide-area {
     display: none;
   }
 
-  /* line 1152, ../scss/default.scss */
+  /* line 1167, ../scss/default.scss */
   .reflect {
     -webkit-box-reflect: none;
     -moz-box-reflect: none;
@@ -1621,7 +1644,7 @@ aside.gdbar img {
     box-reflect: none;
   }
 
-  /* line 1160, ../scss/default.scss */
+  /* line 1175, ../scss/default.scss */
   pre, code {
     font-family: monospace !important;
   }

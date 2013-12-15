@@ -997,6 +997,21 @@ aside.gdbar {
     right: 0;
     margin: 8px 15px;
   }
+
+  &.big-green {
+    height: 272px;
+    width: 455px;
+    @include border-radius(0 20px 20px 0);
+    @include background(linear-gradient(left, $brand-green, $brand-green) no-repeat);
+
+    img {
+      width: 339px;
+      height: 258px;
+      position: absolute;
+      right: 0;
+      margin: 8px 15px;
+  }
+  }
 }
 
 .title-slide {
