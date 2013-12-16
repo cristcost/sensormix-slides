@@ -289,6 +289,7 @@ Built-By: gdg-firenze
 <b>Bundle-SymbolicName: example-bundle</b>
 <b>Bundle-Vendor: GDG Firenze :: Sensormix Team</b>
 <b>Bundle-Version: 1.0.0.SNAPSHOT</b>
+<b>Bundle-Activator: com.google.developers.gdgfirenze.dataservice.Activator</b>
 Created-By: Apache Maven Bundle Plugin
 <b>Export-Package: 
  com.google.developers.gdgfirenze.model;version="1.0.0.SNAPSHOT",
@@ -1234,12 +1235,12 @@ public interface SensormixService {
   &lt;prop key=&quot;sensormix_db.password&quot;&gt;&lt;/prop&gt;
 &lt;/osgix:cm-properties&gt;
 
-&lt;osgi:service ref=&quot;sensormixService&quot;&gt;
+<b>&lt;osgi:service ref=&quot;sensormixService&quot;&gt;
   &lt;osgi:interfaces&gt;
     &lt;value&gt;com.google.developers.gdgfirenze.service.SensormixService&lt;/value&gt;
     &lt;value&gt;com.google.developers.gdgfirenze.osgi.SensormixAdminInterface&lt;/value&gt;
   &lt;/osgi:interfaces&gt;
-&lt;/osgi:service&gt;
+&lt;/osgi:service&gt;</b>
 </pre>
     </article>
   </slide>
