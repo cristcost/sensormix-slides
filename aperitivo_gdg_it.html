@@ -689,6 +689,87 @@ public class MyRoute extends RouteBuilder {
 
   <slide class="header-blue">
     <hgroup>
+      <h2>Una applicazione Camel completa:</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="spring xml">
+import org.apache.camel.CamelContext;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.impl.DefaultCamelContext;
+
+public class CamelExample {
+  public static void main(String[] args) throws Exception {
+
+    CamelContext context = new DefaultCamelContext();
+
+    context.addRoutes(new RouteBuilder() {
+      public void configure() {
+        from(&quot;jetty:http://0.0.0.0:8080/tellMeSomething&quot;)
+        .transform(simple(&quot;You say ${in.body}&quot;))
+        .to(&quot;velocity:response.vm&quot;);
+      }
+    });
+
+    context.start();
+    System.out.println(&quot;Press ENTER to exit&quot;);
+    System.in.read();
+
+    context.stop();
+  }
+}
+</pre>
+    </article>
+  </slide>
+
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Camel in ServiceMix</h2>
+    </hgroup>
+    <article>
+      <p>Una volta attivati i bundle di Camel su Karaf-ServiceMix... </p>
+      <div class="build">
+        <img src="images/camel_image_3.png" alt="Camel Bundles in ServiceMix" title="Camel Bundles in ServiceMix" />
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-blue">
+    <hgroup>
+      <h2>Camel in ServiceMix</h2>
+    </hgroup>
+    <article class="smaller">
+      <p>...è possibile definire rotte direttamente
+       nei file Spring XML, oppure utilizzare dei RouteBuilder in Java per avviare delle 
+       applicazioni che usano Camel all’interno di ServiceMix.</p>
+<div class="build">
+<pre class="prettyprint" data-lang="Spring XML">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;&gt;
+
+  &lt;camelContext xmlns=&quot;http://camel.apache.org/schema/spring&quot;&gt;
+   
+    &lt;route&gt;
+      &lt;from uri=&quot;jetty:http://0.0.0.0:8080/tellMeSomething&quot;/&gt;
+      &lt;convertBodyTo type=&quot;java.lang.String&quot;/&gt;
+      &lt;transform&gt;
+        &lt;simple&gt;You say ${in.body}&lt;/simple&gt;
+      &lt;/transform&gt;
+      &lt;to uri=&quot;velocity:response.vm&quot; /&gt;
+    &lt;/route&gt;
+
+  &lt;/camelContext&gt;
+
+&lt;/beans&gt;
+</pre></div>
+
+    </article>
+  </slide>
+
+
+
+  <slide class="header-blue">
+    <hgroup>
       <h2>Camel: componenti</h2>
       <h3>162 componenti elencati su <a href="http://camel.apache.org/components.html">camel.apache.org/components.html</a></h3>
     </hgroup>
@@ -736,52 +817,6 @@ public class MyRoute extends RouteBuilder {
       </table>
     </article>
   </slide>
-
-  <slide class="header-blue">
-    <hgroup>
-      <h2>Camel in ServiceMix</h2>
-    </hgroup>
-    <article>
-      <p>Una volta attivati i bundle di Camel su Karaf-ServiceMix... </p>
-      <div class="build">
-        <img src="images/camel_image_3.png" alt="Camel Bundles in ServiceMix" title="Camel Bundles in ServiceMix" />
-      </div>
-    </article>
-  </slide>
-
-  <slide class="header-blue">
-    <hgroup>
-      <h2>Camel in ServiceMix</h2>
-    </hgroup>
-    <article class="smaller">
-      <p>...è possibile definire rotte direttamente
-       nei file Spring XML, oppure utilizzare dei RouteBuilder in Java per avviare delle 
-       applicazioni che usano Camel all’interno di ServiceMix.</p>
-<div class="build">
-<pre class="prettyprint" data-lang="Spring XML">
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;&gt;
-
-  &lt;camelContext xmlns=&quot;http://camel.apache.org/schema/spring&quot;&gt;
-   
-    &lt;route&gt;
-      &lt;from uri=&quot;jetty:http://0.0.0.0:8080/tellMeSomething&quot;/&gt;
-      &lt;convertBodyTo type=&quot;java.lang.String&quot;/&gt;
-      &lt;transform&gt;
-        &lt;simple&gt;You say ${in.body}&lt;/simple&gt;
-      &lt;/transform&gt;
-      &lt;to uri=&quot;velocity:response.vm&quot; /&gt;
-    &lt;/route&gt;
-
-  &lt;/camelContext&gt;
-
-&lt;/beans&gt;
-</pre></div>
-
-    </article>
-  </slide>
-
-
 
 
   <!-- Usare GWT su ServiceMix -->
@@ -1047,6 +1082,41 @@ public class MyRoute extends RouteBuilder {
 
   <slide class="header-green">
     <hgroup>
+      <h2>Binding Java-XML Schema</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="java">
+@XmlAccessorType(XmlAccessType.FIELD)
+<b>@XmlType(name = &quot;SampleReport&quot;)</b>
+public class SampleReport implements Serializable {
+
+  <b>@XmlAttribute(required = true, name = &quot;sensorId&quot;)</b>
+  @XmlSchemaType(name = &quot;anyURI&quot;)
+  private String sensorId;
+
+  <b>@XmlAttribute(required = false, name = &quot;sampleType&quot;)</b>
+  private String sampleType;
+
+  <b>@XmlElement(required = false, name = &quot;dailySampleReport&quot;)</b>
+  private List&lt;DailySampleReport&gt; dailySampleReports;
+</pre>
+<div class="build">
+<pre class="prettyprint" data-lang="xml schema">
+&lt;<b>xs:complexType name=&quot;SampleReport&quot;</b>&gt;
+  &lt;<b>xs:attribute name=&quot;sensorId&quot;</b> type=&quot;xs:anyURI&quot; use=&quot;required&quot;/&gt;
+  &lt;<b>xs:attribute name=&quot;sampleType&quot;</b> type=&quot;xs:string&quot;/&gt;
+  &lt;xs:sequence&gt;
+    &lt;<b>xs:element name=&quot;dailySampleReport&quot;</b> type=&quot;tns:DailySampleReport&quot;
+          maxOccurs=&quot;unbounded&quot; minOccurs=&quot;0&quot; /&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</pre>
+</div>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
       <h2> POJO annotati JaxB</h2>
     </hgroup>
     <article class="flexbox build fade smaller">
@@ -1072,6 +1142,7 @@ public class SampleReport implements Serializable {
       <img style="position: absolute; top: 100px; right: 50px;" src="images/sensormix_cdm_image_1.png" alt="POJO annotated JaxB" title="POJO annotated JaxB" />
     </article>
   </slide>
+
 
   <slide class="header-green">
     <hgroup>
