@@ -1466,6 +1466,88 @@ public <b>class SampleAdapter</b> {
       <p>Noi cosa abbiamo fatto?</p>
     </article>
   </slide>
+  
+  <slide class="header-green">
+    <hgroup>
+<h2>Configuriamo il maven-bundle-plugin</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;instructions&gt;
+  &lt;Bundle-SymbolicName&gt;${project.artifactId}&lt;/Bundle-SymbolicName&gt;
+  &lt;Bundle-Description&gt;${project.description}&lt;/Bundle-Description&gt;
+
+  <b>&lt;Web-ContextPath&gt;/${project.artifactId}&lt;/Web-ContextPath&gt;</b>
+
+  <b>&lt;Bundle-ClassPath&gt;.,WEB-INF/classes&lt;/Bundle-ClassPath&gt;</b>
+
+  <b>&lt;Import-Package&gt;
+    com.google.gwt.user.client.rpc.*,
+    com.google.gwt.user.client.rpc.core.com.google.gwt.core.shared,
+    com.google.gwt.user.client.rpc.core.java.lang,
+    com.google.gwt.user.client.rpc.core.java.math,
+    com.google.gwt.user.client.rpc.core.java.sql,
+    com.google.gwt.user.client.rpc.core.java.util,
+    com.google.gwt.user.client.rpc.core.java.util.logging,
+    com.google.gwt.user.server.rpc.core.java.lang,
+    com.google.gwt.user.server.rpc.core.java.util,
+    !com.google.gwt.*.client.*,
+    *
+  &lt;/Import-Package&gt;</b>
+&lt;/instructions&gt;</pre>
+    </article>
+  </slide>
+
+  <slide class="header-green">
+    <hgroup>
+<h2>Configuriamo il maven-war-plugin</h2>
+<h3>Ricordate lo skinny war?</h3>
+    </hgroup>
+    <article>
+<p>Si tolgono le dipendenze dalla lib:</p>
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;packagingExcludes&gt;WEB-INF/lib/,
+             WEB-INF/classes/META-INF/&lt;/packagingExcludes&gt;
+</pre>
+
+<p>Si istruisce Maven di copiare il Manifest al posto giusto:</p>
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;archive&gt;
+  &lt;manifestFile&gt;
+    ${project.build.outputDirectory}/META-INF/MANIFEST.MF
+  &lt;/manifestFile&gt;
+&lt;/archive&gt;
+</pre>
+    </article>
+  </slide>
+
+<slide class="header-green">
+    <hgroup>
+<h2>Importiamo il Canonical Data Model</h2>
+    </hgroup>
+    <article class="smaller">
+<p>Nel file SensormixAdminApp.gwt.xml:</p>
+<pre class="prettyprint" data-lang=".gwt.xml">
+  &lt;inherits name='com.google.developers.gdgfirenze.Sensormix' /&gt;
+</pre>
+
+<p>Nel pom.xml:</p>
+<pre class="prettyprint" data-lang="pom.xml">
+&lt;dependency&gt;
+  &lt;groupId&gt;com.google.developers.gdgfirenze&lt;/groupId&gt;
+  &lt;artifactId&gt;sensormix-datamodel-api&lt;/artifactId&gt;
+  &lt;version&gt;${project.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.google.developers.gdgfirenze&lt;/groupId&gt;
+  &lt;artifactId&gt;sensormix-datamodel-api&lt;/artifactId&gt;
+  &lt;version&gt;${project.version}&lt;/version&gt;
+  <b>&lt;classifier&gt;sources&lt;/classifier&gt;</b>
+&lt;/dependency&gt;</pre>
+    </article>
+  </slide>
+
+
 
   <slide class="header-green">
     <hgroup>
@@ -1544,85 +1626,6 @@ public List&lt;String&gt; listSensorsIds() {
     </article>
   </slide>
 
-  <slide class="header-green">
-    <hgroup>
-<h2>Importiamo il Canonical Data Model</h2>
-    </hgroup>
-    <article class="smaller">
-<p>Nel file SensormixAdminApp.gwt.xml:</p>
-<pre class="prettyprint" data-lang=".gwt.xml">
-  &lt;inherits name='com.google.developers.gdgfirenze.Sensormix' /&gt;
-</pre>
-
-<p>Nel pom.xml:</p>
-<pre class="prettyprint" data-lang="pom.xml">
-&lt;dependency&gt;
-  &lt;groupId&gt;com.google.developers.gdgfirenze&lt;/groupId&gt;
-  &lt;artifactId&gt;sensormix-datamodel-api&lt;/artifactId&gt;
-  &lt;version&gt;${project.version}&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;com.google.developers.gdgfirenze&lt;/groupId&gt;
-  &lt;artifactId&gt;sensormix-datamodel-api&lt;/artifactId&gt;
-  &lt;version&gt;${project.version}&lt;/version&gt;
-  <b>&lt;classifier&gt;sources&lt;/classifier&gt;</b>
-&lt;/dependency&gt;</pre>
-    </article>
-  </slide>
-
-  <slide class="header-green">
-    <hgroup>
-<h2>Configuriamo il maven-bundle-plugin</h2>
-    </hgroup>
-    <article class="smaller">
-<pre class="prettyprint" data-lang="pom.xml">
-&lt;instructions&gt;
-  &lt;Bundle-SymbolicName&gt;${project.artifactId}&lt;/Bundle-SymbolicName&gt;
-  &lt;Bundle-Description&gt;${project.description}&lt;/Bundle-Description&gt;
-
-  <b>&lt;Web-ContextPath&gt;/${project.artifactId}&lt;/Web-ContextPath&gt;</b>
-
-  <b>&lt;Bundle-ClassPath&gt;.,WEB-INF/classes&lt;/Bundle-ClassPath&gt;</b>
-
-  <b>&lt;Import-Package&gt;
-    com.google.gwt.user.client.rpc.*,
-    com.google.gwt.user.client.rpc.core.com.google.gwt.core.shared,
-    com.google.gwt.user.client.rpc.core.java.lang,
-    com.google.gwt.user.client.rpc.core.java.math,
-    com.google.gwt.user.client.rpc.core.java.sql,
-    com.google.gwt.user.client.rpc.core.java.util,
-    com.google.gwt.user.client.rpc.core.java.util.logging,
-    com.google.gwt.user.server.rpc.core.java.lang,
-    com.google.gwt.user.server.rpc.core.java.util,
-    !com.google.gwt.*.client.*,
-    *
-  &lt;/Import-Package&gt;</b>
-&lt;/instructions&gt;</pre>
-    </article>
-  </slide>
-
-  <slide class="header-green">
-    <hgroup>
-<h2>Configuriamo il maven-war-plugin</h2>
-<h3>Ricordate lo skinny war?</h3>
-    </hgroup>
-    <article>
-<p>Si tolgono le dipendenze dalla lib:</p>
-<pre class="prettyprint" data-lang="pom.xml">
-&lt;packagingExcludes&gt;WEB-INF/lib/,
-             WEB-INF/classes/META-INF/&lt;/packagingExcludes&gt;
-</pre>
-
-<p>Si istruisce Maven di copiare il Manifest al posto giusto:</p>
-<pre class="prettyprint" data-lang="pom.xml">
-&lt;archive&gt;
-  &lt;manifestFile&gt;
-    ${project.build.outputDirectory}/META-INF/MANIFEST.MF
-  &lt;/manifestFile&gt;
-&lt;/archive&gt;
-</pre>
-    </article>
-  </slide>
 
 
 
