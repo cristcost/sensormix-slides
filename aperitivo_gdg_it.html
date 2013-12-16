@@ -1454,7 +1454,7 @@ public <b>class SampleAdapter</b> {
 
   <slide class="header-green">
     <hgroup>
-      <h2>Riepilogo:</h2>
+      <h2>SensorMix GWT Web Application</h2>
     </hgroup>
     <article>
       <p>Abbiamo visto che per il deploy di una Web Application GWT su Karaf/ServiceMix dobbiamo garantire che:</p>
@@ -1633,7 +1633,8 @@ public List&lt;String&gt; listSensorsIds() {
     </hgroup>
   </slide>
 
- <slide class="header-dark">
+
+  <slide class="header-dark">
     <hgroup>
       <img style="float:right;margin-top:10px;" src="images/arduino_logo.png" alt="Arduino Logo" title="Arduino Logo" />
       <h2>Integrazione di Arduino</h2>
@@ -1714,6 +1715,154 @@ public List&lt;String&gt; listSensorsIds() {
 
 
 
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Installiamo ServiceMix</h2>
+    </hgroup>
+    <article class="flexbox">
+      <div class="build fade">
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/cool_install_servicemix_1.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-220px;margin-top:30px;" src="images/cool_install_servicemix_2.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/cool_install_servicemix_3.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-410px;margin-top:-20px;" src="images/cool_install_servicemix_4.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-300px;margin-top:-10px;" src="images/cool_install_servicemix_5.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/cool_install_servicemix_6.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-400px;margin-top:-20px;" src="images/cool_install_servicemix_7.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-380px;margin-top:-10px;" src="images/cool_install_servicemix_8.png" alt="" title="" />
+      </div>
+    </article>
+  </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Creare una distribuzione della applicazione</h2>
+    </hgroup>
+    <article class="flexbox vcenter">
+        <img src="images/cool_dist_features.png" alt="" title="" />
+    </article>
+  </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Le Karaf Features</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="features.xml">
+&lt;features name=&#39;sensormix-1.0.0&#39;&gt;
+  &lt;feature name=&quot;sensormix-core&quot; version=&quot;1.0.0&quot;&gt;
+    &lt;bundle&gt;mvn:com.google.developers.gdgfirenze/sensormix-datamodel-api/1.0.0&lt;/bundle&gt;
+  &lt;/feature&gt;
+
+  &lt;feature name=&quot;sensormix-dataservice&quot; version=&quot;1.0.0&quot;&gt;
+    &lt;feature version=&quot;1.0.0&quot;&gt;sensormix-core&lt;/feature&gt;
+    &lt;feature&gt;spring-orm&lt;/feature&gt;
+    &lt;!-- ... --&gt;
+    &lt;bundle&gt;mvn:mysql/mysql-connector-java/5.1.26&lt;/bundle&gt;
+    &lt;bundle&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.commons-dbcp/1.4_3&lt;/bundle&gt;
+    &lt;bundle&gt;mvn:org.apache.servicemix.bundles/org.apache.servicemix.bundles.javax-inject/1_2&lt;/bundle&gt;
+    &lt;bundle&gt;mvn:org.eclipse.persistence/javax.persistence/2.1.0&lt;/bundle&gt;
+    &lt;bundle&gt;mvn:org.eclipse.persistence/org.eclipse.persistence.jpa/2.5.0&lt;/bundle&gt;
+    &lt;!-- ... --&gt;
+    &lt;bundle&gt;mvn:com.google.developers.gdgfirenze/sensormix-dataservice-bundle/1.0.0&lt;/bundle&gt;
+  &lt;/feature&gt;
+
+  <b>&lt;feature name=&quot;sensormix&quot; version=&quot;1.0.0&quot;&gt;
+    &lt;feature version=&quot;1.0.0&quot;&gt;sensormix-dataservice&lt;/feature&gt;
+    &lt;feature version=&quot;1.0.0&quot;&gt;sensormix-webservice&lt;/feature&gt;
+  &lt;/feature&gt;</b>
+&lt;/features&gt;
+</pre>        
+    </article>
+  </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Il Features Maven Plugin di Karaf</h2>
+    </hgroup>
+    <article class="smaller">
+<pre class="prettyprint" data-lang="features.xml">
+&lt;plugin&gt;
+  &lt;groupId&gt;org.apache.karaf.tooling&lt;/groupId&gt;
+  &lt;artifactId&gt;features-maven-plugin&lt;/artifactId&gt;
+  &lt;version&gt;${features.plugin.version}&lt;/version&gt;
+  &lt;executions&gt;
+    &lt;execution&gt;
+      <b>&lt;id&gt;add-features-to-repo&lt;/id&gt;</b>
+      &lt;phase&gt;package&lt;/phase&gt;
+      &lt;goals&gt;
+        &lt;goal&gt;add-features-to-repo&lt;/goal&gt;
+      &lt;/goals&gt;
+      &lt;configuration&gt;
+        &lt;descriptors&gt;
+          <b>&lt;descriptor&gt;com.google.developers.gdgfirenze
+                      /sensormix-deploy-features/1.0.0/xml/features&lt;/descriptor&gt;</b>
+        &lt;/descriptors&gt;
+        &lt;features&gt;
+          <b>&lt;feature&gt;sensormix/1.0.0&lt;/feature&gt;</b>
+        &lt;/features&gt;
+        <b>&lt;repository&gt;target/local-repo&lt;/repository&gt;</b>
+      &lt;/configuration&gt;
+    &lt;/execution&gt;
+  &lt;/executions&gt;
+&lt;/plugin&gt;
+</pre>        
+    </article>
+  </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Installiamo SensorMix</h2>
+    </hgroup>
+    <article class="flexbox">
+      <div class="build fade">
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/cool_install_sensormix_1.png" alt="" title="" />
+        <!--<img style="position: absolute;left:50%;margin-left:-220px;margin-top:30px;" src="images/cool_install_sensormix_2.png" alt="" title="" />-->
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-30px;" src="images/cool_install_sensormix_3.png" alt="" title="" />
+        <!--<img style="position: absolute;left:50%;margin-left:-410px;margin-top:-20px;" src="images/cool_install_sensormix_4.png" alt="" title="" />-->
+        <img style="position: absolute;left:50%;margin-left:-420px;margin-top:-10px;" src="images/cool_install_sensormix_5.png" alt="" title="" />
+        <img style="position: absolute;left:50%;margin-left:-490px;margin-top:10px;" src="images/cool_install_sensormix_6.png" alt="" title="" />
+      </div>
+    </article>
+  </slide>
+
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Kryo e Benchmark</h2>
+    </hgroup>
+    <article class="bigger">
+      <p>Si è scelto di utilizzare un’unica classe per tutti i sample (con un campo <code>byte[]</code> che contiene la serializzazione (Kryo) del sample).</p>
+
+      <p>Sfruttando l’astrazione di JPA sono stati fatti benchmark di occupazione e performance per supportare le scelte e validare la soluzione.</p>
+    </article>
+  </slide>
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>ServiceMix: Quanto overhead?</h2>
+      <h3>Il pacchetto ServiceMix occupa circa 65MB sul filesystem</h3>
+    </hgroup>
+    <article class="flexbox vcenter">
+      <img src="images/cool_servicemix_footprint.jpg" alt="" title="" />
+    </article>
+  </slide>
+
+
+
+  <slide class="header-dark">
+    <hgroup>
+      <h2>Maven ed Eclipse</h2>
+    </hgroup>
+    <article class="bigger">
+      <p>SensorMix è stato sviluppato in <b>Team</b> utilizzando <b>Maven</b> ed <b>Eclipse</b>.</p>
+      <p>In particolare:</p>
+      <ul class="build">
+        <li>Sviluppo GWT integrato nello stesso Java IDE</li>
+        <li>Distribuzione tramite Karaf's Features Maven Plugin</li>
+        <li>Checkstyle e PMD per migliorare la cooperazione del Team</li>
+      </ul>
+    </article>
+  </slide>
 
   <slide class="segue no-back nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
