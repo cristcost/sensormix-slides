@@ -899,13 +899,15 @@ public class CamelExample {
   <slide class="header-red">
     <hgroup>
       <h2>Applicazioni GWT sotto Karaf/ServiceMix</h2>
-      <h3>...anche gwt-servlet.jar ha bisogno di modifiche</h3>
     </hgroup>
     <article>
-      <p>GWT non è predisposto per essere usato in OSGi.</p>
-      <p>Non è un bundle perchè al manifest della gwt-servlet.jar mancano gli header OSGi.</p>
-
-      <div class="build" style="text-align:center;font-weight:bold;font-size:1.8em;"><p>E allora?</p></div>
+      <div style="position: absolute; height:496px;top:90px;">
+        <img style="position: absolute;left:50%;margin-left:-420px;top:25px;" src="images/gwt_image_4.png" alt="gwt-servlet.jar is not an OSGi Bundle" title="gwt-servlet.jar is not an OSGi Bundle" />
+        <p style="margin-top:260px;">...anche gwt-servlet.jar ha bisogno di modifiche!</p>
+        <p>GWT non è predisposto per essere usato in OSGi.</p>
+        <p>Non è un bundle perchè al manifest della gwt-servlet.jar mancano gli header OSGi.</p>
+        <div style="text-align:center;font-weight:bold;font-size:1.8em;"><p>E allora?</p></div>
+      </div>
     </article>
   </slide>
 
@@ -1968,7 +1970,6 @@ public List&lt;String&gt; listSensorsIds() {
 </slides>
 
 <script>
-
 </script>
 
 <!--[if IE]>
