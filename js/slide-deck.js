@@ -291,6 +291,8 @@ SlideDeck.prototype.loadConfig_ = function(config) {
 
   this.config_ = config;
 
+  _lang = document.querySelector('[data-lang]').getAttribute("data-lang");
+
   var settings = this.config_.settings;
 
   this.loadTheme_(settings.theme || []);
@@ -318,6 +320,10 @@ SlideDeck.prototype.loadConfig_ = function(config) {
   }
 
   if (settings.title) {
+    if(typeof settings.title === 'object') {
+      settings.title = settings.title[_lang];
+    }
+
     document.title = settings.title.replace(/<br\/?>/, ' ');
     if (settings.eventInfo && settings.eventInfo.title) {
       document.title +=  ' - ' + settings.eventInfo.title;
@@ -326,6 +332,9 @@ SlideDeck.prototype.loadConfig_ = function(config) {
   }
 
   if (settings.subtitle) {
+    if(typeof settings.subtitle === 'object') {
+      settings.subtitle = settings.subtitle[_lang];
+    }
     document.querySelector('[data-config-subtitle]').innerHTML = settings.subtitle;
   }
 
@@ -343,6 +352,9 @@ SlideDeck.prototype.loadConfig_ = function(config) {
       }
       html = presenterTitle.join(' - ') + '<br>';
 
+      var email = p.email ? '<span style="font-size:0.5em;">' + p.email 
+           + '</span>' : '';
+
       var gplus = p.gplus ? '<span>g+</span><a href="' + p.gplus +
           '">' + p.gplus.replace(/https?:\/\//, '') + '</a>' : '';
 
@@ -356,18 +368,22 @@ SlideDeck.prototype.loadConfig_ = function(config) {
       var github = p.github ? '<span>github</span><a href="' + p.github +
           '">' + p.github.replace(/https?:\/\//, '') + '</a>' : '';
 
-      var html2 = [gplus, twitter, www, github].join('<br>');
+      var html2 = [email, gplus, twitter, www, github].join('<br>');
 
       if (dataConfigContact) {
         dataConfigContact.innerHTML = html2;
       }
     } else {
+      var html2 = [];
       for (var i = 0, p; p = presenters[i]; ++i) {
         html.push(p.name);
+        html2.push(p.name + (p.email ? ' <span style="font-size:0.5em;">' + p.email +
+           '</span>' : ''));
       }
       html = html.join(' - ');
+      html2 = html2.join('<br/>');
       if (dataConfigContact) {
-        dataConfigContact.innerHTML = html;
+        dataConfigContact.innerHTML = html2;
       }
     }
 

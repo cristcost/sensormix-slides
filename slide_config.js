@@ -1,8 +1,10 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Sviluppare su OSGI<br/>con Camel e GWT',
-    subtitle: 'Aperitivo tecnologico del GDG Firenze<br/>http://www.gdg-firenze.info/',
+    title: {it:'Sviluppare su OSGI<br/>con Camel e GWT',
+      en:'Develop apps with Camel<br/> and GWT on OSGi'},
+    subtitle: {it:'Aperitivo tecnologico del GDG Firenze<br/>http://www.gdg-firenze.info/',
+      en:'Tech Aperitif of GDG Firenze<br/>http://www.gdg-firenze.info/'},
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -17,10 +19,10 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [
-    { name: 'Cristiano Costantini' },
-    { name: 'Giuseppe Gerla' },
-    { name: 'Michele Ficarra' },
-    { name: 'Sergio Ciampi' },
-    { name: 'Stefano Cigheri' }]
+    { name: 'Cristiano Costantini' , email: 'cristiano.costantini@gmail.com'},
+    { name: 'Giuseppe Gerla' , email: 'giuseppe.gerla@gmail.com'},
+    { name: 'Michele Ficarra' , email: 'miche.ficarra@gmail.com'},
+    { name: 'Sergio Ciampi' , email: 'sergio.ciampi@gmail.com'},
+    { name: 'Stefano Cigheri' , email: 'stefano.cigheri@gmail.com'}]
 };
 
