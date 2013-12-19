@@ -123,8 +123,8 @@
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Una Metafora:</h2>
-      <h3>Pensate ai servizi di Windows o demoni Unix ma completamente Java</h3>
+      <h2>A Metaphor:</h2>
+      <h3>Think to Windows services or Unix daemons but completely Java</h3>
     </hgroup>
     <article class="flexbox">
       <div class="build fade">
@@ -378,12 +378,12 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>OSGi e Spring</h2>
-      <h3>Uso di Spring dentro a Karaf/ServiceMix</h3>
+      <h2>OSGi and Spring</h2>
+      <h3>Use of Spring in Karaf/ServiceMix</h3>
     </hgroup>
     <article class="smaller">
-      <p>Lo springframework fornisce molte features interessanti (dependency injection, ORM, AOP,...)</p>
-      <p>Lo Spring Deployer riconosce i file Spring all'interno del folder META-INF/spring di un Jar, e ne istanzia i bean che vi sono definiti, senza necessità di utilizzare le API OSGi</p>
+      <p>Springframework provides many features (dependency injection, ORM, AOP,...)</p>
+      <p>Karaf/ServiceMix includes a bundle, the Spring Deployer, that scans and detects Spring files within the folder META-INF/spring of a Jar, and it starts the beans defined inside these files without the need of using OSGi API</p>
 
 <pre class="prettyprint" data-lang="Spring">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -403,11 +403,11 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>OSGi e Spring</h2>
+      <h2>OSGi and Spring</h2>
       <h3>Spring DM</h3>
     </hgroup>
     <article class="smaller">
-      <p>Spring DM permette di utilizzare servizi OSGi da Spring in modo trasparente.</p>
+      <p>Spring DM allows using OSGi services from Spring in a transparent way.</p>
 <pre class="prettyprint" data-lang="Spring DM">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
@@ -430,19 +430,19 @@ Created-By: Apache Maven Bundle Plugin
   <slide class="segue back-blue nobackground">
     <aside class="gdbar"><img src="images/logo_sensormix_c.png"></aside>
     <hgroup class="auto-fadein">
-      <h2>Introduzione ad Apache Camel</h2>
-      <h3>Ovvero un modo agile per integrare sistemi eterogenei</h3>
+      <h2>Intro to Apache Camel</h2>
+      <h3>An agile way to integrate heterogeneous systems</h3>
     </hgroup>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>“Integrare”</h2>
+      <h2>“To integrate”</h2>
     </hgroup>
     <article class="build">
-      <p>Cosa si intende quando parliamo di integrazione?</p>
-      <p>Trovare una soluzione al seguente problema:</p>
-      <q>Come posso far funzionare insieme molteplici applicazioni attraverso lo scambio di informazioni?</q>
+      <p>What does we mean when we talk about integration?</p>
+      <p>To find a solution to the following problem:</p>
+      <q>How can I integrate multiple applications so that they work together and can exchange information?</q>
     </article>
   </slide>
 
@@ -451,21 +451,21 @@ Created-By: Apache Maven Bundle Plugin
       <h2>Enterprise Integration Patterns</h2>
     </hgroup>
     <article>
-      <p>Gli Enterprise Integration Patters offrono soluzioni per affrontare il precedente problema.</p>
-      <p>Cosa sono gli EIP?</p>
+      <p>Enterprise Integration Patters provide solutions for challenging the previous problem.</p>
+      <p>What is Enterprise Integration Patters?</p>
     </article>
   </slide>
 
   <slide class="fill nobackground" style="background-image: url(images/eipbook.jpg)">
     <hgroup>
-      <h2 class="white">Un libro!</h2>
+      <h2 class="white">It's a book!</h2>
     </hgroup>
     <footer><a class="source white" href="http://www.eaipatterns.com/">Gregor Hohpe and Bobby Woolf<br/>Addison-Wesley 2003</a></footer>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>EIP Importanti</h2>
+      <h2>Significant Patterns</h2>
     </hgroup>
     <article>
       <dl style="font-size: 0.65em;">
@@ -499,27 +499,27 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Come si può fare integrazione?</h2>
+      <h2>How can we integrate?</h2>
     </hgroup>
     <article>
-      <p>I principali metodi tramite cui avviene integrazione sono:</p>
+      <p>The main approaches for integration are:</p>
       <ul class="build">
-        <li>Scambio di file
+        <li>File Transfer
           <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_file.gif" alt="EIP File Transfer" title="EIP File Transfer" /></div></li>
-        <li>Database condiviso
+        <li>Shared Database
           <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_db.gif" alt="EIP Shared DB" title="EIP Shared DB" /></div></li>
         <li>Remote Procedure Invocation
           <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_rmi.gif" alt="EIP Remote Procedure Invocation" title="EIP Remote Procedure Invocation" /></div></li>
         <li>Messaging
           <div style="position:absolute;right:0px;top:0px;background-color:white;width:345px;height:153px;"><img src="images/camel_eip_messaging.gif" alt="EIP Messaging" title="EIP Messaging" /></div></li>
       </ul>
-      <div class="build"><p>Gli EIP si focalizzano sulla integrazione via “messaging” e definiscono una notazione per rappresentare le soluzioni di integrazione.</p></div>
+      <div class="build"><p>EIPs focuses on integration via “messaging” and define a specific notation for representing integration solutions.</p></div>
     </article>
   </slide>
 
   <slide class="fill nobackground" style="background-image: url(images/eipbookcover.jpg)">
     <hgroup>
-      <h2 class="white">Notazione EIP</h2>
+      <h2 class="white">EIP Notation</h2>
     </hgroup>
     <article class="build flexbox vcenter ">
       <div>
@@ -532,7 +532,7 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Soluzioni con EIP</h2>
+      <h2>Solutions with EIP</h2>
     </hgroup>
      <article class="flexbox vcenter">
       <div>
@@ -543,7 +543,7 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Soluzioni con EIP</h2>
+      <h2>Solutions with EIP</h2>
     </hgroup>
      <article class="flexbox vcenter">
       <div>
@@ -555,13 +555,13 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Soluzioni con EIP</h2>
+      <h2>Solutions with EIP</h2>
     </hgroup>
      <article class="flexbox vcenter">
       <div>
         <img src="images/sensormix_cdm_eip.png" alt="Example of EIP" title="Example of EIP" />
         <div class="build">
-          <h3>Attenti a questa qui!</h3>
+          <h3>Remember this one!</h3>
         </div>
       </div>
     </article>
@@ -569,14 +569,14 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Come implementare facilmente EIP?</h2>
-      <h3>(domanda retorica)</h3>
+      <h2>How to implement easily EIP solutions?</h2>
+      <h3>(rhetorical question)</h3>
     </hgroup>
     <article class="build">
-      <p>Integrare è però difficile perchè esiste una vasta eterogeneità di protocolli, interfacce e formati.</p>
-      <p>Come si possono implementare su una piattaforma Java gli Enterprise Integration Pattern?</p>
+      <p>Integration is still difficult as it exists a wide and heterogeneous set of protocols, interfaces and formats.</p>
+      <p>How can we implement Enterprise Integration Patterns on a Java platform?</p>
       <div>
-        <p>con</p>
+        <p>with</p>
         <q>Apache Camel</q>
         <div class="build">
           <span><b>C</b>oncise</span>
@@ -595,15 +595,15 @@ Created-By: Apache Maven Bundle Plugin
       <h2>Apache Camel</h2>
     </hgroup>
     <article class="build">
-      <p>Apache Camel è un framework di integrazione open-sorce versatile basato sugli Enterprise Integration Patterns del libro di Hohpe e Woolf.</p>
-      <p>Include un vasto insieme di <a href="http://camel.apache.org/components.html">componenti</a> per funzionare con molti <b>protocolli di trasporto</b> e <a href="http://camel.apache.org/data-format.html">formati dati</a> e permette di definire regole di <b>instradamento</b> e <b>intermediazione</b> attraverso l’uso di <a href="http://camel.apache.org/dsl.html">domain-specific language</a>.</p>
-      <p>...si presta talmente bene alla integrazione che ServiceMix, dalla versione 3 alla 4, ha abbandonato la tecnologia JBI per adottare un nuovo approccio alla integrazione basato su Camel e OSGi.</p>
+      <p>Apache Camel is a versatile open-source integration framework based on known Enterprise Integration Patterns from Hohpe and Woolf's book.</p>
+      <p>It includes a wide set of  <a href="http://camel.apache.org/components.html">components</a> for working with many <b>transport protocols</b> and <a href="http://camel.apache.org/data-format.html">data formats</a>  and it allows to define <b>routing</b> and <b>mediation</b> rules by using <a href="http://camel.apache.org/dsl.html">domain-specific language</a>.</p>
+      <p>...it so good for integration that ServiceMix, from version 3 to version 4, switched focus from using JBI to adopt a new approach to integration based on Camel and OSGi.</p>
     </article>
   </slide>
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Esempio: Content Based Router</h2>
+      <h2>Example: Content Based Router</h2>
     </hgroup>
     <article class="bigger">
       <img style="width:50%;" src="images/camel_eip_3.png" alt="Content Based Router" title="Content Based Router" />
@@ -679,7 +679,7 @@ public class MyRoute extends RouteBuilder {
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Una applicazione Camel completa:</h2>
+      <h2>A complete Camel application:</h2>
     </hgroup>
     <article class="smaller">
 <pre class="prettyprint" data-lang="spring xml">
@@ -714,10 +714,10 @@ public class CamelExample {
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Camel in ServiceMix</h2>
+      <h2>Camel on ServiceMix</h2>
     </hgroup>
     <article>
-      <p>Una volta attivati i bundle di Camel su Karaf-ServiceMix... </p>
+      <p>As soon as Camel bundles are enabled on Karaf-ServiceMix... </p>
       <div class="build">
         <img src="images/camel_image_3.png" alt="Camel Bundles in ServiceMix" title="Camel Bundles in ServiceMix" />
       </div>
@@ -726,12 +726,12 @@ public class CamelExample {
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Camel in ServiceMix</h2>
+      <h2>Camel on ServiceMix</h2>
     </hgroup>
     <article class="smaller">
-      <p>...è possibile definire rotte direttamente
-       nei file Spring XML, oppure utilizzare dei RouteBuilder in Java per avviare delle 
-       applicazioni che usano Camel all’interno di ServiceMix.</p>
+      <p>...it is then possible to define routes directly 
+       in Spring XML files, or use a RouteBuilder with Java to start Camel application
+       within ServiceMix.</p>
 <div class="build">
 <pre class="prettyprint" data-lang="Spring XML">
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -760,8 +760,8 @@ public class CamelExample {
 
   <slide class="header-blue">
     <hgroup>
-      <h2>Camel: componenti</h2>
-      <h3>162 componenti elencati su <a href="http://camel.apache.org/components.html">camel.apache.org/components.html</a></h3>
+      <h2>Camel: components</h2>
+      <h3>162 components listed on <a href="http://camel.apache.org/components.html">camel.apache.org/components.html</a></h3>
     </hgroup>
     <article class="smaller">
       <div style="height:460px;overflow:auto;margin-top:-30px;">
@@ -795,7 +795,7 @@ public class CamelExample {
   <slide class="header-blue">
     <hgroup>
       <h2>Camel: data format</h2>
-      <h3>25+ data format elencati su <a href="http://camel.apache.org/data-format.html">camel.apache.org/data-format.html</a></h3>
+      <h3>25+ data formats listed <a href="http://camel.apache.org/data-format.html">camel.apache.org/data-format.html</a></h3>
     </hgroup>
     <article>
       <table>
