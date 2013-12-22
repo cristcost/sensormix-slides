@@ -109,15 +109,15 @@
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>OSGi: questo sconosciuto</h2>
+      <h2>Let's meet OSGi</h2>
     </hgroup>
     <article>
       <ul>
         <li>OSGi: Open Service Gateway initiative</li>
-        <li>OSGi Alliance: organizzazione fondata nel 1999 da <a href="http://it.wikipedia.org/wiki/Ericsson">Ericsson</a>, <a href="http://it.wikipedia.org/wiki/IBM">IBM</a>, <a href="http://it.wikipedia.org/wiki/Oracle">Oracle</a> e altri</li>
-        <li>OSGi Framework: è un layer di modularità per la piattaforma Java</li>
+        <li>OSGi Alliance: is a non-profit corporation founded in March 1999 by <a href="http://it.wikipedia.org/wiki/Ericsson">Ericsson</a>, <a href="http://it.wikipedia.org/wiki/IBM">IBM</a>, <a href="http://it.wikipedia.org/wiki/Oracle">Oracle</a> and others</li>
+        <li>OSGi Framework: modularity layer for Java platform</li>
       </ul>
-      <p>Il nucleo delle specifiche definisce la gestione del modello del ciclo di vita del software, i moduli (chiamati bundles), un service registry e un ambiente di esecuzione.</p>
+      <p>The core specifications defines the software lifecycle, modules, services registry and an execution environment.</p>
     </article>
   </slide>
 
@@ -139,17 +139,19 @@
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Perchè nasce OSGi</h2>
+      <h2>Why OSGi is born</h2>
     </hgroup>
     <article>
-      <p>OSGi nasce con lo scopo di creare sistemi embedded per mercati residenziali, automotive e M2M. In questi contesti è spesso necessario comunicare con i devices attraverso protocolli differenti.</p>
-      <p>Il fine, quindi, era quello di fornire un modello di programmazione capace di realizzare servizi end-to-end creando uno strato di astrazione che unificasse i differenti protocolli.</p>
+      <p>OSGi is born with the goal of creating Java embedded systems for residential, automotive and M2M markets.    
+        In these contexts it is often required communicating with devices using different protocols.</p>
+      <p>
+        So his initial objective was to provide a programming model that allow implementing end-to-end services having an abstraction layer that allow unification of different protocols.</p>
     </article>
   </slide>
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Perchè si espande</h2>
+      <h2>Why it grows?</h2>
     </hgroup>
     <article class="flexbox vleft auto-fadein smaller">
       <q>
@@ -165,10 +167,10 @@
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Implementazioni OSGi</h2>
+      <h2>OSGi Implementations</h2>
     </hgroup>
     <article class="bigger">
-      <p>Esistono diverse implementazioni di OSGi. Quelle più complete sono:</p>
+      <p>The specifications enables the creation of multiple implementations of the core framework:</p>
       <ul>
         <li>Apache Felix</li>
         <li>Eclipse Equinox</li>
@@ -179,7 +181,7 @@
  
    <slide class="header-yellow">
     <hgroup>
-      <h2>Come è fatto un framework OSGi</h2>
+      <h2>The OSGi framework</h2>
     </hgroup>
     <article>
       <svg style="float:right;" height="496" width="370">
@@ -205,53 +207,53 @@
           </g>
         </g>
       </svg>
-      <p>Il framework può essere rappresentato con tre layer:</p>
+      <p>OSGi framework can be represented with three layers:</p>
       <ul class="build fade">
-        <li>Il <b>module</b> layer definisce il concetto di modulo OSGi: il Bundle</li>
-        <li>Il <b>lifecycle</b> layer definisce come i bundles sono dinamicamente installati e gestiti nel framework OSGi</li>
-        <li>Il <b>service</b> layer supporta e promuove un modello di sviluppo di applicazioni flessibile che incapsula concetti resi di uso comune dal service-oriented programming</li>
+        <li>The <b>module</b> layer defines the OSGi module concept, called Bundle</li>
+        <li>The <b>lifecycle</b> layer defines how bundles are dinamically installed and managed int the OSGi framework</li>
+        <li>The <b>service</b> layer supports and promotes a flexible application programming model incorporating concepts popularized by service-oriented computing</li>
       </ul>
     </article>
   </slide>
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Il “Module layer”</h2>
+      <h2>The “Module layer”</h2>
     </hgroup>
     <article>
       <img style="width:370px;float:right;" src="images/servicemix_image_2.png" alt="OSGi Bundles" title="OSGi Bundles" />
-      <p>Il cuore del module layer è il <b>Bundle</b>.</p>
-      <p>Un Bundle è un JAR che contiene metadati extra (manifest).</p>
+      <p>The core concept of the module layer is the <b>Bundle</b>.</p>
+      <p>The Bundle is a JAR file that contains extra metadata (manifest).</p>
 
       <div class="build">
-        <p>A differenza dei JAR il bundle ha:</p>
+        <p>Compared to a regular JAR, a Bundle has:</p>
         <ul>
-          <li>un classpath “ristretto” al solo bundle</li>
-          <li>un manifest più ricco</li>
+          <li>a “closed” classpath </li>
+          <li>a more expensive manifest</li>
         </ul>
-        <p>Grazie al manifest è possibile estendere la visibilità del classpath dichiarando esplicitamente le proprie dipendenze</p>
+        <p>Thanks to the manifest it is possible to extend classpath visibility</p>
       </div>
     </article>
   </slide>
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Il manifest OSGi</h2>
+      <h2>The OSGi manifest</h2>
     </hgroup>
     <article>
-      <p>Nel manifest viene specificato anche:</p>
+      <p>In the manifest it can be specified:</p>
       <ul>
-        <li>L’identificazione e la descrizione</li>
-        <li>Il classloading</li>
-        <li>L’attivazione</li>
+        <li>Bundle identification and description</li>
+        <li>Bundle classloading</li>
+        <li>Bundle activation</li>
       </ul>
-      <p>Esempi:</p>
+      <p>Examples:</p>
     </article>
   </slide>
 <slide class="header-yellow">
     <hgroup>
-      <h2>Il manifest OSGi</h2>
-      <h3>Manifest di un semplice JAR compilato con maven</h3>
+      <h2>The OSGi manifest</h2>
+      <h3>Manifest of a simple JAR built with maven</h3>
     </hgroup>
     <article class="smaller">
       <pre class="prettyprint" data-lang="manifest.mf">
@@ -264,8 +266,8 @@ Created-By: Apache Maven
   </slide>
   <slide class="header-yellow">
     <hgroup>
-      <h2>Il manifest OSGi</h2>
-      <h3>Manifest di un Bundle</h3>
+      <h2>The OSGi manifest</h2>
+      <h3>Manifest of a Bundle</h3>
     </hgroup>
     <article class="smaller">
       <pre class="prettyprint" data-lang="manifest.mf">
@@ -293,22 +295,22 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Il “Lifecycle layer”</h2>
-      <h3>Il lifecycle layer ha due scopi:</h3>
+      <h2>The “Lifecycle layer”</h2>
+      <h3>The lifecycle layer server two different purposes:</h3>
     </hgroup>
     <article>
-    <p>Esternamente gestisce il ciclo di vita del bundle.</p>
+    <p>Externally it defines the bundle lifecycle.</p>
     <img src="images/servicemix_image_3.png" alt="OSGi Lifecycle" title="OSGi Lifecycle" />
     </article>
   </slide>
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Il “Lifecycle layer”</h2>
-      <h3>Il lifecycle layer ha due scopi:</h3>
+      <h2>The “Lifecycle layer”</h2>
+      <h3>The lifecycle layer server two different purposes:</h3>
     </hgroup>
     <article>
-      <p>Internamente definisce Bundle Activator </p>
+      <p>Internally it defines the Bundle Activator </p>
       <img src="images/servicemix_image_4.png" alt="OSGi Bundle Activator" title="OSGi Bundle Activator" />
       <div class="build"><p>= public static void main(String[] args)</p></div>
     </article>
@@ -316,24 +318,25 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Il “Service layer”</h2>
+      <h2>The “Service layer”</h2>
     </hgroup>
     <article>
-      <p>L’OSGi service layer promuove l’approccio basato su interface ed in particolare la separazione tra interfacce e implementazioni.</p>
-      <p>I Servizi OSGi sono interfacce Java che rappresentano un contratto tra il service provider e i service clients.</p>
+      <p>OSGi service layer promotes an interface-based development approach and the separation of interface and implementation.</p>
+      <p>OSGi services are Java interfaces representing a conceptual contract between service providers and service clients.</p>
       <img src="images/servicemix_image_5.png" alt="OSGi Bundle Activator" title="OSGi Bundle Activator" />
     </article>
   </slide>
 
+
   <slide class="header-yellow">
     <hgroup>
-      <h2>OSGi: la Service Platform</h2>
+      <h2>The OSGi Service Platform</h2>
     </hgroup>
     <article>
       <img style="width:370px;float:right;" src="images/servicemix_image_6.png" alt="OSGi Service Platform" title="OSGi Service Platform" />
-      <p>L’OSGi definisce un set minimo di servizi per agevolare lo sviluppo di applicazioni modulari</p>
+      <p>OSGi specifications define a set of service to improve modular application development</p>
       <ul>
-        <li>Cofiguration Admin (hot configuration)</li>
+        <li>Configuration Admin (hot configuration)</li>
         <li>Event Admin</li>
         <li>Console Admin</li>
         <li>Log Service</li>
@@ -344,33 +347,37 @@ Created-By: Apache Maven Bundle Plugin
 
   <slide class="header-yellow">
     <hgroup>
-      <h2>Karaf: un OSGi container</h2>
+      <h2>Karaf: an OSGi container</h2>
     </hgroup>
     <article>
-      <p>Karaf è un OSGi container in cui sono deployati bundles (e servizi) aggiuntivi per fornire ulteriori funzionalità tra cui Hot deployment, Dynamic configuration, Logging System, Extensible Shell console (SSH)</p>
-      <p>Karaf è un chiaro esempio di architettura basata su OSGi</p>
+      <p>Karaf is an OSGi container in which we can find several bundles (and services). This bundles provide additional functionalities like  Hot deployment, Dynamic configuration, Logging System, Extensible Shell console (SSH).</p>
+      <p>Karaf its a tipical example of OSGi architecture</p>
       <img src="images/servicemix_image_7.png" alt="Apache Karaf Architecture" title="Apache Karaf Architecture" />
     </article>
   </slide>
 
+
+
+
   <slide class="header-yellow">
     <hgroup>
-      <h2>ServiceMix: un ESB su OSGi</h2>
+      <h2>ServiceMix: an ESB on OSGi</h2>
     </hgroup>
     <article class="smaller">
       <img style="width:370px;float:right;" src="images/servicemix_image_8.png" alt="OSGi Service Platform" title="OSGi Service Platform" />
-      <p>Le principali funzionalità di ServiceMix sono:</p>
+      <p>ServiceMix extends further the Karaf framework with features for implementing an Enterprise Service Bus.</p>
+      <p>Main ServiceMix functionality are:</p>
       <ul>
-        <li>reliable messaging with <a href="http://activemq.apache.org/">Apache ActiveMQ</a></li>
-        <li>messaging, routing and Enterprise Integration Patterns with <a href="http://camel.apache.org">Apache Camel</a></li>
+        <li>Reliable messaging with <a href="http://activemq.apache.org/">Apache ActiveMQ</a></li>
+        <li>Messaging, routing and Enterprise Integration Patterns with <a href="http://camel.apache.org">Apache Camel</a></li>
         <li>WS-\* and RESTful web services with <a href="http://cxf.apache.org">Apache CXF</a></li>
         <li>OSGi-based server runtime powered by <a href="http://karaf.apache.org">Apache Karaf</a></li>
       </ul>
 
-      <p>Altre funzionalità offerte da ServiceMix:</p>
+      <p>In addition ServiceMix provides:</p>
       <ul>
-        <li>loosely coupled integration between all the other components with Apache ServiceMix NMR including rich Event, Messaging and Audit API</li>
-        <li>complete WS-BPEL engine with <a href="http://ode.apache.org">Apache ODE</a></li>
+        <li>Loosely coupled integration between all the other components with Apache ServiceMix NMR including rich Event, Messaging and Audit API</li>
+        <li>Complete WS-BPEL engine with <a href="http://ode.apache.org">Apache ODE</a></li>
       </ul>
 
     </article>
@@ -1829,9 +1836,9 @@ public List&lt;String&gt; listSensorsIds() {
       <h2>Kryo and Benchmark</h2>
     </hgroup>
     <article class="bigger">
-      <p>Si è scelto di utilizzare un’unica classe per tutti i sample (con un campo <code>byte[]</code> che contiene la serializzazione (Kryo) del sample).</p>
+      <p>For JPA persistence datamodel we used only one class for all samples. This class has a field <code>byte[]</code> that is the sample serialization (Kryo).</p>
 
-      <p>Sfruttando l’astrazione di JPA sono stati fatti benchmark di occupazione e performance per supportare le scelte e validare la soluzione.</p>
+      <p>Using JPA abstraction we realized a benchmark to evaluate performance and size. So we were able to choose the best solution.</p>
     </article>
   </slide>
 
